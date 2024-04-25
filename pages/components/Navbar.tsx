@@ -8,8 +8,8 @@ const Navbar = () => {
           href="index.html"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img className="h-30 w-20" src={"./logo.png"} />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <img className="h-30 w-20 max-w-xs transition duration-350 ease-in-out hover:shadow-lg dark:hover:shadow-black/20" src={"./logo.png"} />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white hover:text-blue-600">
             UW Dorms
           </span>
         </a>
