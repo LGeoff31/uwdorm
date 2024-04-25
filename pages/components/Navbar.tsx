@@ -1,9 +1,8 @@
 import React from "react";
-import logo from "../../public/logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="bg-white">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a
           href="index.html"
@@ -14,35 +13,12 @@ const Navbar = () => {
             UW Dorms
           </span>
         </a>
-        <div className="text-med hidden w-full md:block md:w-auto">
-          <ul className="font-medium flex flex-col p-3  mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
-            <li>
-              <a href="index.html" className="hover:text-blue-600">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="index.html" className="hover:text-blue-600">
-                See Dorms
-              </a>
-            </li>
-            <li>
-              <a href="index.html" className="hover:text-blue-600">
-                Rate Dorm
-              </a>
-            </li>
-            <li>
-              <a href="index.html" className="hover:text-blue-600">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="index.html" className="hover:text-blue-600">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
+        <div className="text-med w-full md:block md:w-auto md:bg-white">
+                        <ul className="font-medium flex flex-col p-3 mt-4  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                            <li><a href="/dorms" className="hover:text-blue-600">Dorms</a></li>
+                            <li><a href="/contact" className="hover:text-blue-600">Contact</a></li>
+                        </ul>
+                    </div>
       </div>
     </nav>
   );
