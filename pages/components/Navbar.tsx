@@ -1,5 +1,4 @@
 import React from "react";
-import { Stack, Typography } from "@mui/material";
 import logo from "../../public/logo.png";
 
 const Navbar = () => {
