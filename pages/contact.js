@@ -1,5 +1,10 @@
-function contact(){
+import Navbar from "./components/Navbar"
+
+export default function contact(){
     return(
-        <h1>For more info contact james.yuu@hotmail.com or ...</h1>
+        <>
+            <Navbar/>
+            <h1>For more info contact james.yuu@hotmail.com or ...</h1>
+        </>
     )
 }
