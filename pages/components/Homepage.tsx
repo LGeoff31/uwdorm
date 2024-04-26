@@ -41,7 +41,7 @@ const Homepage = () => {
             UW <span style={{ color: "#7be4ed" }}>Dorms</span>
           </Typography>
           <Typography fontSize="2rem" color="white" marginBottom="2rem">
-            Explore reviews of Waterloo's residences and add your own!
+            Explore reviews of Waterloo&apos;s residences and add your own!
           </Typography>
           <Autocomplete
             sx={{
@@ -75,6 +75,17 @@ const Homepage = () => {
           </Stack>
 
           <Stack direction="row" gap="1rem" marginTop="2rem">
+            <CiDollar style={{ fontSize: "3rem", color: "white" }} />
+            <Stack>
+              <Typography fontWeight="bold" color="#ffff87">
+                {"Price"}
+              </Typography>
+              <Typography fontWeight="300" color="white">
+                Compare prices between different residences.
+              </Typography>
+            </Stack>
+          </Stack>
+          <Stack direction="row" gap="1rem" marginTop="2rem">
             <AccessibilityNewIcon
               style={{ fontSize: "3rem", color: "white" }}
             />
@@ -83,7 +94,7 @@ const Homepage = () => {
                 {"Life"}
               </Typography>
               <Typography fontWeight="300" color="white">
-                Learn about people's university experience or add yours!
+                Learn about the Waterloo experience or add yours!
               </Typography>
             </Stack>
           </Stack>
