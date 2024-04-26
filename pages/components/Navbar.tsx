@@ -34,7 +34,7 @@ const Navbar = () => {
       const result = await signInWithPopup(auth, googleProvider);
       route.push("/");
     } catch (error) {
-      console.log("google sing in error", error);
+      console.log("google sign in error", error);
     }
   };
   const handleClick = (event: any) => {
@@ -57,7 +57,7 @@ const Navbar = () => {
             className="h-30 w-20 max-w-xs transition duration-350 ease-in-out hover:shadow-lg dark:hover:shadow-black/20"
             src={"./logo.png"}
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white hover:text-blue-600">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap hover:text-blue-600">
             UW Dorms
           </span>
         </Link>
