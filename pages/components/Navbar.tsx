@@ -33,7 +33,9 @@ const Navbar = () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       route.push("/");
-    } catch (error) {}
+    } catch (error) {
+      console.log("google sing in error", error);
+    }
   };
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
@@ -41,6 +43,7 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   if (loading) return <h1>Loading...</h1>;
 
   return (

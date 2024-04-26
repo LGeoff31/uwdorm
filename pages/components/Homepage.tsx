@@ -81,39 +81,42 @@ const Homepage = () => {
           />
         </Stack>
 
-        <Stack direction="row" gap="1rem" marginTop="2rem">
-          <IoHomeOutline style={{ fontSize: "3rem", color: "white" }} />
-          <Stack>
-            <Typography fontWeight="bold" color="#ffff87">
-              {"Comfort"}
-            </Typography>
-            <Typography fontWeight="300" color="white">
-              The lifestyle, appliances, entertainment within the residence.
-            </Typography>
+        <Grid>
+          <Stack direction="row" gap="1rem" marginTop="2rem">
+            <IoHomeOutline style={{ fontSize: "3rem", color: "white" }} />
+            <Stack>
+              <Typography fontWeight="bold" color="#ffff87">
+                {"Comfort"}
+              </Typography>
+              <Typography fontWeight="300" color="white">
+                The lifestyle, appliances, entertainment within the residence.
+              </Typography>
+            </Stack>
           </Stack>
-        </Stack>
-        <Stack direction="row" gap="1rem" marginTop="2rem">
-          <IoHomeOutline style={{ fontSize: "3rem", color: "white" }} />
-          <Stack>
-            <Typography fontWeight="bold" color="#ffff87">
-              {"Comfort"}
-            </Typography>
-            <Typography fontWeight="300" color="white">
-              The lifestyle, appliances, entertainment within the residence.
-            </Typography>
+
+          <Stack direction="row" gap="1rem" marginTop="2rem">
+            <CiDollar style={{ fontSize: "3rem", color: "white" }} />
+            <Stack>
+              <Typography fontWeight="bold" color="#ffff87">
+                {"Pricing"}
+              </Typography>
+              <Typography fontWeight="300" color="white">
+                Compare the prices between countless residences.
+              </Typography>
+            </Stack>
           </Stack>
-        </Stack>
-        <Stack direction="row" gap="1rem" marginTop="2rem">
-          <IoHomeOutline style={{ fontSize: "3rem", color: "white" }} />
-          <Stack>
-            <Typography fontWeight="bold" color="#ffff87">
-              {"Comfort"}
-            </Typography>
-            <Typography fontWeight="300" color="white">
-              The lifestyle, appliances, entertainment within the residence.
-            </Typography>
+          <Stack direction="row" gap="1rem" marginTop="2rem">
+            <IoRestaurantOutline style={{ fontSize: "3rem", color: "white" }} />
+            <Stack>
+              <Typography fontWeight="bold" color="#ffff87">
+                {"Food"}
+              </Typography>
+              <Typography fontWeight="300" color="white">
+                Discover delicious restaurants nearby to eat.
+              </Typography>
+            </Stack>
           </Stack>
-        </Stack>
+        </Grid>
       </Grid>
     </>
   );
