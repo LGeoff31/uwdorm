@@ -81,7 +81,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <button onClick={handleFetchTest}>CLICK ME</button>
+        {/* <button onClick={handleFetchTest}>CLICK ME</button> */}
         {!user ? (
           <Box fontSize={"2rem"} marginRight="2rem">
             <IconButton onClick={handleClick}>
