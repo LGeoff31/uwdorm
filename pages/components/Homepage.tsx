@@ -11,7 +11,7 @@ import {
 import { IoHomeOutline } from "react-icons/io5";
 import { CiDollar } from "react-icons/ci";
 import { IoRestaurantOutline } from "react-icons/io5";
-import Features from "../subcomponents/Features";
+// import Features from "../subcomponents/Features";
 
 const Homepage = () => {
   const residences = [
@@ -81,17 +81,38 @@ const Homepage = () => {
           />
         </Stack>
 
-        <Stack
-          direction="column" // Change to column to stack features vertically
-        >
-          {featuresData.map((feature, index) => (
-            <Features
-              key={index}
-              Icon={feature.Icon}
-              title={feature.title}
-              description={feature.description}
-            />
-          ))}
+        <Stack direction="row" gap="1rem" marginTop="2rem">
+          <IoHomeOutline style={{ fontSize: "3rem", color: "white" }} />
+          <Stack>
+            <Typography fontWeight="bold" color="#ffff87">
+              {"Comfort"}
+            </Typography>
+            <Typography fontWeight="300" color="white">
+              The lifestyle, appliances, entertainment within the residence.
+            </Typography>
+          </Stack>
+        </Stack>
+        <Stack direction="row" gap="1rem" marginTop="2rem">
+          <IoHomeOutline style={{ fontSize: "3rem", color: "white" }} />
+          <Stack>
+            <Typography fontWeight="bold" color="#ffff87">
+              {"Comfort"}
+            </Typography>
+            <Typography fontWeight="300" color="white">
+              The lifestyle, appliances, entertainment within the residence.
+            </Typography>
+          </Stack>
+        </Stack>
+        <Stack direction="row" gap="1rem" marginTop="2rem">
+          <IoHomeOutline style={{ fontSize: "3rem", color: "white" }} />
+          <Stack>
+            <Typography fontWeight="bold" color="#ffff87">
+              {"Comfort"}
+            </Typography>
+            <Typography fontWeight="300" color="white">
+              The lifestyle, appliances, entertainment within the residence.
+            </Typography>
+          </Stack>
         </Stack>
       </Grid>
     </>
