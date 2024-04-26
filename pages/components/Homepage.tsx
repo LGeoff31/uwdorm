@@ -9,7 +9,7 @@ import {
 import { IoHomeOutline } from "react-icons/io5";
 import { CiDollar } from "react-icons/ci";
 import { IoRestaurantOutline } from "react-icons/io5";
-import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
+import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
 
 const Homepage = () => {
   const residences = [
@@ -19,9 +19,7 @@ const Homepage = () => {
     // Add more residences as needed
   ];
 
-  const [selectedResidence, setSelectedResidence] = useState<string | null>(
-    ""
-  );
+  const [selectedResidence, setSelectedResidence] = useState<string | null>("");
   const handleResidenceSelect = (residence: string) => {
     setSelectedResidence(residence);
   };

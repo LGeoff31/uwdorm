@@ -44,6 +44,12 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const handleFetchTest = async () => {
+    const response = await fetch("/api/test");
+    const data = await response.json();
+    console.log(data);
+  };
+
   if (loading) return <h1>Loading...</h1>;
 
   return (
@@ -75,6 +81,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+        <button onClick={handleFetchTest}>CLICK ME</button>
         {!user ? (
           <Box fontSize={"2rem"} marginRight="2rem">
             <IconButton onClick={handleClick}>
