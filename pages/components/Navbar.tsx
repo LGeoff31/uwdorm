@@ -55,15 +55,11 @@ const Navbar = () => {
   return (
     <nav className="bg-white">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a
-          href="/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
-        >
+        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             className="h-30 w-20 max-w-xs transition duration-350 ease-in-out hover:shadow-lg dark:hover:shadow-black/20"
             src={"./logo.png"}
           />
-          
         </a>
         <div className="text-med w-full md:block md:w-auto md:bg-white">
           <ul className="font-medium flex flex-col p-3 mt-4  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
@@ -113,7 +109,7 @@ const Navbar = () => {
                   src={user.photoURL || undefined}
                   alt="photo"
                   style={{
-                    borderRadius: "10%",
+                    borderRadius: "50%",
                     width: "50px",
                     height: "50px",
                   }}
