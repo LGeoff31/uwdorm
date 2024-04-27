@@ -36,13 +36,12 @@ const Homepage = () => {
         height="90vh"
       >
         <Stack margin="0 auto" justifyContent={"center"}>
-          <Typography variant="h1" color="white" margin="0 auto">
-            {" "}
-            UW <span style={{ color: "#7be4ed" }}>Dorms</span>
-          </Typography>
-          <Typography fontSize="2rem" color="white" marginBottom="2rem">
+            <span className="text-6xl text-center mb-8 text-purple-300 hover:text-blue-400">
+              UW Dorms
+            </span>
+          <span className="text-xl mb-8 text-white">
             Explore reviews of Waterloo&apos;s residences and add your own!
-          </Typography>
+          </span>
           <Autocomplete
             sx={{
               background: "white",
