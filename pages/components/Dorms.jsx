@@ -65,7 +65,7 @@ function DormInfo(props) {
 
 /*images are 750 by 500 */
 
-function dorms() {
+const dorms = () => {
   const [residences, setResidences] = useState([]);
 
   const fetchData = async () => {
@@ -100,6 +100,6 @@ function dorms() {
       ))}
     </div>
   );
-}
+};
 
 export default dorms;
