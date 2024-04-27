@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";
-import Village1 from "../public/images/Village1.png";
 import { TextField, Button, Typography } from "@mui/material";
 
 function DormInfo(props) {
@@ -8,7 +6,7 @@ function DormInfo(props) {
   const [comments, setComments] = useState([]); //all the submitted comments
 
   const fetchComments = async () => {
-    const response = await fetch("/api/comments-by-residence", {
+    const response = await fetch("/pages/api/comments-by-residence", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +27,7 @@ function DormInfo(props) {
       review: comment,
     };
 
-    const response = await fetch("/api/insert-comment", {
+    const response = await fetch("/pages/api/insert-comment.ts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -83,7 +81,14 @@ function dorms() {
 
   return (
     <div>
-      <Navbar />
+      <Typography
+        variant="h1"
+        display="flex"
+        margin="0 auto"
+        justifyContent={"center"}
+      >
+        Residences
+      </Typography>
       {residences.map((residence) => (
         <DormInfo
           key={residence.id}
@@ -93,25 +98,6 @@ function dorms() {
           description={residence.description}
         />
       ))}
-      {/* <DormInfo
-        name="Village 1"
-        image="https://uwaterloo.ca/campus-housing/sites/default/files/uploads/images/campus_housing-220519-0083.jpg"
-        description="cozy place you are so cool"
-        imagesrc="https://uwaterloo.ca/campus-housing/sites/default/files/uploads/images/campus_housing-220519-0083.jpg"
-      />
-      <DormInfo
-        name="Claudette Millar Hall"
-        image="https://uwaterloo.ca/campus-housing/sites/default/files/uploads/images/newrezhero_0.jpg"
-        description="cozy place you are so cool"
-        imagesrc="https://uwaterloo.ca/campus-housing/sites/default/files/uploads/images/newrezhero_0.jpg"
-      />
-      <DormInfo
-        name="Claudette Millar Hall"
-        image="https://uwaterloo.ca/campus-housing/sites/default/files/uploads/images/revmain_2.jpg"
-        description="cozy place you are so cool"
-        imagesrc="https://uwaterloo.ca/campus-housing/sites/default/files/uploads/images/revmain_2.jpg
-            "
-      /> */}
     </div>
   );
 }

@@ -16,6 +16,12 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/components/Homepage.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/components/Homepage.js",
+    "pages/components/Dorms.jsx"
+  ],
   "exclude": ["node_modules"]
 }
