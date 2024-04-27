@@ -55,7 +55,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link
+        <a
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
@@ -63,21 +63,19 @@ const Navbar = () => {
             className="h-30 w-20 max-w-xs transition duration-350 ease-in-out hover:shadow-lg dark:hover:shadow-black/20"
             src={"./logo.png"}
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap hover:text-blue-600">
-            UW Dorms
-          </span>
-        </Link>
+          
+        </a>
         <div className="text-med w-full md:block md:w-auto md:bg-white">
           <ul className="font-medium flex flex-col p-3 mt-4  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
             <li>
-              <Link href="/dorms" className="hover:text-blue-600">
+              <a href="/dorms" className="hover:text-blue-600 text-gray-400">
                 Dorms
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-blue-600">
+              <a href="/contact" className="hover:text-blue-600 text-gray-400">
                 Contact
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -115,7 +113,7 @@ const Navbar = () => {
                   src={user.photoURL || undefined}
                   alt="photo"
                   style={{
-                    borderRadius: "50%",
+                    borderRadius: "10%",
                     width: "50px",
                     height: "50px",
                   }}
