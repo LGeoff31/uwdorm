@@ -21,7 +21,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/components/Homepage.js",
-    "pages/components/Dorms.jsx"
+    "pages/components/Dorms.jsx",
+    "pages/[id].jsx"
   ],
   "exclude": ["node_modules"]
 }

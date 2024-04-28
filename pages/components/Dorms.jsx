@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  Link,
   Stack,
   Paper,
   TextField,
@@ -12,13 +13,15 @@ import {
 function DormInfo(props) {
   return (
     <Stack elevation={3} padding="2rem">
-      <img
-        height={200} // Adjust the height as needed
-        width={600} // Adjust the width as needed
-        src={props.images}
-        alt={props.name}
-        className=" h-full transition-all duration-300 cursor-pointer filter  hover:grayscale-0"
-      />
+      <Link href={props.link} height={400}>
+        <img
+          height={200} // Adjust the height as needed
+          width={600} // Adjust the width as needed
+          src={props.images}
+          alt={props.name}
+          className=" h-full transition-all duration-300 cursor-pointer filter  hover:grayscale-0"
+        />
+      </Link>
 
       <Stack
         bottom={0}
@@ -84,6 +87,7 @@ const Dorms = () => {
             images={residence.images}
             description={residence.description}
             address={residence.address}
+            link={residence.id}
           />
         ))}
       </Grid>

@@ -12,7 +12,6 @@ export default async function handler(
       await sql`SELECT * FROM comment WHERE residence_id=${residence_id}`;
     return rows;
   };
-
   const data = await getComments();
   console.log(data);
 
