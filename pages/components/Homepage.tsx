@@ -49,15 +49,15 @@ const Homepage = () => {
           height="90vh"
         >
           <Stack margin="0 auto" justifyContent={"center"}>
-            <span className="text-6xl text-center mb-8 text-white hover:text-blue-400">
+            <span className="text-6xl text-center mb-8 text-blue-300">
               UW Rez
             </span>
-            <span className="text-xl mb-8 text-white">
+            <span className="text-xl mb-8 text-gray-300">
               Explore reviews of Waterloo&apos;s residences and add your own!
             </span>
             <Autocomplete
               sx={{
-                background: "white",
+                background: "lightgray",
                 width: "50%",
                 margin: "0 auto",
                 display: "flex",
@@ -74,36 +74,36 @@ const Homepage = () => {
           </Stack>
           <Grid>
             <Stack direction="row" gap="1rem" marginTop="2rem">
-              <IoHomeOutline style={{ fontSize: "3rem", color: "white" }} />
+              <IoHomeOutline style={{ fontSize: "3rem", color: "#d4d4d8" }} />
               <Stack>
-                <Typography fontWeight="bold" color="#ffff87">
+                <Typography fontWeight="bold" color="#93c5fd">
                   {"Comfort"}
                 </Typography>
-                <Typography fontWeight="300" color="white">
+                <Typography fontWeight="300" color="#d4d4d8">
                   Learn about the lifestyle and available accommodations!
                 </Typography>
               </Stack>
             </Stack>
             <Stack direction="row" gap="1rem" marginTop="2rem">
-              <CiDollar style={{ fontSize: "3rem", color: "white" }} />
+              <CiDollar style={{ fontSize: "3rem", color: "#d4d4d8" }} />
               <Stack>
-                <Typography fontWeight="bold" color="#ffff87">
+                <Typography fontWeight="bold" color="#93c5fd">
                   {"Price"}
                 </Typography>
-                <Typography fontWeight="300" color="white">
+                <Typography fontWeight="300" color="lightgray">
                   Compare prices between different residences.
                 </Typography>
               </Stack>
             </Stack>
             <Stack direction="row" gap="1rem" marginTop="2rem">
               <AccessibilityNewIcon
-                style={{ fontSize: "3rem", color: "white" }}
+                style={{ fontSize: "3rem", color: "#d4d4d8"}}
               />
               <Stack>
-                <Typography fontWeight="bold" color="#ffff87">
+                <Typography fontWeight="bold" color="#93c5fd">
                   {"Life"}
                 </Typography>
-                <Typography fontWeight="300" color="white">
+                <Typography fontWeight="300" color="#d4d4d8">
                   Learn about the Waterloo experience or add yours!
                 </Typography>
               </Stack>

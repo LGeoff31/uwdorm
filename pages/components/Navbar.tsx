@@ -54,89 +54,89 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link
-          href="/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
+  <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+    <div className="flex items-center space-x-3">
+      <Link href="/" className="flex items-center">
+        <img
+          className="h-30 w-20 max-w-xs transition duration-400 ease-in-out hover:shadow-lg dark:hover:shadow-black"
+          src={"./logo.png"}
+        />
+      </Link>
+    </div>
+    <div className="text-med hidden md:block sm:block flex-grow"> 
+      <ul className="font-medium flex flex-row justify-end space-x-8 p-5 underline-none"> 
+        <li>
+          <Link
+            href="/contact"
+            className="hover:text-blue-600 text-gray-400 "
+          >
+            Contact Us
+          </Link>
+        </li>
+      </ul>
+    </div>
+    {!user ? (
+      <Box fontSize={"2rem"} marginRight="2rem">
+        <IconButton onClick={handleClick}>
+          <AccountCircleIcon sx={{ fontSize: "3rem" }} />
+          <ExpandMoreIcon style={{ color: "#052A42" }} />
+        </IconButton>
+        <Menu
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
         >
-          <img
-            className="h-30 w-20 max-w-xs transition duration-350 ease-in-out hover:shadow-lg dark:hover:shadow-black/20"
-            src={"./logo.png"}
-          />
-        </Link>
-        <div className="text-med w-full md:block md:w-auto md:bg-white">
-          <ul className="font-medium flex flex-col p-3 mt-4  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-            <li>
-              <Link
-                href="/contact"
-                className="hover:text-blue-600 text-gray-400"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-        {/* <button onClick={handleFetchTest}>CLICK ME</button> */}
-        {!user ? (
-          <Box fontSize={"2rem"} marginRight="2rem">
-            <IconButton onClick={handleClick}>
-              <AccountCircleIcon sx={{ fontSize: "3rem" }} />
-              <ExpandMoreIcon style={{ color: "#052A42" }} />
-            </IconButton>
-            <Menu
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "right",
+          <MenuItem onClick={GoogleLogin} href="/">
+            {" "}
+            <FcGoogle /> &nbsp; Sign In
+          </MenuItem>
+        </Menu>
+      </Box>
+    ) : (
+      <>
+        <Box marginRight="2rem">
+          <IconButton onClick={handleClick}>
+            <img
+              src={user.photoURL || undefined}
+              alt="photo"
+              style={{
+                borderRadius: "50%",
+                width: "50px",
+                height: "50px",
               }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-            >
-              <MenuItem onClick={GoogleLogin} href="/">
-                {" "}
-                <FcGoogle /> &nbsp; Sign In
-              </MenuItem>
-            </Menu>
-          </Box>
-        ) : (
-          <>
-            <Box marginRight="2rem">
-              <IconButton onClick={handleClick}>
-                <img
-                  src={user.photoURL || undefined}
-                  alt="photo"
-                  style={{
-                    borderRadius: "50%",
-                    width: "50px",
-                    height: "50px",
-                  }}
-                />
-                <ExpandMoreIcon style={{ color: "#052A42" }} />
-              </IconButton>
-              <Menu
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "right",
-                }}
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-              >
-                <MenuItem onClick={() => auth.signOut()}>Sign Out</MenuItem>
-              </Menu>
-            </Box>
-          </>
-        )}
-      </div>
-    </nav>
+            />
+            <ExpandMoreIcon style={{ color: "#052A42" }} />
+          </IconButton>
+          <Menu
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+          >
+            <MenuItem onClick={() => auth.signOut()}>Sign Out</MenuItem>
+          </Menu>
+        </Box>
+      </>
+    )}
+  </div>
+</nav>
+
+
   );
 };
 
