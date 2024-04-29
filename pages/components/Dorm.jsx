@@ -17,9 +17,9 @@ function DormInfo(props) {
     setComments(data);
   };
 
-  // useEffect(() => {
-  //   fetchComments();
-  // }, []);
+  useEffect(() => {
+    fetchComments();
+  }, []);
   const handleSubmit = async () => {
     const data = {
       residence_id: props.id,
