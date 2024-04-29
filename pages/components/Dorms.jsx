@@ -69,7 +69,7 @@ const Dorms = () => {
   return (
     <>
       <Typography
-        variant="h1"
+        variant="h4"
         display="flex"
         margin="0 auto"
         justifyContent={"center"}
