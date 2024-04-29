@@ -1,17 +1,56 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "./components/Navbar";
-import { Stack, Grid, Box, Typography } from "@mui/material";
+import { TextField, Stack, Grid, Box, Typography, Button } from "@mui/material";
+import { MdOutlineRateReview } from "react-icons/md";
 
 const Residence = () => {
   const router = useRouter();
   const [residence, setResidence] = useState([]);
-
+  const [comment, setComment] = useState(""); //typing textfield
+  const [comments, setComments] = useState([]); //all the submitted comments
   const { id } = router.query;
+
+  const fetchComments = async () => {
+    const response = await fetch("/api/comments-by-residence", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ residence_id: id }),
+    });
+    const data = await response.json();
+    setComments(data);
+  };
+
+  const handleSubmit = async () => {
+    const data = {
+      residence_id: id,
+      users_id: 1,
+      review: comment,
+    };
+    console.log("comment", comment);
+
+    const response = await fetch("/api/insert-comment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) {
+      console.log("error on inserting comment", response.statusText);
+    }
+    const p = await response.json();
+    console.log("inserting comment", p);
+    fetchComments();
+  };
+
   useEffect(() => {
     console.log("id", router.query.id);
     if (router.query.id) {
       fetchResidence();
+      fetchComments();
     }
   }, [router.query.id]);
   const fetchResidence = async () => {
@@ -78,11 +117,23 @@ const Residence = () => {
             <Typography>Bathroom &nbsp;⭐⭐⭐⭐ </Typography>
             <Typography variant="h2">Description</Typography>
             <Typography>{residence[0].description}</Typography>
+            <Typography variant="h2">Images</Typography>
+            <Typography variant="h2">Fun facts</Typography>
           </Stack>
           <Stack padding="2rem" paddingRight="10rem">
-            <Typography variant="h2">Images</Typography>
-            <Typography>{residence[0].description}</Typography>
+            <Button variant="contained">
+              Write a Review &nbsp;
+              <MdOutlineRateReview />{" "}
+            </Button>
+            <TextField
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            />
+            <Button onClick={handleSubmit}>Sumbit</Button>
             <Typography variant="h2">Comments</Typography>
+            {comments.map((c, idx) => (
+              <Typography key={c.id}>{c.review} </Typography>
+            ))}
           </Stack>
         </Grid>
       </Grid>
