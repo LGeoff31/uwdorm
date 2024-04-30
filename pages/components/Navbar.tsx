@@ -21,7 +21,8 @@ import {
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { FaSignOutAlt } from "react-icons/fa";
+import { MdAccountCircle } from "react-icons/md";
 
 const Navbar = () => {
   const [user, loading] = useAuthState(auth);
@@ -54,7 +55,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white">
-  <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+  <div className="max-w-screen-xl flex items-center justify-between mx-auto p-1">
     <div className="flex items-center space-x-3">
       <Link href="/" className="flex items-center">
         <img
@@ -78,7 +79,7 @@ const Navbar = () => {
     {!user ? (
       <Box fontSize={"2rem"} marginRight="2rem">
         <IconButton onClick={handleClick}>
-          <AccountCircleIcon sx={{ fontSize: "3rem" }} />
+          <MdAccountCircle className="h-[3rem] w-[3rem]" />
           <ExpandMoreIcon style={{ color: "#052A42" }} />
         </IconButton>
         <Menu
@@ -93,6 +94,7 @@ const Navbar = () => {
             vertical: "top",
             horizontal: "right",
           }}
+          
         >
           <MenuItem onClick={GoogleLogin} href="/">
             {" "}
@@ -109,8 +111,8 @@ const Navbar = () => {
               alt="photo"
               style={{
                 borderRadius: "50%",
-                width: "50px",
-                height: "50px",
+                width: "2.5rem",
+                height: "2.5rem",
               }}
             />
             <ExpandMoreIcon style={{ color: "#052A42" }} />
@@ -128,7 +130,9 @@ const Navbar = () => {
               horizontal: "right",
             }}
           >
-            <MenuItem onClick={() => auth.signOut()}>Sign Out</MenuItem>
+            <MenuItem onClick={() => auth.signOut()}>
+            <FaSignOutAlt/>&nbsp;Sign Out
+            </MenuItem>
           </Menu>
         </Box>
       </>

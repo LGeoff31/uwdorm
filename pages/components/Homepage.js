@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Footer from './footer'
 import {
   Grid,
   Stack,
@@ -19,8 +20,8 @@ const Homepage = () => {
     // Add more residences as needed
   ];
 
-  const [selectedResidence, setSelectedResidence] = useState<string | null>("");
-  const handleResidenceSelect = (residence: string) => {
+  const [selectedResidence, setSelectedResidence] = useState("");
+  const handleResidenceSelect = (residence) => {
     setSelectedResidence(residence);
   };
 
@@ -111,6 +112,7 @@ const Homepage = () => {
           </Grid>
         </Grid>
       </div>
+      
     </>
   );
 };

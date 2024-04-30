@@ -1,7 +1,6 @@
 import Navbar from "./components/Navbar"
 import { Stack } from "@mui/material"
-import img from '../public/top_img.jpg'
-
+import Footer from '../pages/components/footer'
 export default function contact() {
     return (
         <>
@@ -44,6 +43,7 @@ export default function contact() {
                     <h1 className="px-20 ml-20">Founder - Software Engineering 2028</h1>
                     <h1 className="px-20 py-4 ml-20"> ...</h1>            
                 </div>
+                <Footer/>
             
 
         </>

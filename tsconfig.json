@@ -23,6 +23,6 @@
     "pages/components/Homepage.js",
     "pages/components/Dorms.jsx",
     "pages/[id].jsx"
-  ],
+, "pages/components/Homepage.js"  ],
   "exclude": ["node_modules"]
 }

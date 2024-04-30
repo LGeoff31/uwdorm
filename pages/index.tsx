@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import { Stack } from "@mui/material";
-import Homepage from "./components/Homepage";
+import Homepage from "./components/Homepage.js";
 import Dorms from "./components/Dorms";
 
 export default function Home() {
