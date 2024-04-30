@@ -59,7 +59,7 @@ const Navbar = () => {
     <div className="flex items-center space-x-3">
       <Link href="/" className="flex items-center">
         <img
-          className="h-30 w-20 max-w-xs transition duration-400 ease-in-out hover:shadow-lg dark:hover:shadow-black"
+          className="ml-3 h-30 w-20 max-w-xs transition duration-400 ease-in-out hover:shadow-lg dark:hover:shadow-black"
           src={"./logo.png"}
         />
       </Link>
