@@ -344,7 +344,7 @@ export default function Residence() {
             <Button onClick={handleSubmit}>Sumbit</Button> */}
             <Typography variant="h2">Comments</Typography>
             {comments.map((c, idx) => (
-              <Stack spacing={2} margin={2}>
+              <Stack spacing={2} margin={2} key={idx}>
                 <Stack direction="row" spacing={2} alignItems={"center"}>
                   <StarIcon style={{ fontSize: "5rem", color: "#FFD700" }} />
                   <Typography fontWeight="bold" fontSize="2.5rem">
