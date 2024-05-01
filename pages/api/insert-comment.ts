@@ -8,9 +8,14 @@ export default async function handler(
 ) {
   const insertComment = async () => {
     const data = req.body;
+    const room = parseInt(data.room, 10);
+    const building = parseInt(data.building, 10);
+    const location = parseInt(data.location, 10);
+    const bathroom = parseInt(data.bathroom, 10);
+    console.log("REACHING INSERT COMMENT");
     console.log("data", data);
     const { rows } =
-      await sql`INSERT INTO comment (residence_id, users_id, review) VALUES (${data.residence_id}, ${data.users_id}, ${data.review})`;
+      await sql`INSERT INTO comment (residence_id, users_id, review, room, building, bathroom, location) VALUES (${data.residence_id}, ${data.users_id}, ${data.review}, ${room}, ${building}, ${bathroom}, ${location})`;
     return rows;
   };
 
