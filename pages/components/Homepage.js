@@ -8,104 +8,115 @@ import {
   Autocomplete,
 } from "@mui/material";
 import { IoHomeOutline } from "react-icons/io5";
-import { CiDollar } from "react-icons/ci";
-import { IoRestaurantOutline } from "react-icons/io5";
-import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
-
+import { MdPriceCheck } from "react-icons/md";
+import TransferWithinAStationIcon from '@mui/icons-material/TransferWithinAStation';
+import { SiSlideshare } from "react-icons/si";
 const Homepage = () => {
   const residences = [
-    "CMH",
-    "UWP",
-    "Village 1",
+    "Claudette Millar Hall (CMH)",
+    "Columbia Lake Village - South (CLV)",
+    "Columbia Lake Village - North (CLV)",
+    "Mackenzie King Village (MKV)",
+    "Minota Hagey",
+    "Renison",
+    "Ron Eydt Village (REV)",
+    "St.Jerome (SJU)",
+    "United College (UC)",
+    "UW Place (UWP)",
+    "Village1 (V1)",
     // Add more residences as needed
   ];
 
-  const [selectedResidence, setSelectedResidence] = useState("");
-  const handleResidenceSelect = (residence) => {
-    setSelectedResidence(residence);
-  };
-
+  function handleResidenceChange(e){
+    const selectedResValue = e.target.value;
+    if (selectedResValue){
+      window.location.href = (`/${selectedResValue}`);
+    }
+    else{
+      <h1>Nothing here</h1>
+    }
+  }
   return (
     <>
+      
       <div
         style={{
           backgroundImage: `url(https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "100vh",
+          height: "105vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
         <Grid
-          container
-          sx={{
-            background:
-              "linear-gradient(to bottom, to right, #8e2de2, #4a00e0);",
-          }}
-          alignItems="center"
-          direction="column"
-          justifyContent={"center"}
-          height="90vh"
+          
         >
           <Stack margin="0 auto" justifyContent={"center"}>
-            <span className="text-6xl text-center mb-8 text-blue-300">
+            <span className="text-7xl text-center mb-10 text-blue-300">
               UW Rez
             </span>
-            <span className="text-xl mb-8 text-gray-300">
+            <span className="text-xl mb-10 text-gray-300 ">
               Explore reviews of Waterloo&apos;s residences and add your own!
             </span>
-            <Autocomplete
-              sx={{
-                background: "lightgray",
-                width: "50%",
-                margin: "0 auto",
-                display: "flex",
-                alignItems: "center",
-                marginBottom: "4rem",
-              }}
-              options={residences}
-              getOptionLabel={(option) => option}
-              renderInput={(params) => (
-                <TextField {...params} label="Search Residence" />
-              )}
-              onChange={(event, value) => setSelectedResidence(value)}
-            />
+            <label className="flex text-lg justify-center h-[3rem]">
+              <select className="text-blue-900 font-medium rounded-lg bg-gray-300"onChange={handleResidenceChange}>
+                <option className="" disabled selected hidden >&nbsp;Select a Residence</option>
+                {residences.map((residence, index) => (
+                  <option  key={residence} value={index+1} className="font-medium text-black">
+                    &nbsp;{residence}
+                  </option>
+                ))}
+              </select>
+            </label>
           </Stack>
           <Grid>
-            <Stack direction="row" gap="1rem" marginTop="2rem">
+            <Stack direction="row" gap="1rem" marginTop="4rem">
               <IoHomeOutline style={{ fontSize: "3rem", color: "#d4d4d8" }} />
               <Stack>
                 <Typography fontWeight="bold" color="#93c5fd">
-                  {"Comfort"}
+                  {"Housing"}
                 </Typography>
                 <Typography fontWeight="300" color="#d4d4d8">
-                  Learn about the lifestyle and available accommodations!
+                  Learn about the available accommodations!
                 </Typography>
               </Stack>
             </Stack>
             <Stack direction="row" gap="1rem" marginTop="2rem">
-              <CiDollar style={{ fontSize: "3rem", color: "#d4d4d8" }} />
+              <MdPriceCheck style={{ fontSize: "3rem", color: "#d4d4d8" }} />
               <Stack>
                 <Typography fontWeight="bold" color="#93c5fd">
                   {"Price"}
                 </Typography>
                 <Typography fontWeight="300" color="lightgray">
-                  Compare prices between different residences.
+                  Compare prices between different residences!
                 </Typography>
               </Stack>
             </Stack>
             <Stack direction="row" gap="1rem" marginTop="2rem">
-              <AccessibilityNewIcon
+              <TransferWithinAStationIcon
                 style={{ fontSize: "3rem", color: "#d4d4d8"}}
               />
               <Stack>
                 <Typography fontWeight="bold" color="#93c5fd">
-                  {"Life"}
+                  {"Experience"}
                 </Typography>
                 <Typography fontWeight="300" color="#d4d4d8">
-                  Learn about the Waterloo experience or add yours!
+                Learn from the experiences of others!
+                </Typography>
+              </Stack>
+            </Stack>
+            <Stack direction="row" gap="1rem" marginTop="2rem">
+              <SiSlideshare
+                style={{ fontSize: "3rem", color: "#d4d4d8"}}
+              />
+              <Stack>
+                <Typography fontWeight="bold" color="#93c5fd">
+                  {"Share"}
+                </Typography>
+                <Typography fontWeight="300" color="#d4d4d8">
+                  Add your view on residences for others to see!
                 </Typography>
               </Stack>
             </Stack>

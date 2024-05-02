@@ -16,7 +16,7 @@ function footer(){
                 <Link href="/">
                     <h1 className="mr-2 ml-1">UW Rez</h1>
                 </Link>
-                <Link href="https://www.instagram.com/" target="_blank" className="mr-1">
+                <Link href="https://www.instagram.com/uw.rez/" target="_blank" className="mr-1">
                     <IoLogoInstagram size={28}/>
                 </Link>
                 <Link href="https://www.instagram.com/" target="_blank">
