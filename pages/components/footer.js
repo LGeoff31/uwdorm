@@ -8,7 +8,7 @@ import { IoLogoInstagram } from "react-icons/io";
 function footer(){
     return(
         <>
-            <div className="flex flex-row justify-center p-4 text-lg">
+            <div className="flex flex-row justify-center p-4 text-lg mt-5">
                 {/*add logo*/}
                 <Link href="/">
                     <Image src={Logo} alt="UW Rez Logo" width={30} height={30} />
@@ -25,7 +25,7 @@ function footer(){
                 
                 
             </div>
-            <div className="flex flex-row justify-center mb-5 text-sm">
+            <div className="flex flex-row justify-center mb-5 text-sm ">
                 <Link href="/" className="hover:text-blue-400"> Home</Link>
                 <Link href="/privacy" className="hover:text-blue-400" >&nbsp;&nbsp;Privacy</Link>
                 <Link href="/about" className="hover:text-blue-400">&nbsp;&nbsp;About</Link>

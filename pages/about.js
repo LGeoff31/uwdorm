@@ -21,7 +21,7 @@ export default function contact() {
                 </Stack>
             </div>
                 
-                <div className="p-20 mr-40 ml-20"><div className="text-3xl font-bold">Welcome to UW Rez!:</div>
+                <div className="p-20 mr-40 ml-20"><div className="text-3xl font-bold">Welcome to UW Rez!</div>
             
                 <br></br>
                 <h1 className="">UW Rez is a platform website for University of Waterloo incoming students and current students. 
@@ -32,17 +32,33 @@ export default function contact() {
                 for different campus housing.
                 </h1>
                 </div>
+        
+                <div className="px-20 ml-20 font-bold text-3xl">Our Team:</div>
                 <div>
-                    <div className="px-20 ml-20 font-bold text-3xl">Our Team:</div>
-                    <img alt="James Yu Image"className=" px-20 py-5 ml-20 w-[22rem] h-[11rem] rounded-full" src="https://prep4collegetutors.com/wp-content/uploads/2023/07/image2-e1688790500290.png"></img>
-                    <h1 className="font-bold text-lg px-20 ml-20">James Yu</h1>
-                    <h1 className="px-20 ml-20">Founder - Biomedical Engineering 2028</h1>
-                    <h1 className="px-20 py-4 ml-20"> James can often be found playing table tennis and at the gym. He coded some backend of the website, but most designed frontend components and code</h1>
-                    <img alt="Geoffrey Lee Image"></img>
-                    <h1 className="font-bold text-lg px-20 ml-20">Geoffrey Lee</h1>
-                    <h1 className="px-20 ml-20">Founder - Software Engineering 2028</h1>
-                    <h1 className="px-20 py-4 ml-20"> ...</h1>            
+                    <div className="flex flex-row mt-2">
+                        <img alt="James Yu Image"className=" px-20 py-5 ml-20 w-[20rem] h-[11rem] rounded-full" src="https://prep4collegetutors.com/wp-content/uploads/2023/07/image2-e1688790500290.png"></img>
+                        <div className="flex flex-col mt-4 mr-40">
+                            <h1 className="font-bold text-lg">James Yu</h1>
+                            <h1 className="italic font-light">Founder - Biomedical Engineering 2028</h1>
+                            <h1 className="mt-3">James can often be found playing table tennis and hitting the gym with
+                            friends. He worked as a full stack developer with Geoffrey to create UW Rez.</h1>
+                        </div>
+                    </div>
+                    
                 </div>
+                <div>
+                    <div className="flex flex-row">
+                        <img alt="James Yu Image"className=" px-20 py-5 ml-20 w-[20rem] h-[11rem] rounded-full" src="https://prep4collegetutors.com/wp-content/uploads/2023/07/image2-e1688790500290.png"></img>
+                        <div className="flex flex-col mt-4 mr-40">
+                            <h1 className="font-bold text-lg">Geoffrey Lee</h1>
+                            <h1 className="italic font-light">Founder - Software Engineering 2028</h1>
+                            <h1 className="mt-3">Geoffrey can often be found running marathons and doing coding pro
+                            jects. He worked as a full stack developer with James to create UW Rez.</h1>
+                        </div>
+                    </div>
+                    
+                </div>
+               
                 <Footer/>
             
 
