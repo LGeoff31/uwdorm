@@ -1,8 +1,9 @@
 import Navbar from "./components/Navbar"
 import { Stack } from "@mui/material"
-import Footer from '../pages/components/footer'
-export default function contact() {
-    return (
+import Footer from "./components/footer"
+
+export default function Privacy(){
+    return(
         <>
             <Navbar />
             <div
@@ -16,20 +17,20 @@ export default function contact() {
             >
                 <Stack margin="" >
                     <span className="text-4xl p-20 ml-20 text-blue-300">
-                        UW Rez Contact
+                        UW Rez Privacy
                     </span>
                 </Stack>
             </div>
-                
-                <div className="p-20 mr-40 ml-20"><div className="text-3xl font-bold">Contact:</div>
+            <div className="p-20 mr-40 ml-20"><div className="text-3xl font-bold">Privacy Policy:</div>
             
                 <br></br>
-                <h1 className="">To contact the team, please email: info@uwrez.com or message our instagram: @uw.rez.
+                <h1 className="">
+                We only collect data concerning your email address and logs of comments written. By using our website
+                , you hereby consent to our privacy policy and agree to its Terms and Conditions.
                 </h1>
                 </div>
+                
                 <Footer/>
-            
-
         </>
     )
 }

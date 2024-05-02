@@ -9,6 +9,7 @@ import {
   Typography,
   Box,
 } from "@mui/material";
+import Footer from "./footer";
 
 function DormInfo(props) {
   return (
@@ -91,6 +92,7 @@ const Dorms = () => {
           />
         ))}
       </Grid>
+      <Footer/>
     </>
   );
 };

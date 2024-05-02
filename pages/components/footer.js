@@ -25,7 +25,7 @@ function footer(){
                 
                 
             </div>
-            <div className="flex flex-row justify-center  text-sm">
+            <div className="flex flex-row justify-center mb-5 text-sm">
                 <Link href="/" className="hover:text-blue-400"> Home</Link>
                 <Link href="/privacy" className="hover:text-blue-400" >&nbsp;&nbsp;Privacy</Link>
                 <Link href="/about" className="hover:text-blue-400">&nbsp;&nbsp;About</Link>

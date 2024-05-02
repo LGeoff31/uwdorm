@@ -64,18 +64,7 @@ const Navbar = () => {
         />
       </Link>
     </div>
-    <div className="text-med hidden md:block sm:block flex-grow"> 
-      <ul className="font-medium flex flex-row justify-end space-x-8 p-5 underline-none"> 
-        <li>
-          <Link
-            href="/contact"
-            className="hover:text-blue-600 text-gray-400 "
-          >
-            Contact Us
-          </Link>
-        </li>
-      </ul>
-    </div>
+    
     {!user ? (
       <Box fontSize={"2rem"} marginRight="2rem">
         <IconButton onClick={handleClick}>
