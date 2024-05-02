@@ -58,7 +58,7 @@ const Homepage = () => {
               UW Rez
             </span>
             <span className="text-xl mb-10 text-gray-300 ">
-              Explore reviews of Waterloo&apos;s residences and add your own!
+              Explore reviews of Waterloo&apos;s residences or add your own!
             </span>
             <label className="flex text-lg justify-center h-[3rem]">
               <select className="text-blue-900 font-medium rounded-lg bg-gray-300"onChange={handleResidenceChange}>
@@ -71,8 +71,8 @@ const Homepage = () => {
               </select>
             </label>
           </Stack>
-          <Grid>
-            <Stack direction="row" gap="1rem" marginTop="4rem">
+          <Grid >
+            <Stack direction="row" gap="1rem" marginTop="4rem" justifyContent={"center"}>
               <IoHomeOutline style={{ fontSize: "3rem", color: "#d4d4d8" }} />
               <Stack>
                 <Typography fontWeight="bold" color="#93c5fd">
@@ -83,7 +83,7 @@ const Homepage = () => {
                 </Typography>
               </Stack>
             </Stack>
-            <Stack direction="row" gap="1rem" marginTop="2rem">
+            <Stack direction="row" gap="1rem" marginTop="2rem" justifyContent={"center"}>
               <MdPriceCheck style={{ fontSize: "3rem", color: "#d4d4d8" }} />
               <Stack>
                 <Typography fontWeight="bold" color="#93c5fd">
@@ -94,7 +94,7 @@ const Homepage = () => {
                 </Typography>
               </Stack>
             </Stack>
-            <Stack direction="row" gap="1rem" marginTop="2rem">
+            <Stack direction="row" gap="1rem" marginTop="2rem" justifyContent={"center"}>
               <TransferWithinAStationIcon
                 style={{ fontSize: "3rem", color: "#d4d4d8"}}
               />
@@ -103,11 +103,11 @@ const Homepage = () => {
                   {"Experience"}
                 </Typography>
                 <Typography fontWeight="300" color="#d4d4d8">
-                Learn from the experiences of others!
+                Learn from the experiences of other students!
                 </Typography>
               </Stack>
             </Stack>
-            <Stack direction="row" gap="1rem" marginTop="2rem">
+            <Stack direction="row" gap="1rem" marginTop="2rem" justifyContent={"center"}>
               <SiSlideshare
                 style={{ fontSize: "3rem", color: "#d4d4d8"}}
               />
@@ -120,6 +120,7 @@ const Homepage = () => {
                 </Typography>
               </Stack>
             </Stack>
+            
           </Grid>
         </Grid>
       </div>
