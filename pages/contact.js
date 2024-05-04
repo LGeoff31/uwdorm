@@ -3,7 +3,7 @@ import { Stack } from "@mui/material"
 import FooterOther from "./components/footerOther"
 import { useState } from "react"
 import { LuSendHorizonal } from "react-icons/lu";
-
+import React from "react";
 
 export default function contact() {
     const [firstName, setFirstName] = useState("");
