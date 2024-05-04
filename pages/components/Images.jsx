@@ -512,7 +512,7 @@ const Images = ({ id }) => {
   };
 
   return (
-    <Box sx={{ maxWidth: 1000 }}>
+    <Box sx={{ maxWidth: 900 }}>
       <Paper
         square
         elevation={0}
@@ -540,9 +540,10 @@ const Images = ({ id }) => {
               <Box
                 component="img"
                 sx={{
-                  height: "50vh", // Adjust the height of the images
-                  display: "block",
-                  overflow: "hidden",
+                  height: "700px",
+                  //   height: "100vh", // Adjust the height of the images
+                  //   display: "block",
+                  //   overflow: "hidden",
                 }}
                 src={step.imgPath}
                 alt={step.label}

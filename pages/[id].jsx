@@ -9,24 +9,13 @@ import {
   Grid,
   Box,
   Typography,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  CheckBox,
-  DialogTitle,
-  FormControlLabel,
-  IconButton,
-  Rating,
 } from "@mui/material";
-// import FormControlContext from "@mui/material/FormControl/FormControlContext";
-import { MdOutlineRateReview } from "react-icons/md";
-import CloseIcon from "@mui/icons-material/Close";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarIcon from "@mui/icons-material/Star";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Images from "./components/Images";
+import ResidenceImage from "./components/ResidenceImage";
+import AddReview from "./components/AddReview";
 
 export default function Residence() {
   const router = useRouter();
@@ -57,6 +46,67 @@ export default function Residence() {
       community: "First-year and upper-year students",
       mascot: "UWP Unicorn",
     },
+    3: {
+      size: "1,650 residents",
+      style: "Suite",
+      rooms: ["2", "3", "4-bedroom suite"],
+      mealPlan: "Optional",
+      community: "First-year and upper-year students",
+      mascot: "UWP Unicorn",
+    },
+    4: {
+      size: "960 residents",
+      style: "Traditional",
+      rooms: ["Double"],
+      mealPlan: "Required",
+      community: "First-year students",
+      mascot: "REV Moustache",
+    },
+    5: {
+      size: "320 residents",
+      style: "Suite",
+      rooms: ["4-bedroom suite"],
+      mealPlan: "Optional",
+      community: "First-year students",
+      mascot: "MKV Crown",
+    },
+    6: {
+      size: "400 residents",
+      style: "Suite",
+      rooms: ["4-bedroom townhouse"],
+      mealPlan: "Optional",
+      community: "First-year, upper-year, graduate and exchange students",
+      mascot: "CLV Lake Monster",
+    },
+    7: {
+      size: "70 residents",
+      style: "Hybrid (shared kitchen per floor and optional meal plans)",
+      rooms: ["Single"],
+      mealPlan: "Optional",
+      community: "Upper-year students",
+      mascot: "MH Owl",
+    },
+    8: {
+      size: "1019 residents",
+      style: "Traditional",
+      founded: "1865",
+      mascot: "Jerome Lion",
+    },
+    9: {
+      size: "330 residents",
+      style: "Traditional",
+      rooms: ["Single", "Semi-Private"],
+      mealPlan: "Required",
+      community: "First-year and upper-year students",
+      mascot: "UWP Unicorn",
+    },
+    10: {
+      size: "539 residents",
+      style: "Traditional",
+      rooms: ["Single", "Double Room"],
+      founded: "1962",
+      community: "First-year and upper-year students",
+    },
   };
 
   let residenceDetails = residencesMap[id];
@@ -76,34 +126,6 @@ export default function Residence() {
     setComments(data);
   };
 
-  const handleSubmit = async () => {
-    console.log("room rating", roomRating, "  review", comment);
-    const data = {
-      residence_id: id,
-      users_id: 1,
-      review: comment,
-      room: roomRating,
-      building: buildingRating,
-      location: locationRating,
-      bathroom: bathroomRating,
-    };
-    console.log("comment", comment);
-
-    const response = await fetch("/api/insert-comment", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    if (!response.ok) {
-      console.log("error on inserting comment", response.statusText);
-    }
-    const p = await response.json();
-    console.log("inserting comment", p);
-    fetchComments();
-  };
-
   useEffect(() => {
     console.log("id", router.query.id);
     if (router.query.id) {
@@ -111,6 +133,7 @@ export default function Residence() {
       fetchComments();
     }
   }, [router.query.id]);
+
   const fetchResidence = async () => {
     try {
       const response = await fetch("/api/residence-by-id", {
@@ -132,12 +155,6 @@ export default function Residence() {
     return <h1>Loading...</h1>;
   }
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
   const StarRating = ({ rating, name }) => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
@@ -194,42 +211,17 @@ export default function Residence() {
         sx={{
           background: "rgb(225 246 255)",
           height: "100%",
-          position: "relative",
         }}
       >
         <Navbar />
-        <div style={{ position: "relative", width: "100%" }}>
-          <img
-            src={residence[0].images}
-            alt="image"
-            style={{ width: "100%", height: "500px" }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              bottom: 10,
-              left: 150,
-              fontSize: "1.5rem",
-              fontWeight: "bold",
-              zIndex: 1,
-            }}
-            className="text-blue-300"
-          >
-            <Typography fontSize="bold" variant="h2">
-              {residence[0].name}
-            </Typography>
-          </div>
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              background: "rgba(0, 0, 0, 0.7)",
-            }}
-          ></div>
-        </div>
+        <ResidenceImage
+          residence={residence}
+          overallRating={overallRating}
+          overallBathroomRating={overallBathroomRating}
+          overallBuildingRating={overallBuildingRating}
+          overallRoomRating={overallRoomRating}
+          overallLocationRating={overallLocationRating}
+        />
 
         <Grid container direction="row" justifyContent={"space-between"}>
           <Stack padding="2rem" paddingLeft="10rem">
@@ -237,58 +229,11 @@ export default function Residence() {
               <Link href="/">
                 <ArrowBackIcon sx={{ fontSize: "2rem" }} />
               </Link>
-              <Typography variant="body1"> Back to Residences</Typography>
-            </Stack>
-            <Stack spacing={3} marginTop="2rem">
-              <Typography variant="h4" fontWeight="bold">
-                Overall Rating
+              <Typography variant="body1" fontSize="1.5rem">
+                {" "}
+                Back to Residences
               </Typography>
-              <Stack direction="row" spacing={2} alignItems="center">
-                <StarIcon style={{ fontSize: "5rem", color: "#FFD700" }} />
-                <Typography fontSize="3rem" className="text-blue-500">
-                  {" "}
-                  {overallRating}{" "}
-                </Typography>
-              </Stack>
             </Stack>
-            <Grid width="20%" marginTop="1.5rem">
-              <Stack
-                direction="row"
-                alignItems={"center"}
-                spacing={2}
-                justifyContent={"space-between"}
-              >
-                <Typography fontSize="1.5rem">Room</Typography>
-                <StarRating rating={overallRoomRating} name={""} />{" "}
-              </Stack>
-              <Stack
-                direction="row"
-                alignItems={"center"}
-                spacing={2}
-                justifyContent={"space-between"}
-              >
-                <Typography fontSize="1.5rem">Building</Typography>
-                <StarRating rating={overallBuildingRating} name={""} />{" "}
-              </Stack>
-              <Stack
-                direction="row"
-                alignItems={"center"}
-                spacing={2}
-                justifyContent={"space-between"}
-              >
-                <Typography fontSize="1.5rem">Location</Typography>
-                <StarRating rating={overallLocationRating} name={""} />{" "}
-              </Stack>
-              <Stack
-                direction="row"
-                alignItems={"center"}
-                spacing={2}
-                justifyContent={"space-between"}
-              >
-                <Typography fontSize="1.5rem">Bathroom</Typography>
-                <StarRating rating={overallBathroomRating} name={""} />{" "}
-              </Stack>
-            </Grid>
             <Typography
               variant="h4"
               marginTop="2rem"
@@ -308,97 +253,47 @@ export default function Residence() {
             >
               Fun Facts
             </Typography>
-            <Stack spacing={1}>
+            <Stack spacing={1} marginBottom="2rem">
               {residenceDetails &&
-                Object.entries(residenceDetails).map(([key, value]) => {
-                  if (key !== "images") {
-                    return (
-                      <Typography key={key} variant="body1" fontSize="1.5rem">
-                        <strong>
-                          {key.charAt(0).toUpperCase() + key.slice(1)}:
-                        </strong>{" "}
-                        {Array.isArray(value) ? value.join(", ") : value}
-                      </Typography>
-                    );
-                  }
-                })}
+                Object.entries(residenceDetails).map(([key, value]) => (
+                  <Typography key={key} variant="body1" fontSize="1.5rem">
+                    <strong>
+                      {key.charAt(0).toUpperCase() + key.slice(1)}:
+                    </strong>{" "}
+                    {Array.isArray(value) ? value.join(", ") : value}
+                  </Typography>
+                ))}
             </Stack>
-            <Typography
-              variant="h4"
-              fontWeight="bold"
-              marginTop="2rem"
-              marginBottom="2rem"
-            >
-              Images
-            </Typography>
+
             <Images id={id} />
           </Stack>
-          <Stack padding="2rem" paddingRight="10rem">
-            <Button variant="contained" onClick={handleOpen}>
-              Write a Review &nbsp; <MdOutlineRateReview />
-            </Button>
-            <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
-              <DialogTitle margin={2}>
-                Add a Review!{" "}
-                <IconButton style={{ float: "right" }} onClick={handleClose}>
-                  <CloseIcon color="primary" />
-                </IconButton>
-              </DialogTitle>
-              <DialogContent>
-                <Stack spacing={2} margin={2}>
-                  <Stack direction="row" justifyContent={"space-between"}>
-                    <Typography>Room</Typography>
-                    <Rating
-                      name="rating"
-                      value={roomRating}
-                      onChange={(e) => setRoomRating(e.target.value)}
-                    />
-                  </Stack>
-                  <Stack direction="row" justifyContent={"space-between"}>
-                    <Typography>Building</Typography>
-                    <Rating
-                      name="rating"
-                      value={buildingRating}
-                      onChange={(e) => setBuildingRating(e.target.value)}
-                    />
-                  </Stack>
-                  <Stack direction="row" justifyContent={"space-between"}>
-                    <Typography>Location</Typography>
-                    <Rating
-                      name="rating"
-                      value={locationRating}
-                      onChange={(e) => setLocationRating(e.target.value)}
-                    />
-                  </Stack>
-                  <Stack direction="row" justifyContent={"space-between"}>
-                    <Typography>Bathroom</Typography>
-                    <Rating
-                      name="rating"
-                      value={bathroomRating}
-                      onChange={(e) => setBathroomRating(e.target.value)}
-                    />
-                  </Stack>
-                  <TextField
-                    variant="outlined"
-                    label="Write a detailed review..."
-                    multiline
-                    rows={4}
-                    onChange={(e) => setComment(e.target.value)}
-                  />
 
-                  <Button
-                    color="primary"
-                    variant="contained"
-                    onClick={handleSubmit}
-                  >
-                    Submit
-                  </Button>
-                </Stack>
-              </DialogContent>
-              <DialogActions></DialogActions>
-            </Dialog>
-
-            <Typography variant="h2">Comments</Typography>
+          <Stack padding="2rem" paddingRight="10rem" paddingLeft="10rem">
+            <Stack
+              direction="row"
+              alignItems={"center"}
+              display="flex"
+              justifyContent={"space-between"}
+            >
+              <Typography variant="h2">Comments</Typography>
+              <AddReview
+                residencesMap={residencesMap}
+                fetchComments={fetchComments}
+                roomRating={roomRating}
+                buildingRating={buildingRating}
+                locationRating={locationRating}
+                bathroomRating={bathroomRating}
+                setRoomRating={setRoomRating}
+                setBathroomRating={setBathroomRating}
+                setBuildingRating={setBuildingRating}
+                setLocationRating={setLocationRating}
+                open={open}
+                setOpen={setOpen}
+                comment={comment}
+                setComment={setComment}
+                id={id}
+              />
+            </Stack>
             {comments.map((c, idx) => (
               <Stack spacing={2} margin={2} key={idx}>
                 <Stack direction="row" spacing={2} alignItems={"center"}>
