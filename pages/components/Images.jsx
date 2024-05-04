@@ -512,22 +512,9 @@ const Images = ({ id }) => {
   };
 
   return (
-    <Box sx={{ maxWidth: 900 }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          height: 50,
-          pl: 2,
-          bgcolor: "background.default",
-        }}
-      >
-        <Typography variant="body1" fontSize="1.5rem" margin="0 auto">
-          {residencesMap[id]["images"][activeStep].label}
-        </Typography>
-      </Paper>
+    <div className="w-[120rem] rounded-sm">
+      
+       
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -540,8 +527,10 @@ const Images = ({ id }) => {
               <Box
                 component="img"
                 sx={{
-                  height: "700px",
+                  height: "350px",
+                  width: "800px",
                 }}
+                className="rounded-t-2xl"
                 src={step.imgPath}
                 alt={step.label}
               />
@@ -549,7 +538,7 @@ const Images = ({ id }) => {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-      <MobileStepper
+      <MobileStepper className="rounded-b-2xl"
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
@@ -578,7 +567,7 @@ const Images = ({ id }) => {
           </Button>
         }
       />
-    </Box>
+    </div>
   );
 };
 

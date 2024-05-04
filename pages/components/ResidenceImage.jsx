@@ -52,7 +52,7 @@ const ResidenceImage = ({
       >
         <Stack direction="row" alignItems={"center"} spacing={10}>
           <Stack direction="column">
-            <Typography fontWeight="bold" variant="h2" fontSize="4rem">
+            <Typography fontWeight="bold" variant="h2" fontSize="3rem">
               {residence[0].name}
             </Typography>
             <Stack direction="row" alignItems={"center"}>
