@@ -21,7 +21,7 @@ export default function About() {
                     </span>
                 </Stack>
             </div>
-                <div>
+                <div className="bg-[rgba(225,246,255,1)]">
                     <div className="p-20 mr-40 ml-20">
                         <div className="text-3xl font-bold">Welcome to UW Rez!</div>
                 

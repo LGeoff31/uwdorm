@@ -5,7 +5,7 @@ import Dorms from "./components/Dorms";
 
 export default function Home() {
   return (
-    <Stack sx={{ background: "rgb(21 16 25)" }}>
+    <Stack sx={{ background: "rgb(225 246 255)" }}>
       <Navbar />
       <Homepage />
       <Dorms />

@@ -66,34 +66,33 @@ export default function Contact() {
                     </span>
                 </Stack>
             </div>
-                <div className="p-20 mr-40 ml-20"><div className="text-3xl font-bold">Contact:</div>
-                    <br></br>
-                    <div className="flex flex-row mb-5 ">
-                        <label for="firstname" className="flex flex-col text-lg">First Name:
-                            <input required className="w-[12rem] border-2 border-zinc-300 rounded-lg p-2" id="firstname" placeholder="Enter First Name" onChange={handleFirstNameChange}></input>
-                        </label>
-                        <label for="lastname" className="flex flex-col text-lg ml-5">Last Name:
-                            <input  required id="lastname" className="w-[12rem] border-2 border-zinc-300 rounded-lg p-2" placeholder="Enter Last Name" onChange={handleLastNameChange}></input>
-                        </label>
+                <div  className="bg-[rgba(225,246,255,1)]">
+                    <div className="p-20 mr-40 ml-20"><div className="text-3xl font-bold">Contact:</div>
+                        <br></br>
+                        <div className="flex flex-row mb-5 ">
+                            <label for="firstname" className="flex flex-col text-lg">First Name:
+                                <input required className="w-[12rem] border-2 border-zinc-300 rounded-lg p-2" id="firstname" placeholder="Enter First Name" onChange={handleFirstNameChange}></input>
+                            </label>
+                            <label for="lastname" className="flex flex-col text-lg ml-5">Last Name:
+                                <input  required id="lastname" className="w-[12rem] border-2 border-zinc-300 rounded-lg p-2" placeholder="Enter Last Name" onChange={handleLastNameChange}></input>
+                            </label>
+                        </div>
+                        <div className="mb-3 text-lg">Email:
+                            <label for="email" className="flex flex-col">
+                                <input required className="w-[25rem] border-2 border-zinc-300 rounded-lg p-2" id="email" placeholder="Enter Email" onChange={handleEmailChange}></input>
+                            </label>
+                        </div>
+                        <div className="text-lg">Message:
+                            <label for="message" className="flex flex-col">
+                                <textarea required id="message" className="w-[25rem] h-[7rem] border-2 border-zinc-300 rounded-lg p-2" placeholder="Enter Message" onChange={handleMessageChange}></textarea>
+                            </label>
+                        </div>
+                            
+                            <button type="submit" onClick={handleSubmit} className="flex flex-row mt-5 text-lg bg-blue-300 rounded-lg w-[25rem] h-[3rem] justify-center items-center">
+                            Submit <LuSendHorizonal size={16} className="ml-2"/>
+                            </button>
                     </div>
-                    <div className="mb-3 text-lg">Email:
-                        <label for="email" className="flex flex-col">
-                            <input required className="w-[25rem] border-2 border-zinc-300 rounded-lg p-2" id="email" placeholder="Enter Email" onChange={handleEmailChange}></input>
-                        </label>
-                    </div>
-                    <div className="text-lg">Message:
-                        <label for="message" className="flex flex-col">
-                            <textarea required id="message" className="w-[25rem] h-[7rem] border-2 border-zinc-300 rounded-lg p-2" placeholder="Enter Message" onChange={handleMessageChange}></textarea>
-                        </label>
-                    </div>
-                        
-                        <button type="submit" onClick={handleSubmit} className="flex flex-row mt-5 text-lg bg-blue-300 rounded-lg w-[25rem] h-[3rem] justify-center items-center">
-                           Submit <LuSendHorizonal size={16} className="ml-2"/>
-                        </button>
-                
-                    
                 </div>
-                
                 <FooterOther/>
             
 

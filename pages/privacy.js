@@ -21,15 +21,16 @@ export default function Privacy(){
                     </span>
                 </Stack>
             </div>
-            <div className="p-20 mr-40 ml-20"><div className="text-3xl font-bold">Privacy Policy:</div>
-            
-                <br></br>
-                <h1 className="">
-                We only collect data concerning your email address and logs of comments written. By using our website
-                , you hereby consent to our privacy policy and agree to its Terms and Conditions.
-                </h1>
-                </div>
+            <div  className="bg-[rgba(225,246,255,1)]">
+                <div className="p-20 mr-40 ml-20"><div className="text-3xl font-bold">Privacy Policy:</div>
                 
+                    <br></br>
+                    <h1 className="">
+                    We only collect data concerning your email address and logs of comments written. By using our website
+                    , you hereby consent to our privacy policy. Thanks :&#41;
+                    </h1>
+                </div>
+            </div>
                 <FooterOther/>
         </>
     )

@@ -9,13 +9,13 @@ import {
   Typography,
   Box,
 } from "@mui/material";
-import Footer from "./footer";
+import FooterOther from "./footerOther";
 
 function DormInfo(props) {
   return (
     <Stack elevation={3} padding="2.5rem">
       <Link href={props.link} height={350}>
-      <div class="rounded-t-3xl relative overflow-hidden bg-cover bg-no-repeat border-2 border-zinc-300">
+      <div class="rounded-t-3xl relative overflow-hidden bg-cover bg-no-repeat">
         <img
           src={props.images}
           alt={props.name}
@@ -25,16 +25,16 @@ function DormInfo(props) {
       </div>
       </Link>
 
-      <div className="h-full bg-white p-3 rounded-b-3xl border-2 border-zinc-300">
+      <div className="h-full bg-white p-3 rounded-b-3xl ">
         <div>
           <h1 className="font-medium text-xl">
             {props.name}
           </h1>
 
-          <h1 className="text-med">399 Reviews ⭐</h1>
+          <h1 className="text-med text-zinc-500">399 Reviews ⭐</h1>
         </div>
 
-        <h1 className="text-right text-lg">{props.address}</h1>
+        <h1 className="text-right text-lg text-blue-400 ">{props.address}</h1>
       </div>
     </Stack>
   );
@@ -58,7 +58,7 @@ const Dorms = () => {
 
   return (
     <>
-      <h1 className="text-center text-zinc-300 p-4 text-3xl mt-20 font-medium">
+      <h1 className="text-center p-4 text-4xl mt-20 ">
         Residences
       </h1>
       <Grid container justifyContent={"center"} >
@@ -75,7 +75,7 @@ const Dorms = () => {
           />
         ))}
       </Grid>
-      <Footer/>
+      <FooterOther/>
     </>
   );
 };
