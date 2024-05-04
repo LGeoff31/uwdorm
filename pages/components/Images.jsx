@@ -541,9 +541,6 @@ const Images = ({ id }) => {
                 component="img"
                 sx={{
                   height: "700px",
-                  //   height: "100vh", // Adjust the height of the images
-                  //   display: "block",
-                  //   overflow: "hidden",
                 }}
                 src={step.imgPath}
                 alt={step.label}

@@ -16,6 +16,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Images from "./components/Images";
 import ResidenceImage from "./components/ResidenceImage";
 import AddReview from "./components/AddReview";
+import Description from "./components/Description";
 
 export default function Residence() {
   const router = useRouter();
@@ -172,8 +173,14 @@ export default function Residence() {
       }
     }
     return (
-      <Stack direction="row" justifyContent={"space-between"}>
-        <Typography fontSize="1.5rem">{name}</Typography>
+      <Stack
+        direction="row"
+        justifyContent={"space-between"}
+        className="text-blue-700"
+      >
+        <Typography fontSize="1.5rem" marginRight="3rem">
+          {name}{" "}
+        </Typography>
         {stars}
       </Stack>
     );
@@ -210,7 +217,6 @@ export default function Residence() {
       <Grid
         sx={{
           background: "rgb(225 246 255)",
-          height: "100%",
         }}
       >
         <Navbar />
@@ -222,60 +228,49 @@ export default function Residence() {
           overallRoomRating={overallRoomRating}
           overallLocationRating={overallLocationRating}
         />
-
-        <Grid container direction="row" justifyContent={"space-between"}>
-          <Stack padding="2rem" paddingLeft="10rem">
-            <Stack direction="row" spacing={1.5} alignItems="center">
-              <Link href="/">
-                <ArrowBackIcon sx={{ fontSize: "2rem" }} />
-              </Link>
-              <Typography variant="body1" fontSize="1.5rem">
-                {" "}
-                Back to Residences
-              </Typography>
-            </Stack>
-            <Typography
-              variant="h4"
-              marginTop="2rem"
-              fontWeight="bold"
-              marginBottom="1rem"
-            >
-              Description
-            </Typography>
-            <Typography variant="body1" fontSize="1.5rem" width="70%">
-              {residence[0].description}
-            </Typography>
-            <Typography
-              variant="h4"
-              marginTop="2rem"
-              fontWeight="bold"
-              marginBottom="1rem"
-            >
-              Fun Facts
-            </Typography>
-            <Stack spacing={1} marginBottom="2rem">
-              {residenceDetails &&
-                Object.entries(residenceDetails).map(([key, value]) => (
-                  <Typography key={key} variant="body1" fontSize="1.5rem">
-                    <strong>
-                      {key.charAt(0).toUpperCase() + key.slice(1)}:
-                    </strong>{" "}
-                    {Array.isArray(value) ? value.join(", ") : value}
-                  </Typography>
-                ))}
-            </Stack>
-
+        <Stack
+          direction="row"
+          spacing={1.5}
+          alignItems="center"
+          paddingLeft="10rem"
+          paddingTop="2rem"
+        >
+          <Link href="/">
+            <ArrowBackIcon
+              sx={{ fontSize: "2rem" }}
+              className="hover:scale-125 ease-in-out duration-900"
+            />
+          </Link>
+          <Typography variant="body1" fontSize="1.5rem">
+            {" "}
+            Back to Residences
+          </Typography>
+        </Stack>
+        <Grid justifyContent={"space-between"}>
+          <Stack
+            padding="2rem"
+            paddingLeft="10rem"
+            paddingRight="10rem"
+            direction="row"
+          >
+            <Description
+              residence={residence}
+              residenceDetails={residenceDetails}
+            />
             <Images id={id} />
           </Stack>
 
-          <Stack padding="2rem" paddingRight="10rem" paddingLeft="10rem">
+          <Stack padding="2rem" paddingLeft="10rem" paddingRight="10rem">
             <Stack
               direction="row"
               alignItems={"center"}
               display="flex"
               justifyContent={"space-between"}
+              gap="2rem"
             >
-              <Typography variant="h2">Comments</Typography>
+              <Typography variant="h2" fontWeight={"bold"} marginBottom="2rem">
+                Comments
+              </Typography>
               <AddReview
                 residencesMap={residencesMap}
                 fetchComments={fetchComments}
@@ -294,9 +289,20 @@ export default function Residence() {
                 id={id}
               />
             </Stack>
-            {comments.map((c, idx) => (
-              <Stack spacing={2} margin={2} key={idx}>
-                <Stack direction="row" spacing={2} alignItems={"center"}>
+            {comments.map((c, idx) => {
+              return (
+                <>
+                  <br></br>
+                  <Stack
+                    key={idx}
+                    direction="column"
+                    className="pt-5 px-20 border-2 border-slate-300 rounded-3xl"
+
+                    // width="20%"
+                    // alignItems={"center"}
+                    // justifyContent={"space-between"}
+                  >
+                    {/* <Stack direction="row" spacing={2} alignItems={"center"}>
                   <StarIcon style={{ fontSize: "5rem", color: "#FFD700" }} />
                   <Typography fontWeight="bold" fontSize="2.5rem">
                     {(
@@ -304,19 +310,102 @@ export default function Residence() {
                       4
                     ).toFixed(1)}
                   </Typography>
-                </Stack>
-                <StarRating rating={c.room} name={"Room"} />
-                <StarRating rating={c.building} name={"Building"} />
+                </Stack> */}
+                    <Stack
+                      direction="row"
+                      alignItems={"center"}
+                      spacing={2}
+                      justifyContent={"space-between"}
+                    >
+                      <Typography fontSize="1.5rem">Room</Typography>
+                      <StarRating rating={c.room} name={""} />{" "}
+                    </Stack>
+                    <Stack
+                      direction="row"
+                      alignItems={"center"}
+                      spacing={2}
+                      justifyContent={"space-between"}
+                    >
+                      <Typography fontSize="1.5rem">Building</Typography>
+                      <StarRating rating={c.building} name={""} />{" "}
+                    </Stack>
+                    <Stack
+                      direction="row"
+                      alignItems={"center"}
+                      spacing={2}
+                      justifyContent={"space-between"}
+                    >
+                      <Typography fontSize="1.5rem">Location</Typography>
+                      <StarRating rating={c.location} name={""} />{" "}
+                    </Stack>
+                    <Stack
+                      direction="row"
+                      alignItems={"center"}
+                      spacing={2}
+                      justifyContent={"space-between"}
+                    >
+                      <Typography fontSize="1.5rem">Bathroom</Typography>
+                      <StarRating rating={c.bathroom} name={""} />{" "}
+                    </Stack>
+
+                    {/* <StarRating rating={c.room} name={"Room"} /> */}
+                    {/* <StarRating rating={c.building} name={"Building"} />
                 <StarRating rating={c.location} name={"Location"} />
-                <StarRating rating={c.bathroom} name={"Bathroom"} />
-                <Typography key={c.id} fontSize="1.5rem">
-                  {c.review}{" "}
-                </Typography>
-              </Stack>
-            ))}
+                <StarRating rating={c.bathroom} name={"Bathroom"} /> */}
+                    <Typography
+                      key={c.id}
+                      fontSize="1.5rem"
+                      marginBottom="2rem"
+                      color="grey"
+                    >
+                      {c.review}{" "}
+                    </Typography>
+                  </Stack>
+                </>
+              );
+            })}
           </Stack>
         </Grid>
       </Grid>
     </>
   );
 }
+
+// <Stack direction={"column"}>
+//   <Stack
+//     direction="row"
+//     alignItems={"center"}
+//     spacing={2}
+//     justifyContent={"space-between"}
+//   >
+//     <Typography fontSize="1.5rem">Room</Typography>
+//     <StarRating rating={overallRoomRating} name={""} />{" "}
+//   </Stack>
+//   <Stack
+//     direction="row"
+//     alignItems={"center"}
+//     spacing={2}
+//     justifyContent={"space-between"}
+//   >
+//     <Typography fontSize="1.5rem">Building</Typography>
+//     <StarRating rating={overallBuildingRating} name={""} />{" "}
+//   </Stack>
+//   <Stack
+//     direction="row"
+//     alignItems={"center"}
+//     spacing={2}
+//     justifyContent={"space-between"}
+//   >
+//     <Typography fontSize="1.5rem">Location</Typography>
+//     <StarRating rating={overallLocationRating} name={""} />{" "}
+//   </Stack>
+//   <Stack
+//     direction="row"
+//     alignItems={"center"}
+//     spacing={2}
+//     justifyContent={"space-between"}
+//   >
+//     <Typography fontSize="1.5rem">Bathroom</Typography>
+//     <StarRating rating={overallBathroomRating} name={""} />{" "}
+//   </Stack>
+// </Stack>;
