@@ -5,10 +5,10 @@ import { CiMail } from "react-icons/ci";
 
 import { IoLogoInstagram } from "react-icons/io";
 
-function footer(){
+function footerOther(){
     return(
         <>
-            <div className="flex flex-row justify-center p-2 text-xl mt-5 text-zinc-300">
+            <div className="flex flex-row justify-center p-2 text-xl mt-5">
                
                 <Link href="/">
                     <Image src={Logo} alt="UW Rez Logo" width={30} height={30} className="duration-300 ease-in-out hover:scale-125"/>
@@ -16,7 +16,7 @@ function footer(){
                 <Link href="/">
                     <h1 className="mr-2 ml-1 hover:text-blue-300">UW Rez</h1>
                 </Link>
-                <Link href="https://www.instagram.com/uw.rez/" target="_blank" className="mr-1 duration-300 ease-in-out hover:scale-125 ">
+                <Link href="https://www.instagram.com/uw.rez/" target="_blank" className="mr-1 duration-300 ease-in-out hover:scale-125">
                     <IoLogoInstagram size={28}/>
                 </Link>
                 <Link href="https://www.instagram.com/" target="_blank" className="duration-300 ease-in-out hover:scale-125">
@@ -25,7 +25,7 @@ function footer(){
                 
                 
             </div>
-            <div className="text-zinc-300 flex flex-row justify-center mb-5 text-med ">
+            <div className=" flex flex-row justify-center mb-5 text-med ">
                 <Link href="/" className="hover:text-blue-400"> Home</Link>
                 <Link href="/privacy" className="hover:text-blue-400" >&nbsp;&nbsp;Privacy</Link>
                 <Link href="/about" className="hover:text-blue-400">&nbsp;&nbsp;About</Link>
@@ -35,4 +35,4 @@ function footer(){
     )
 }
 
-export default footer
+export default footerOther

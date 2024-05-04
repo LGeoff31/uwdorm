@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar"
 import { Stack } from "@mui/material"
-import Footer from "./components/footer"
+import FooterOther from "./components/footerOther"
 
 export default function Privacy(){
     return(
@@ -30,7 +30,7 @@ export default function Privacy(){
                 </h1>
                 </div>
                 
-                <Footer/>
+                <FooterOther/>
         </>
     )
 }

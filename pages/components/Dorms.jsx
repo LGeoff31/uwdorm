@@ -15,17 +15,17 @@ function DormInfo(props) {
   return (
     <Stack elevation={3} padding="2.5rem">
       <Link href={props.link} height={350}>
-      <div class="rounded-t-3xl relative overflow-hidden bg-cover bg-no-repeat">
+      <div class="rounded-t-3xl relative overflow-hidden bg-cover bg-no-repeat border-2 border-zinc-300">
         <img
           src={props.images}
           alt={props.name}
           className="rounded-t-3xl h-[22rem] w-[35rem] transition 
-          duration-300 ease-in-out hover:scale-110"
+          duration-300 ease-in-out hover:scale-110 "
         />
       </div>
       </Link>
 
-      <div className="h-full bg-white p-3 rounded-b-3xl">
+      <div className="h-full bg-white p-3 rounded-b-3xl border-2 border-zinc-300">
         <div>
           <h1 className="font-medium text-xl">
             {props.name}
@@ -58,7 +58,7 @@ const Dorms = () => {
 
   return (
     <>
-      <h1 className="text-center p-8 text-3xl mt-4 font-medium">
+      <h1 className="text-center text-zinc-300 p-4 text-3xl mt-20 font-medium">
         Residences
       </h1>
       <Grid container justifyContent={"center"} >
