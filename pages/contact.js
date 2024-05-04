@@ -1,11 +1,11 @@
 import Navbar from "./components/Navbar"
 import { Stack } from "@mui/material"
 import FooterOther from "./components/footerOther"
-import { useState } from "react"
+import React, { useState } from "react"
 import { LuSendHorizonal } from "react-icons/lu";
-import React from "react";
 
-export default function contact() {
+
+export default function Contact() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
