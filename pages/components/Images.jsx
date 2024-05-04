@@ -491,12 +491,12 @@ const Images = ({ id }) => {
     },
   };
 
+  const theme = useTheme();
+  const [activeStep, setActiveStep] = useState(0);
   if (!id) {
     return <div>Loading</div>;
   }
 
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = useState(0);
   const maxSteps = residencesMap[id]["images"].length;
 
   const handleNext = () => {
