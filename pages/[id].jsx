@@ -242,10 +242,7 @@ export default function Residence() {
               className="hover:scale-125 ease-in-out duration-900"
             />
           </Link>
-          <h1 className="text-xl">
-            {" "}
-            Back to Residences
-          </h1>
+          <h1 className="text-xl"> Back to Residences</h1>
         </Stack>
         <Grid justifyContent={"space-between"}>
           <Stack
@@ -254,7 +251,7 @@ export default function Residence() {
             paddingRight="10rem"
             direction="row"
           >
-            <Description 
+            <Description
               residence={residence}
               residenceDetails={residenceDetails}
             />
@@ -269,9 +266,7 @@ export default function Residence() {
               justifyContent={"space-between"}
               gap="2rem"
             >
-              <h1 className="text-3xl font-bold">
-                Comments
-              </h1>
+              <h1 className="text-3xl font-bold">Comments</h1>
               <AddReview
                 residencesMap={residencesMap}
                 fetchComments={fetchComments}
@@ -300,7 +295,7 @@ export default function Residence() {
                     // width="20%"
                     // alignItems={"center"}
                     // justifyContent={"space-between"}
-                    >
+                  >
                     {/* <Stack direction="row" spacing={2} alignItems={"center"}>
                   <StarIcon style={{ fontSize: "5rem", color: "#FFD700" }} />
                   <Typography fontWeight="bold" fontSize="2.5rem">
@@ -310,37 +305,35 @@ export default function Residence() {
                     ).toFixed(1)}
                   </Typography>
                 </Stack> */}
-                <div className="flex flex-row">
-                    <h1 className="text-left text-lg text-zinc-500 p-2">
-                      {c.review}{" "}
-                    </h1>
-                    <div className="flex flex-col">
+                    <div className="flex flex-row">
+                      <h1 className="text-left text-lg text-zinc-500 p-2">
+                        {c.review}{" "}
+                      </h1>
+                      <div className="flex flex-col">
                         <div className="flex flex-row justify-between">
                           <h1 className="text-left text-lg p-2">Room</h1>
-                          <StarRating  rating={c.room} name={""} />{" "}
+                          <StarRating rating={c.room} name={""} />{" "}
                         </div>
-                      
-                      
+
                         <div className="flex flex-row justify-between">
                           <h1 className="text-left text-lg p-2">Building</h1>
                           <StarRating rating={c.building} name={""} />{" "}
                         </div>
-                      
-                      <div className="flex flex-row justify-between">
-                        <h1 className="text-left text-lg p-2">Location</h1>
-                        <StarRating rating={c.location} name={""} />{" "}
-                      </div>
-                      <div className="flex flex-row justify-between">
-                        <h1 className="text-left text-lg p-2">Bathroom</h1>
-                        <StarRating rating={c.bathroom} name={""} />{" "}
+
+                        <div className="flex flex-row justify-between">
+                          <h1 className="text-left text-lg p-2">Location</h1>
+                          <StarRating rating={c.location} name={""} />{" "}
+                        </div>
+                        <div className="flex flex-row justify-between">
+                          <h1 className="text-left text-lg p-2">Bathroom</h1>
+                          <StarRating rating={c.bathroom} name={""} />{" "}
+                        </div>
                       </div>
                     </div>
-                </div>
                     {/* <StarRating rating={c.room} name={"Room"} /> */}
                     {/* <StarRating rating={c.building} name={"Building"} />
                 <StarRating rating={c.location} name={"Location"} />
                 <StarRating rating={c.bathroom} name={"Bathroom"} /> */}
-                   
                   </div>
                 </>
               );
@@ -348,7 +341,7 @@ export default function Residence() {
           </Stack>
         </Grid>
       </Grid>
-      <FooterOther/>
+      <FooterOther />
     </>
   );
 }
