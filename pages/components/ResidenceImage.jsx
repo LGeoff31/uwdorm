@@ -13,6 +13,9 @@ const ResidenceImage = ({
   overallRoomRating,
   overallBuildingRating,
 }) => {
+  if (!id) {
+    return <div>Loading</div>;
+  }
   const StarRating = ({ rating, name }) => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
