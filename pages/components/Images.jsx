@@ -491,6 +491,10 @@ const Images = ({ id }) => {
     },
   };
 
+  if (!id) {
+    return <div>Loading</div>;
+  }
+
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = residencesMap[id]["images"].length;
