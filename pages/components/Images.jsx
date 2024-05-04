@@ -512,7 +512,7 @@ const Images = ({ id }) => {
   };
 
   return (
-    <div className="w-[120rem] rounded-sm">
+    <div className="w-[115rem] rounded-sm">
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -525,7 +525,7 @@ const Images = ({ id }) => {
               <Box
                 component="img"
                 sx={{
-                  height: "350px",
+                  height: "400px",
                   width: "800px",
                 }}
                 className="rounded-t-2xl"
