@@ -13,7 +13,7 @@ const ResidenceImage = ({
   overallRoomRating,
   overallBuildingRating,
 }) => {
-  if (!id) {
+  if (!residence) {
     return <div>Loading</div>;
   }
   const StarRating = ({ rating, name }) => {
