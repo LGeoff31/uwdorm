@@ -15,6 +15,9 @@ import StarIcon from "@mui/icons-material/Star";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const Description = ({ residence, residenceDetails }) => {
+  if (!residence) {
+    return <div>Loading</div>;
+  }
   return (
     <Stack>
       <Typography variant="h4" fontWeight="bold" marginBottom="1rem">
