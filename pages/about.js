@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar"
 import { Stack } from "@mui/material"
 import FooterOther from "./components/footerOther"
 
-export default function contact() {
+export default function About() {
     return (
         <>
             <Navbar />
