@@ -13,40 +13,29 @@ import Footer from "./footer";
 
 function DormInfo(props) {
   return (
-    <Stack elevation={3} padding="2rem">
-      <Link href={props.link} height={400}>
+    <Stack elevation={3} padding="2.5rem">
+      <Link href={props.link} height={350}>
+      <div class="rounded-t-3xl relative overflow-hidden bg-cover bg-no-repeat">
         <img
-          height={200} // Adjust the height as needed
-          width={600} // Adjust the width as needed
           src={props.images}
           alt={props.name}
-          className=" h-full transition-all duration-300 cursor-pointer filter  hover:grayscale-0"
+          className="rounded-t-3xl h-[22rem] w-[35rem] transition 
+          duration-300 ease-in-out hover:scale-110"
         />
+      </div>
       </Link>
 
-      <Stack
-        bottom={0}
-        left={0}
-        width="100%"
-        bgcolor="white"
-        p={2}
-        borderBottomLeftRadius="xl"
-        borderBottomRightRadius="xl"
-        borderRadius={"5%"}
-        flexDirection={"row"}
-        alignItems={"center"}
-        justifyContent={"space-between"}
-      >
-        <Box>
-          <Typography variant="h6" fontWeight={"bold"}>
+      <div className="h-full bg-white p-3 rounded-b-3xl">
+        <div>
+          <h1 className="font-medium text-xl">
             {props.name}
-          </Typography>
+          </h1>
 
-          <Typography>399 Reviews ⭐</Typography>
-        </Box>
+          <h1 className="text-med">399 Reviews ⭐</h1>
+        </div>
 
-        <Typography>{props.address}</Typography>
-      </Stack>
+        <h1 className="text-right text-lg">{props.address}</h1>
+      </div>
     </Stack>
   );
 }
@@ -69,19 +58,12 @@ const Dorms = () => {
 
   return (
     <>
-      <Typography
-        variant="h4"
-        display="flex"
-        margin="0 auto"
-        justifyContent={"center"}
-        marginBottom="4rem"
-        marginTop="4rem"
-      >
+      <h1 className="text-center p-8 text-3xl mt-4 font-medium">
         Residences
-      </Typography>
-      <Grid container spacing={3} justifyContent={"center"}>
+      </h1>
+      <Grid container justifyContent={"center"} >
         {residences.map((residence) => (
-          <DormInfo
+          <DormInfo 
             key={residence.id}
             id={residence.id}
             name={residence.name}
@@ -89,6 +71,7 @@ const Dorms = () => {
             description={residence.description}
             address={residence.address}
             link={residence.id}
+            
           />
         ))}
       </Grid>

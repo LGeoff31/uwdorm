@@ -13,17 +13,17 @@ import TransferWithinAStationIcon from '@mui/icons-material/TransferWithinAStati
 import { SiSlideshare } from "react-icons/si";
 const Homepage = () => {
   const residences = [
+    "Village1 (V1)",
     "Claudette Millar Hall (CMH)",
-    "Columbia Lake Village - South (CLV)",
-    "Columbia Lake Village - North (CLV)",
-    "Mackenzie King Village (MKV)",
-    "Minota Hagey",
-    "Renison",
+    "UW Place (UWP)",
     "Ron Eydt Village (REV)",
+    "Mackenzie King Village (MKV)",
+    "Columbia Lake Village (CLV)",
+    "Minota Hagey",
     "St.Jerome (SJU)",
     "United College (UC)",
-    "UW Place (UWP)",
-    "Village1 (V1)",
+    "Renison",
+    
     // Add more residences as needed
   ];
 
@@ -60,8 +60,8 @@ const Homepage = () => {
             <span className="text-xl mb-10 text-gray-300 ">
               Explore reviews of Waterloo&apos;s residences or add your own!
             </span>
-            <label className="flex text-lg justify-center h-[3rem]">
-              <select className="text-blue-900 font-medium rounded-lg bg-gray-300"onChange={handleResidenceChange}>
+            <label className="flex text-med justify-center h-[3rem]">
+              <select className=" font-medium rounded-lg bg-gray-300"onChange={handleResidenceChange}>
                 <option className="" disabled selected hidden >&nbsp;Select a Residence</option>
                 {residences.map((residence, index) => (
                   <option  key={residence} value={index+1} className="font-medium text-black">
