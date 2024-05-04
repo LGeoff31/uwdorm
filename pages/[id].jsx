@@ -33,6 +33,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarIcon from "@mui/icons-material/Star";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import Images from "./components/Images";
 
 export default function Residence() {
   const router = useRouter();
@@ -54,28 +55,6 @@ export default function Residence() {
       mealPlan: "Required",
       community: "First-year students",
       mascot: "V1 Groundhog",
-      images: [
-        {
-          label: "San Francisco – Oakland Bay Bridge, United States",
-          imgPath:
-            "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
-        },
-        {
-          label: "Bird",
-          imgPath:
-            "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60",
-        },
-        {
-          label: "Bali, Indonesia",
-          imgPath:
-            "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250",
-        },
-        {
-          label: "Goč, Serbia",
-          imgPath:
-            "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
-        },
-      ],
     },
     2: {
       size: "539 residents",
@@ -84,129 +63,10 @@ export default function Residence() {
       mealPlan: "Required",
       community: "First-year and upper-year students",
       mascot: "UWP Unicorn",
-      images: [
-        {
-          label: "San Francisco – Oakland Bay Bridge, United States",
-          imgPath:
-            "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
-        },
-        {
-          label: "Bird",
-          imgPath:
-            "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60",
-        },
-        {
-          label: "Bali, Indonesia",
-          imgPath:
-            "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250",
-        },
-        {
-          label: "Goč, Serbia",
-          imgPath:
-            "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
-        },
-      ],
     },
   };
 
   let residenceDetails = residencesMap[id];
-
-  const SwipeableTextMobileStepper = () => {
-    const theme = useTheme();
-    const [activeStep, setActiveStep] = useState(0);
-    const maxSteps = residencesMap[id]["images"].length;
-
-    const handleNext = () => {
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    };
-
-    const handleBack = () => {
-      setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    };
-
-    const handleStepChange = (step) => {
-      setActiveStep(step);
-    };
-
-    return (
-      <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-        <Paper
-          square
-          elevation={0}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            height: 50,
-            pl: 2,
-            bgcolor: "background.default",
-          }}
-        >
-          <Typography>
-            {residencesMap[id]["images"][activeStep].label}
-          </Typography>
-        </Paper>
-        <AutoPlaySwipeableViews
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-          index={activeStep}
-          onChangeIndex={handleStepChange}
-          enableMouseEvents
-        >
-          {residencesMap[id]["images"].map((step, index) => (
-            <div key={step.label}>
-              {Math.abs(activeStep - index) <= 2 ? (
-                <Box
-                  component="img"
-                  sx={{
-                    height: "60vh", // Adjust the height of the images
-                    display: "block",
-                    maxWidth: "100%", // Allow images to take full width
-                    overflow: "hidden",
-                  }}
-                  src={step.imgPath}
-                  alt={step.label}
-                />
-              ) : null}
-            </div>
-          ))}
-        </AutoPlaySwipeableViews>
-        <MobileStepper
-          steps={maxSteps}
-          position="static"
-          activeStep={activeStep}
-          nextButton={
-            <Button
-              size="small"
-              onClick={handleNext}
-              disabled={activeStep === maxSteps - 1}
-            >
-              Next
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowLeft />
-              ) : (
-                <KeyboardArrowRight />
-              )}
-            </Button>
-          }
-          backButton={
-            <Button
-              size="small"
-              onClick={handleBack}
-              disabled={activeStep === 0}
-            >
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowRight />
-              ) : (
-                <KeyboardArrowLeft />
-              )}
-              Back
-            </Button>
-          }
-        />
-      </Box>
-    );
-  };
-
-  const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
   console.log("fun facts #1", residencesMap);
   console.log("fun facts", residenceDetails);
@@ -457,19 +317,28 @@ export default function Residence() {
             </Typography>
             <Stack spacing={1}>
               {residenceDetails &&
-                Object.entries(residenceDetails).map(([key, value]) => (
-                  <Typography key={key} variant="body1" fontSize="1.5rem">
-                    <strong>
-                      {key.charAt(0).toUpperCase() + key.slice(1)}:
-                    </strong>{" "}
-                    {Array.isArray(value) ? value.join(", ") : value}
-                  </Typography>
-                ))}
+                Object.entries(residenceDetails).map(([key, value]) => {
+                  if (key !== "images") {
+                    return (
+                      <Typography key={key} variant="body1" fontSize="1.5rem">
+                        <strong>
+                          {key.charAt(0).toUpperCase() + key.slice(1)}:
+                        </strong>{" "}
+                        {Array.isArray(value) ? value.join(", ") : value}
+                      </Typography>
+                    );
+                  }
+                })}
             </Stack>
-            <Typography variant="h4" fontWeight="bold" marginTop="2rem">
+            <Typography
+              variant="h4"
+              fontWeight="bold"
+              marginTop="2rem"
+              marginBottom="2rem"
+            >
               Images
             </Typography>
-            <SwipeableTextMobileStepper />
+            <Images id={id} />
           </Stack>
           <Stack padding="2rem" paddingRight="10rem">
             <Button variant="contained" onClick={handleOpen}>
