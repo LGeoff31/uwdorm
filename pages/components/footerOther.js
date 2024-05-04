@@ -27,9 +27,9 @@ function footerOther(){
             </div>
             <div className=" flex flex-row justify-center text-med bg-[rgba(225,246,255,1)] p-3">
                 <Link href="/" className="hover:text-blue-400"> Home</Link>
-                <Link href="/Privacy" className="hover:text-blue-400" >&nbsp;&nbsp;Privacy</Link>
-                <Link href="/About" className="hover:text-blue-400">&nbsp;&nbsp;About</Link>
-                <Link href="/Contact" className="hover:text-blue-400">&nbsp;&nbsp;Contact</Link>
+                <Link href="/privacy" className="hover:text-blue-400" >&nbsp;&nbsp;Privacy</Link>
+                <Link href="/about" className="hover:text-blue-400">&nbsp;&nbsp;About</Link>
+                <Link href="/contact" className="hover:text-blue-400">&nbsp;&nbsp;Contact</Link>
                 <br></br>
             </div>
         </>

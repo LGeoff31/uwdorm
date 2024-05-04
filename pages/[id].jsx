@@ -17,6 +17,7 @@ import Images from "./components/Images";
 import ResidenceImage from "./components/ResidenceImage";
 import AddReview from "./components/AddReview";
 import Description from "./components/Description";
+import FooterOther from "./components/footerOther";
 
 export default function Residence() {
   const router = useRouter();
@@ -241,10 +242,10 @@ export default function Residence() {
               className="hover:scale-125 ease-in-out duration-900"
             />
           </Link>
-          <Typography variant="body1" fontSize="1.5rem">
+          <h1 className="text-xl">
             {" "}
             Back to Residences
-          </Typography>
+          </h1>
         </Stack>
         <Grid justifyContent={"space-between"}>
           <Stack
@@ -253,7 +254,7 @@ export default function Residence() {
             paddingRight="10rem"
             direction="row"
           >
-            <Description
+            <Description 
               residence={residence}
               residenceDetails={residenceDetails}
             />
@@ -268,9 +269,9 @@ export default function Residence() {
               justifyContent={"space-between"}
               gap="2rem"
             >
-              <Typography variant="h2" fontWeight={"bold"} marginBottom="2rem">
+              <h1 className="text-3xl font-bold">
                 Comments
-              </Typography>
+              </h1>
               <AddReview
                 residencesMap={residencesMap}
                 fetchComments={fetchComments}
@@ -293,15 +294,13 @@ export default function Residence() {
               return (
                 <>
                   <br></br>
-                  <Stack
-                    key={idx}
-                    direction="column"
-                    className="pt-5 px-20 border-2 border-slate-300 rounded-3xl"
+                  <div
+                    className="p-3 border-2 border-slate-300 rounded-3xl"
 
                     // width="20%"
                     // alignItems={"center"}
                     // justifyContent={"space-between"}
-                  >
+                    >
                     {/* <Stack direction="row" spacing={2} alignItems={"center"}>
                   <StarIcon style={{ fontSize: "5rem", color: "#FFD700" }} />
                   <Typography fontWeight="bold" fontSize="2.5rem">
@@ -311,62 +310,45 @@ export default function Residence() {
                     ).toFixed(1)}
                   </Typography>
                 </Stack> */}
-                    <Stack
-                      direction="row"
-                      alignItems={"center"}
-                      spacing={2}
-                      justifyContent={"space-between"}
-                    >
-                      <Typography fontSize="1.5rem">Room</Typography>
-                      <StarRating rating={c.room} name={""} />{" "}
-                    </Stack>
-                    <Stack
-                      direction="row"
-                      alignItems={"center"}
-                      spacing={2}
-                      justifyContent={"space-between"}
-                    >
-                      <Typography fontSize="1.5rem">Building</Typography>
-                      <StarRating rating={c.building} name={""} />{" "}
-                    </Stack>
-                    <Stack
-                      direction="row"
-                      alignItems={"center"}
-                      spacing={2}
-                      justifyContent={"space-between"}
-                    >
-                      <Typography fontSize="1.5rem">Location</Typography>
-                      <StarRating rating={c.location} name={""} />{" "}
-                    </Stack>
-                    <Stack
-                      direction="row"
-                      alignItems={"center"}
-                      spacing={2}
-                      justifyContent={"space-between"}
-                    >
-                      <Typography fontSize="1.5rem">Bathroom</Typography>
-                      <StarRating rating={c.bathroom} name={""} />{" "}
-                    </Stack>
-
+                <div className="flex flex-row">
+                    <h1 className="text-left text-lg text-zinc-500 p-2">
+                      {c.review}{" "}
+                    </h1>
+                    <div className="flex flex-col">
+                        <div className="flex flex-row justify-between">
+                          <h1 className="text-left text-lg p-2">Room</h1>
+                          <StarRating  rating={c.room} name={""} />{" "}
+                        </div>
+                      
+                      
+                        <div className="flex flex-row justify-between">
+                          <h1 className="text-left text-lg p-2">Building</h1>
+                          <StarRating rating={c.building} name={""} />{" "}
+                        </div>
+                      
+                      <div className="flex flex-row justify-between">
+                        <h1 className="text-left text-lg p-2">Location</h1>
+                        <StarRating rating={c.location} name={""} />{" "}
+                      </div>
+                      <div className="flex flex-row justify-between">
+                        <h1 className="text-left text-lg p-2">Bathroom</h1>
+                        <StarRating rating={c.bathroom} name={""} />{" "}
+                      </div>
+                    </div>
+                </div>
                     {/* <StarRating rating={c.room} name={"Room"} /> */}
                     {/* <StarRating rating={c.building} name={"Building"} />
                 <StarRating rating={c.location} name={"Location"} />
                 <StarRating rating={c.bathroom} name={"Bathroom"} /> */}
-                    <Typography
-                      key={c.id}
-                      fontSize="1.5rem"
-                      marginBottom="2rem"
-                      color="grey"
-                    >
-                      {c.review}{" "}
-                    </Typography>
-                  </Stack>
+                   
+                  </div>
                 </>
               );
             })}
           </Stack>
         </Grid>
       </Grid>
+      <FooterOther/>
     </>
   );
 }

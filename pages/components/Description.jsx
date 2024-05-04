@@ -20,29 +20,24 @@ const Description = ({ residence, residenceDetails }) => {
   }
   return (
     <Stack>
-      <Typography variant="h4" fontWeight="bold" marginBottom="1rem">
+      <h1 className="text-3xl font-bold mb-3">
         Description
-      </Typography>
-      <Typography variant="body1" fontSize="1.5rem" width="70%">
+      </h1>
+      <h1 className="text-lg mb-5 mr-5">
         {residence[0].description}
-      </Typography>
-      <Typography
-        variant="h4"
-        marginTop="2rem"
-        fontWeight="bold"
-        marginBottom="1rem"
-      >
+      </h1>
+      <h1 className="text-3xl font-bold mb-3">
         Fun Facts
-      </Typography>
-      <Stack spacing={1} marginBottom="2rem">
+      </h1>
+      <div spacing={1} marginBottom="2rem">
         {residenceDetails &&
           Object.entries(residenceDetails).map(([key, value]) => (
-            <Typography key={key} variant="body1" fontSize="1.5rem">
+            <h1 key={key} className="text-lg">
               <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong>{" "}
               {Array.isArray(value) ? value.join(", ") : value}
-            </Typography>
+            </h1>
           ))}
-      </Stack>
+      </div>
     </Stack>
   );
 };

@@ -38,7 +38,7 @@ export default function About() {
                     <div className="px-20 ml-20 font-bold text-3xl">Our Team:</div>
                     <div>
                         <div className="flex flex-row mt-2">
-                            <img alt="James Yu Image"className=" px-20 py-5 ml-20 w-[20rem] h-[11rem] rounded-full" src="https://prep4collegetutors.com/wp-content/uploads/2023/07/image2-e1688790500290.png"></img>
+                            <img alt="James Yu Image"className=" px-20 py-5 ml-20 w-[20rem] h-[11rem] rounded-full" src=""></img>
                             <div className="flex flex-col mt-4 mr-40">
                                 <h1 className="font-bold text-lg">James Yu</h1>
                                 <h1 className="italic font-light">Founder - Biomedical Engineering 2028</h1>
@@ -50,7 +50,7 @@ export default function About() {
                     </div>
                     <div>
                         <div className="flex flex-row">
-                            <img alt="James Yu Image"className=" px-20 py-5 ml-20 w-[20rem] h-[11rem] rounded-full" src="https://prep4collegetutors.com/wp-content/uploads/2023/07/image2-e1688790500290.png"></img>
+                            <img alt="James Yu Image"className=" px-20 py-5 ml-20 w-[20rem] h-[11rem] rounded-full" src=""></img>
                             <div className="flex flex-col mt-4 mr-40">
                                 <h1 className="font-bold text-lg">Geoffrey Lee</h1>
                                 <h1 className="italic font-light">Founder - Software Engineering 2028</h1>
