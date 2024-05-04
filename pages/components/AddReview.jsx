@@ -32,6 +32,9 @@ const AddReview = ({
   comment,
   setComment,
 }) => {
+  if (!id) {
+    return <div>Loading</div>;
+  }
   const handleSubmit = async () => {
     console.log("room rating", roomRating, "  review", comment);
     const data = {
