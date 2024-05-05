@@ -36,6 +36,10 @@ const AddReview = ({
     return <div>Loading</div>;
   }
   const handleSubmit = async () => {
+    if (comment.length < 81){
+      alert("Please enter more than 80 characters!");
+      return;
+    }
     console.log("room rating", roomRating, "  review", comment);
     const data = {
       residence_id: id,
