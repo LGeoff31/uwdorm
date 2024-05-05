@@ -46,7 +46,7 @@ export default function Privacy() {
           Privacy Policy:
         </Typography>
         <Typography variant="body1" marginTop="2rem">
-          Thank you for using uwrez.com. his Privacy Policy explains how we
+          Thank you for using uwrez.com. This Privacy Policy explains how we
           collect, use, and disclose your information when you use our website.
         </Typography>
 
