@@ -30,7 +30,9 @@ function DormInfo(props) {
         <div>
           <h1 className="font-medium text-xl">{props.name}</h1>
 
-          <h1 className="text-med text-zinc-500">399 Reviews ⭐</h1>
+          <h1 className="text-med text-zinc-500">
+            {props.residenceCounts} Reviews ⭐
+          </h1>
         </div>
 
         <h1 className="text-right text-lg text-blue-400 ">{props.address}</h1>
@@ -43,6 +45,9 @@ function DormInfo(props) {
 
 const Dorms = () => {
   const [residences, setResidences] = useState([]);
+  let commentLength = 0;
+  // let [comment, setComment] = useState(""); //typing textfield
+  const [comments, setComments] = useState([]); //all the submitted comments
 
   const fetchData = async () => {
     const response = await fetch("/api/residences");
@@ -51,10 +56,43 @@ const Dorms = () => {
     console.log(data);
   };
 
+  const fetchAllComments = async () => {
+    const response = await fetch("/api/all_comments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    console.log("THIS IS DATA", data);
+    setComments(data);
+  };
+
   useEffect(() => {
     fetchData();
+    fetchAllComments();
   }, []);
 
+  const residenceCounts = {};
+  comments.forEach((item) => {
+    const residenceId = item.residence_id;
+    residenceCounts[residenceId] = (residenceCounts[residenceId] || 0) + 1;
+  });
+
+  const findCount = ({ id }) => {
+    console.log("checking ", id, residenceCounts);
+
+    if (id in residenceCounts) {
+      return residenceCounts[id];
+    }
+    console.log("ID", id);
+    return 0;
+  };
+
+  console.log("THIS IS COUNT", residenceCounts);
+  if (!residenceCounts) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <>
       <h1
@@ -80,6 +118,7 @@ const Dorms = () => {
               description={residence.description}
               address={residence.address}
               link={residence.id}
+              residenceCounts={findCount({ id: residence.id })}
             />
           </motion.div>
         ))}
