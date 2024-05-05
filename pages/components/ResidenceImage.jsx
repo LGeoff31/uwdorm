@@ -41,11 +41,19 @@ const ResidenceImage = ({
   };
   return (
     <Grid sx={{ position: "relative", width: "100%" }}>
-      <img
+      <div
+        style={{
+          background: `url('https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png') no-repeat center center fixed`,
+          backgroundSize: "cover",
+          height: "25vh",
+          display: "flex",
+        }}
+      ></div>
+      {/* <img
         src={residence[0].images}
         alt="image"
         style={{ width: "100%", height: "500px" }}
-      />
+      /> */}
       <Grid
         sx={{ position: "absolute", bottom: 20, left: 150, zIndex: 1 }}
         className="text-blue-300"
@@ -112,7 +120,7 @@ const ResidenceImage = ({
           left: 0,
           width: "100%",
           height: "100%",
-          background: "rgba(0, 0, 0, 0.7)",
+          // background: "rgba(0, 0, 0, 0.7)",
         }}
       ></div>
     </Grid>
