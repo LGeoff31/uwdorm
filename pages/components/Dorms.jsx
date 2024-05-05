@@ -61,7 +61,7 @@ const Dorms = () => {
       <Grid container justifyContent={"center"} marginBottom="10rem">
         {residences.map((residence) => (
           <motion.div
-            // key={idx}
+            key={residence.id}
             initial={{ x: -200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5 }}
