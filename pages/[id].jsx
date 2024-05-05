@@ -162,7 +162,7 @@ export default function Residence() {
     for (let i = 0; i < 5; i++) {
       if (i < rating) {
         stars.push(
-          <StarIcon key={i} style={{ fontSize: "2.5rem", color: "#FFD700" }} />
+          <StarIcon key={i} style={{ fontSize: "1.8rem", color: "#FFD700" }} />
         );
       } else {
         stars.push(
