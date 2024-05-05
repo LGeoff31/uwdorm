@@ -21,13 +21,13 @@ const ResidenceImage = ({
     for (let i = 0; i < 5; i++) {
       if (i < rating) {
         stars.push(
-          <StarIcon key={i} style={{ fontSize: "2.5rem", color: "#FFD700" }} />
+          <StarIcon key={i} style={{ fontSize: "2rem", color: "#FFD700" }} />
         );
       } else {
         stars.push(
           <StarBorderIcon
             key={i}
-            style={{ fontSize: "2.5rem", color: "#FFD700" }}
+            style={{ fontSize: "2rem", color: "#FFD700" }}
           />
         );
       }
@@ -52,12 +52,12 @@ const ResidenceImage = ({
       >
         <Stack direction="row" alignItems={"center"} spacing={10}>
           <Stack direction="column">
-            <Typography fontWeight="bold" variant="h2" fontSize="3rem">
+            <h1 className="text-5xl">
               {residence[0].name}
-            </Typography>
+            </h1>
             <Stack direction="row" alignItems={"center"}>
-              <StarIcon style={{ fontSize: "5rem", color: "#FFD700" }} />
-              <Typography fontSize="3rem" color="yellow">
+              <StarIcon style={{ fontSize: "3rem", color: "#FFD700" }} />
+              <Typography fontSize="2.7rem" color="yellow">
                 {" "}
                 {overallRating}{" "}
               </Typography>
@@ -71,7 +71,7 @@ const ResidenceImage = ({
               spacing={2}
               justifyContent={"space-between"}
             >
-              <Typography fontSize="1.5rem">Room</Typography>
+              <h1 className="text-xl">Room</h1>
               <StarRating rating={overallRoomRating} name={""} />{" "}
             </Stack>
             <Stack
@@ -80,7 +80,7 @@ const ResidenceImage = ({
               spacing={2}
               justifyContent={"space-between"}
             >
-              <Typography fontSize="1.5rem">Building</Typography>
+              <h1 className="text-xl">Building</h1>
               <StarRating rating={overallBuildingRating} name={""} />{" "}
             </Stack>
             <Stack
@@ -89,7 +89,7 @@ const ResidenceImage = ({
               spacing={2}
               justifyContent={"space-between"}
             >
-              <Typography fontSize="1.5rem">Location</Typography>
+              <h1 className="text-xl">Location</h1>
               <StarRating rating={overallLocationRating} name={""} />{" "}
             </Stack>
             <Stack
@@ -98,7 +98,7 @@ const ResidenceImage = ({
               spacing={2}
               justifyContent={"space-between"}
             >
-              <Typography fontSize="1.5rem">Bathroom</Typography>
+              <h1 className="text-xl">Bathroom</h1>
               <StarRating rating={overallBathroomRating} name={""} />{" "}
             </Stack>
           </Stack>
