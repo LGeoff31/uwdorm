@@ -26,6 +26,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-swipeable-views-react-18-fix": "^0.14.1",
     "react-swipeable-views-utils": "^0.14.0",
+    "react-toastify": "^10.0.5",
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {

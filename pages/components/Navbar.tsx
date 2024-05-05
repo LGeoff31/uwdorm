@@ -24,20 +24,23 @@ import {
 import { FaSignOutAlt } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
 
-const Navbar = () => {
+const Navbar = ({ setUser }: { setUser: any }) => {
   const [user, loading] = useAuthState(auth);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const route = useRouter();
   const googleProvider = new GoogleAuthProvider();
   const GoogleLogin = async () => {
+    console.log("user1", user);
     try {
       const result = await signInWithPopup(auth, googleProvider);
       route.push("/");
     } catch (error) {
       console.log("google sign in error", error);
     }
+    console.log("user2", user);
   };
+
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
@@ -45,14 +48,9 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
-  const handleFetchTest = async () => {
-    const response = await fetch("/api/test");
-    const data = await response.json();
-    console.log(data);
-  };
-
   if (loading) return <h1>Loading...</h1>;
-
+  console.log(user);
+  setUser(user);
   return (
     <nav className="bg-white">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-1">

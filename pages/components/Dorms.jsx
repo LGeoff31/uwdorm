@@ -57,7 +57,12 @@ const Dorms = () => {
 
   return (
     <>
-      <h1 className="text-center p-4 text-4xl mt-20 ">Residences</h1>
+      <h1
+        className="text-center p-4 text-5xl mt-20 text-blue-500"
+        style={{ fontWeight: "bold" }}
+      >
+        Residences
+      </h1>
       <Grid container justifyContent={"center"} marginBottom="10rem">
         {residences.map((residence) => (
           <motion.div

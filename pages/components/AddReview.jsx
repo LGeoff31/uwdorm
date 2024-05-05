@@ -11,9 +11,11 @@ import {
   DialogTitle,
   IconButton,
   Rating,
+  Alert,
 } from "@mui/material";
 import { MdOutlineRateReview } from "react-icons/md";
 import CloseIcon from "@mui/icons-material/Close";
+import Snackbar from "@mui/material/Snackbar";
 
 const AddReview = ({
   id,
@@ -31,16 +33,13 @@ const AddReview = ({
   setOpen,
   comment,
   setComment,
+  userPhoto,
 }) => {
   if (!id) {
     return <div>Loading</div>;
   }
+
   const handleSubmit = async () => {
-    if (comment.length < 81){
-      alert("Please enter more than 80 characters!");
-      return;
-    }
-    console.log("room rating", roomRating, "  review", comment);
     const data = {
       residence_id: id,
       users_id: 1,
@@ -49,8 +48,8 @@ const AddReview = ({
       building: buildingRating,
       location: locationRating,
       bathroom: bathroomRating,
+      userPhoto: userPhoto,
     };
-    console.log("comment", comment);
 
     const response = await fetch("/api/insert-comment", {
       method: "POST",
@@ -63,7 +62,8 @@ const AddReview = ({
       console.log("error on inserting comment", response.statusText);
     }
     const p = await response.json();
-    console.log("inserting comment", p);
+
+    handleClose();
     fetchComments();
   };
   const handleOpen = () => {
@@ -72,6 +72,7 @@ const AddReview = ({
   const handleClose = () => {
     setOpen(false);
   };
+
   return (
     <Stack>
       <Button variant="contained" onClick={handleOpen} size="large">
@@ -95,7 +96,7 @@ const AddReview = ({
               />
             </Stack>
             <Stack direction="row" justifyContent={"space-between"}>
-              <Typography>Building</Typography>
+              <Typography>Pricing</Typography>
               <Rating
                 name="rating"
                 value={buildingRating}

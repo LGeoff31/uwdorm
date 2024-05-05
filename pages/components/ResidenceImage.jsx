@@ -60,9 +60,7 @@ const ResidenceImage = ({
       >
         <Stack direction="row" alignItems={"center"} spacing={10}>
           <Stack direction="column">
-            <h1 className="text-5xl">
-              {residence[0].name}
-            </h1>
+            <h1 className="text-5xl">{residence[0].name}</h1>
             <Stack direction="row" alignItems={"center"}>
               <StarIcon style={{ fontSize: "3rem", color: "#FFD700" }} />
               <Typography fontSize="2.7rem" color="yellow">
@@ -88,7 +86,7 @@ const ResidenceImage = ({
               spacing={2}
               justifyContent={"space-between"}
             >
-              <h1 className="text-xl">Building</h1>
+              <h1 className="text-xl">Pricing</h1>
               <StarRating rating={overallBuildingRating} name={""} />{" "}
             </Stack>
             <Stack

@@ -30,6 +30,7 @@ export default function Residence() {
   const [locationRating, setLocationRating] = useState(0);
   const [bathroomRating, setBathroomRating] = useState(0);
   const { id } = router.query;
+  const [user, setUser] = useState(null);
 
   const residencesMap = {
     1: {
@@ -113,9 +114,6 @@ export default function Residence() {
 
   let residenceDetails = residencesMap[id];
 
-  console.log("fun facts #1", residencesMap);
-  console.log("fun facts", residenceDetails);
-
   const fetchComments = async () => {
     const response = await fetch("/api/comments-by-residence", {
       method: "POST",
@@ -152,7 +150,6 @@ export default function Residence() {
     }
   };
 
-  console.log("residence for village 1", residence);
   if (!residence || residence.length === 0) {
     return <h1>Loading...</h1>;
   }
@@ -212,6 +209,17 @@ export default function Residence() {
   overallBuildingRating /= comments.length;
 
   overallRating = overallRating.toFixed(1);
+  console.log("Please user", user);
+  let userPhoto =
+    "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/little-cute-kitten-serhii-kucher.jpg";
+  if (user) {
+    userPhoto = user.photoURL;
+  }
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const options = { month: "long", day: "numeric", year: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+  };
 
   return (
     <>
@@ -220,7 +228,7 @@ export default function Residence() {
           background: "rgb(225 246 255)",
         }}
       >
-        <Navbar />
+        <Navbar setUser={setUser} />
         <ResidenceImage
           residence={residence}
           overallRating={overallRating}
@@ -283,6 +291,7 @@ export default function Residence() {
                 comment={comment}
                 setComment={setComment}
                 id={id}
+                userPhoto={userPhoto}
               />
             </Stack>
             {comments.map((c, idx) => {
@@ -292,24 +301,22 @@ export default function Residence() {
                   <div
                     key={idx}
                     className="p-3 border-2 border-slate-300 rounded-3xl bg-gray-100"
-
-                    // width="20%"
-                    // alignItems={"center"}
-                    // justifyContent={"space-between"}
                   >
-                    {/* <Stack direction="row" spacing={2} alignItems={"center"}>
-                  <StarIcon style={{ fontSize: "5rem", color: "#FFD700" }} />
-                  <Typography fontWeight="bold" fontSize="2.5rem">
-                    {(
-                      (c.building + c.room + c.location + c.bathroom) /
-                      4
-                    ).toFixed(1)}
-                  </Typography>
-                </Stack> */}
-                    <div className="flex flex-row">
-                      <h1 className="text-left text-lg text-zinc-500 mr-12 ml-1">
-                        {c.review}{" "}
-                      </h1>
+                    <div className="flex flex-row justify-between">
+                      <img
+                        src={c.photourl}
+                        alt="user photo"
+                        style={{ borderRadius: "70%", height: "8rem" }}
+                      />
+                      <Stack direction={"column"}>
+                        <Typography color="grey">
+                          {formatDate(c.created_at)}
+                        </Typography>
+                        <h1 className="text-left text-lg text-zinc-500 mr-12 ml-1">
+                          {c.review}{" "}
+                        </h1>
+                      </Stack>
+
                       <div className="flex flex-col">
                         <div className="flex flex-row justify-between">
                           <h1 className="text-left text-lg">Room</h1>
@@ -317,7 +324,7 @@ export default function Residence() {
                         </div>
 
                         <div className="flex flex-row justify-between">
-                          <h1 className="text-left text-lg">Building</h1>
+                          <h1 className="text-left text-lg">Pricing</h1>
                           <StarRating rating={c.building} name={""} />{" "}
                         </div>
 
