@@ -290,6 +290,7 @@ export default function Residence() {
                 <>
                   <br></br>
                   <div
+                    key={idx}
                     className="p-3 border-2 border-slate-300 rounded-3xl bg-gray-100"
 
                     // width="20%"
