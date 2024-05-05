@@ -168,7 +168,7 @@ export default function Residence() {
         stars.push(
           <StarBorderIcon
             key={i}
-            style={{ fontSize: "2.5rem", color: "#FFD700" }}
+            style={{ fontSize: "1.8rem", color: "#FFD700" }}
           />
         );
       }
@@ -290,7 +290,7 @@ export default function Residence() {
                 <>
                   <br></br>
                   <div
-                    className="p-3 border-2 border-slate-300 rounded-3xl"
+                    className="p-3 border-2 border-slate-300 rounded-3xl bg-gray-100"
 
                     // width="20%"
                     // alignItems={"center"}
@@ -306,26 +306,26 @@ export default function Residence() {
                   </Typography>
                 </Stack> */}
                     <div className="flex flex-row">
-                      <h1 className="text-left text-lg text-zinc-500 p-2">
+                      <h1 className="text-left text-lg text-zinc-500 mr-12 ml-1">
                         {c.review}{" "}
                       </h1>
                       <div className="flex flex-col">
                         <div className="flex flex-row justify-between">
-                          <h1 className="text-left text-lg p-2">Room</h1>
+                          <h1 className="text-left text-lg">Room</h1>
                           <StarRating rating={c.room} name={""} />{" "}
                         </div>
 
                         <div className="flex flex-row justify-between">
-                          <h1 className="text-left text-lg p-2">Building</h1>
+                          <h1 className="text-left text-lg">Building</h1>
                           <StarRating rating={c.building} name={""} />{" "}
                         </div>
 
                         <div className="flex flex-row justify-between">
-                          <h1 className="text-left text-lg p-2">Location</h1>
+                          <h1 className="text-left text-lg">Location</h1>
                           <StarRating rating={c.location} name={""} />{" "}
                         </div>
                         <div className="flex flex-row justify-between">
-                          <h1 className="text-left text-lg p-2">Bathroom</h1>
+                          <h1 className="text-left text-lg">Bathroom</h1>
                           <StarRating rating={c.bathroom} name={""} />{" "}
                         </div>
                       </div>
