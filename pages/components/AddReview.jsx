@@ -94,12 +94,14 @@ const AddReview = ({
         <DialogContent>
           <Stack spacing={2} margin={2}>
             <TextField
+              required
               variant="outlined"
               label="Display Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             <TextField
+              required
               select
               variant="outlined"
               label="Faculty Program"

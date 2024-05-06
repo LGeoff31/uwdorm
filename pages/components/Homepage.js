@@ -80,7 +80,6 @@ const Homepage = () => {
           </Stack>
           <Grid>
             <motion.div
-              // key={residence.id}
               initial={{ x: -200, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 1.5 }}
@@ -112,56 +111,103 @@ const Homepage = () => {
               </Stack>
             </motion.div>
 
-            <Stack
-              direction="row"
-              gap="1rem"
-              marginTop="2rem"
-              justifyContent={"center"}
+            <motion.div
+              initial={{ x: 200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.5, delay: 1 }}
+              className=" object-cover md:rounded-lg  overflow-hidden"
             >
-              <MdPriceCheck style={{ fontSize: "3rem", color: "#d4d4d8" }} />
-              <Stack>
-                <Typography fontWeight="bold" color="#93c5fd" fontSize="1.5rem">
-                  {"Price"}
-                </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="1.2rem">
-                  Compare prices between different residences!
-                </Typography>
+              <Stack
+                direction="row"
+                gap="1rem"
+                marginTop="2rem"
+                justifyContent={"center"}
+              >
+                <MdPriceCheck style={{ fontSize: "3rem", color: "#d4d4d8" }} />
+                <Stack>
+                  <Typography
+                    fontWeight="bold"
+                    color="#93c5fd"
+                    fontSize="1.5rem"
+                  >
+                    {"Price"}
+                  </Typography>
+                  <Typography
+                    fontWeight="300"
+                    color="#d4d4d8"
+                    fontSize="1.2rem"
+                  >
+                    Compare prices between different residences!
+                  </Typography>
+                </Stack>
               </Stack>
-            </Stack>
-            <Stack
-              direction="row"
-              gap="1rem"
-              marginTop="2rem"
-              justifyContent={"center"}
+            </motion.div>
+
+            <motion.div
+              initial={{ x: -200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.5, delay: 2 }}
+              className=" object-cover md:rounded-lg  overflow-hidden"
             >
-              <TransferWithinAStationIcon
-                style={{ fontSize: "3rem", color: "#d4d4d8" }}
-              />
-              <Stack>
-                <Typography fontWeight="bold" color="#93c5fd" fontSize="1.5rem">
-                  {"Experience"}
-                </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="1.2rem">
-                  Learn from the experiences of other students!
-                </Typography>
+              <Stack
+                direction="row"
+                gap="1rem"
+                marginTop="2rem"
+                justifyContent={"center"}
+              >
+                <TransferWithinAStationIcon
+                  style={{ fontSize: "3rem", color: "#d4d4d8" }}
+                />
+                <Stack>
+                  <Typography
+                    fontWeight="bold"
+                    color="#93c5fd"
+                    fontSize="1.5rem"
+                  >
+                    {"Experience"}
+                  </Typography>
+                  <Typography
+                    fontWeight="300"
+                    color="#d4d4d8"
+                    fontSize="1.2rem"
+                  >
+                    Learn from the experiences of other students!
+                  </Typography>
+                </Stack>
               </Stack>
-            </Stack>
-            <Stack
-              direction="row"
-              gap="1rem"
-              marginTop="2rem"
-              justifyContent={"center"}
+            </motion.div>
+
+            <motion.div
+              initial={{ x: 200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.5, delay: 3 }}
+              className=" object-cover md:rounded-lg  overflow-hidden"
             >
-              <SiSlideshare style={{ fontSize: "3rem", color: "#d4d4d8" }} />
-              <Stack>
-                <Typography fontWeight="bold" color="#93c5fd" fontSize="1.5rem">
-                  {"Share"}
-                </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="1.2rem">
-                  Add your view on residences for others to see!
-                </Typography>
+              <Stack
+                direction="row"
+                gap="1rem"
+                marginTop="2rem"
+                justifyContent={"center"}
+              >
+                <SiSlideshare style={{ fontSize: "3rem", color: "#d4d4d8" }} />
+                <Stack>
+                  <Typography
+                    fontWeight="bold"
+                    color="#93c5fd"
+                    fontSize="1.5rem"
+                  >
+                    {"Share"}
+                  </Typography>
+                  <Typography
+                    fontWeight="300"
+                    color="#d4d4d8"
+                    fontSize="1.2rem"
+                  >
+                    Add your view on residences for others to see!
+                  </Typography>
+                </Stack>
               </Stack>
-            </Stack>
+            </motion.div>
           </Grid>
         </Grid>
       </div>
