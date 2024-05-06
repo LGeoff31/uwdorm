@@ -115,7 +115,7 @@ export default function Residence() {
   let residenceDetails = residencesMap[id];
 
   const fetchComments = async () => {
-    if (comment.length > 300){
+    if (comment.length > 300) {
       alert("Sorry, the comment must be shorter than 300 characters");
       return;
     }
@@ -159,7 +159,6 @@ export default function Residence() {
   }
 
   const StarRating = ({ rating, name }) => {
-    
     const stars = [];
     for (let i = 0; i < 5; i++) {
       if (i < rating) {
@@ -320,6 +319,8 @@ export default function Residence() {
                         alt="user photo"
                         style={{ borderRadius: "70%", height: "8rem" }}
                       />
+                      <Typography>{c.name}</Typography>
+                      <Typography>{c.faculty}</Typography>
                       <Stack direction={"column"}>
                         <Typography color="grey">
                           {formatDate(c.created_at)}
