@@ -526,7 +526,7 @@ const Images = ({ id }) => {
                 component="img"
                 sx={{
                   height: "400px",
-                  width: "800px",
+                  width: { md: "800px", xs: "full" },
                   // width: { md: "800px", xs: "400px" },
                 }}
                 className="rounded-t-2xl"
@@ -538,7 +538,7 @@ const Images = ({ id }) => {
         ))}
       </AutoPlaySwipeableViews>
       <MobileStepper
-        className="rounded-b-2xl w-[40rem]"
+        className="rounded-b-2xl w-[40rem] sm:w-[20rem]"
         steps={maxSteps}
         position="static"
         activeStep={activeStep}

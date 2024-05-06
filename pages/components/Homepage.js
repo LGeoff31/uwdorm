@@ -59,12 +59,24 @@ const Homepage = () => {
       >
         <Grid>
           <Stack>
-            <span className="lg:text-7xl sm:text-3xl lg:mt-0 sm:mt-10 text-center mb-10 text-blue-300">
+            <Typography
+              fontSize="3rem"
+              color="#93C5FD"
+              margin="0 auto"
+              marginBottom="1rem"
+            >
               UW Rez
-            </span>
-            <span className="text-2xl mb-10 text-gray-300 ">
+            </Typography>
+            <Typography
+              fontSize={{ md: "1.7rem", xs: "1rem" }}
+              marginBottom="1rem"
+              color="#D4D4D8"
+              marginLeft="2rem"
+              marginRight="2rem"
+            >
               Explore reviews of Waterloo&apos;s residences or add your own!
-            </span>
+            </Typography>
+
             <label className="flex text-med justify-center h-[3rem]">
               <select
                 className=" font-medium rounded-lg bg-gray-300"
@@ -97,7 +109,10 @@ const Homepage = () => {
               marginTop="4rem"
               justifyContent={"center"}
             >
-              <IoHomeOutline style={{ fontSize: "3rem", color: "#d4d4d8" }} />
+              <IoHomeOutline
+                style={{ fontSize: "3rem", color: "#d4d4d8" }}
+                // fontSize={{ md: "3rem", xs: "2rem" }}
+              />
               <Stack>
                 <Typography fontWeight="bold" color="#93c5fd">
                   {"Housing"}

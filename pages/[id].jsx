@@ -268,7 +268,9 @@ export default function Residence() {
               residence={residence}
               residenceDetails={residenceDetails}
             />
-            <Images id={id} />
+            <Box className="hidden md:block">
+              <Images id={id} />
+            </Box>
           </Stack>
 
           <Stack
@@ -332,16 +334,19 @@ export default function Residence() {
                             {c.faculty}
                           </h1>
                         </div>
-                        <h1 className="text-med text-left font-light ml-10">{c.review} </h1>
+                        <h1 className="text-med text-left font-light ml-10">
+                          {c.review}{" "}
+                        </h1>
                       </div>
                       <div className="flex flex-col">
                         <h1 className="text-blue-400 ml-1 text-sm">
                           {formatDate(c.created_at)}
                         </h1>
-                        
+
                         <div className="flex flex-row">
                           <h1 className="text-sm"></h1>
-                          <StarIcon className=""
+                          <StarIcon
+                            className=""
                             style={{ fontSize: "1.35rem", color: "#FFD700" }}
                           />
                           <h1 className="text-sm ml-1">
@@ -350,9 +355,9 @@ export default function Residence() {
                               4
                             ).toFixed(1)}
                           </h1>
-                        </div>    
-                        
-                                            {/* <div className="flex flex-col">
+                        </div>
+
+                        {/* <div className="flex flex-col">
                         <div className="flex flex-row ">
                           <h1 className="text-left text-sm">Room</h1>
                           <StarRating className=""rating={c.room} name={""} />{" "}
@@ -373,7 +378,6 @@ export default function Residence() {
                         </div>
                       </div> */}
                       </div>
-                      
                     </div>
                     {/* <StarRating rating={c.room} name={"Room"} /> */}
                     {/* <StarRating rating={c.building} name={"Building"} />
