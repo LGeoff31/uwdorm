@@ -45,7 +45,7 @@ const Homepage = () => {
           backgroundImage: `url(https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "100vh",
+          height: "105vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -93,10 +93,10 @@ const Homepage = () => {
             >
               <IoHomeOutline style={{ fontSize: "3rem", color: "#d4d4d8" }} />
               <Stack>
-                <Typography fontWeight="bold" color="#93c5fd" fontSize="1.5rem">
+                <Typography fontWeight="bold" color="#93c5fd">
                   {"Housing"}
                 </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="1.2rem">
+                <Typography fontWeight="300" color="#d4d4d8">
                   Learn about the available accommodations!
                 </Typography>
               </Stack>
@@ -117,10 +117,10 @@ const Homepage = () => {
             >
               <MdPriceCheck style={{ fontSize: "3rem", color: "#d4d4d8" }} />
               <Stack>
-                <Typography fontWeight="bold" color="#93c5fd" fontSize="1.5rem">
+                <Typography fontWeight="bold" color="#93c5fd">
                   {"Price"}
                 </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="1.2rem">
+                <Typography fontWeight="300" color="#d4d4d8">
                   Compare prices between different residences!
                 </Typography>
               </Stack>
@@ -143,10 +143,10 @@ const Homepage = () => {
                 style={{ fontSize: "3rem", color: "#d4d4d8" }}
               />
               <Stack>
-                <Typography fontWeight="bold" color="#93c5fd" fontSize="1.5rem">
+                <Typography fontWeight="bold" color="#93c5fd">
                   {"Experience"}
                 </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="1.2rem">
+                <Typography fontWeight="300" color="#d4d4d8">
                   Learn from the experiences of other students!
                 </Typography>
               </Stack>
@@ -167,10 +167,10 @@ const Homepage = () => {
             >
               <SiSlideshare style={{ fontSize: "3rem", color: "#d4d4d8" }} />
               <Stack>
-                <Typography fontWeight="bold" color="#93c5fd" fontSize="1.5rem">
+                <Typography fontWeight="bold" color="#93c5fd">
                   {"Share"}
                 </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="1.2rem">
+                <Typography fontWeight="300" color="#d4d4d8">
                   Add your view on residences for others to see!
                 </Typography>
               </Stack>
