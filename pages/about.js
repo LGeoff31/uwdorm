@@ -63,8 +63,8 @@ export default function About() {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <img
               alt="James Yu Image"
-              className=" ml-20 w-[10rem] mr-5 h-[10rem] rounded-full border-2 border-blue-500"
-              src="geoff.png"
+              className=" w-[10rem] mr-5 h-[10rem] rounded-full border-2 border-blue-500"
+              src="geo.png"
             ></img>
             <div className="flex flex-col mt-4">
               <h1 className="font-bold text-lg">Geoffrey Lee</h1>
