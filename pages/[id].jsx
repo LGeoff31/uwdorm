@@ -312,48 +312,47 @@ export default function Residence() {
                   <br></br>
                   <div
                     key={idx}
-                    className="p-3 border-2 border-slate-300 rounded-3xl bg-gray-100"
+                    className="p-2.5 border-2 border-slate-200 rounded-2xl bg-white"
                   >
                     <div className="flex flex-col justify-between">
                       <div className="flex flex-row">
                         <img
-                          className="p-3"
+                          className="p-1"
                           src={c.photourl}
                           alt="user photo"
                           style={{
                             borderRadius: "70%",
-                            height: "5rem",
-                            width: "5rem",
+                            height: "4rem",
+                            width: "4rem",
                           }}
                         />
-                        <div className="">
-                          <h1 className="ml-4">{c.name}</h1>
+                        <div className="flex flex-col">
+                          <h1 className="ml-4 mt-1">{c.name}</h1>
                           <h1 className="ml-4 font-light italic">
                             {c.faculty}
                           </h1>
                         </div>
+                        <h1 className="text-med text-left font-light ml-7">{c.review} </h1>
                       </div>
                       <div className="flex flex-col">
-                        <h1 className="text-gray-600">
+                        <h1 className="text-blue-400 ml-1 text-sm">
                           {formatDate(c.created_at)}
                         </h1>
-                        <h1 className="text-lg text-zinc-500">{c.review} </h1>
-                        <Stack
-                          direction="row"
-                          spacing={2}
-                          alignItems={"center"}
-                        >
-                          <StarIcon
-                            style={{ fontSize: "5rem", color: "#FFD700" }}
+                        
+                        <div className="flex flex-row">
+                          <h1 className="text-sm"></h1>
+                          <StarIcon className=""
+                            style={{ fontSize: "1.35rem", color: "#FFD700" }}
                           />
-                          <Typography fontWeight="bold" fontSize="2.5rem">
+                          <h1 className="text-sm ml-1">
                             {(
                               (c.building + c.room + c.location + c.bathroom) /
                               4
                             ).toFixed(1)}
-                          </Typography>
-                        </Stack>
-                        {/* <div className="flex flex-col">
+                          </h1>
+                        </div>    
+                        
+                                            {/* <div className="flex flex-col">
                         <div className="flex flex-row ">
                           <h1 className="text-left text-sm">Room</h1>
                           <StarRating className=""rating={c.room} name={""} />{" "}
@@ -374,6 +373,7 @@ export default function Residence() {
                         </div>
                       </div> */}
                       </div>
+                      
                     </div>
                     {/* <StarRating rating={c.room} name={"Room"} /> */}
                     {/* <StarRating rating={c.building} name={"Building"} />
