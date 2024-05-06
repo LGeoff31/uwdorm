@@ -115,6 +115,10 @@ export default function Residence() {
   let residenceDetails = residencesMap[id];
 
   const fetchComments = async () => {
+    if (comment.length > 300){
+      alert("Sorry, the comment must be shorter than 300 characters");
+      return;
+    }
     const response = await fetch("/api/comments-by-residence", {
       method: "POST",
       headers: {
@@ -155,6 +159,7 @@ export default function Residence() {
   }
 
   const StarRating = ({ rating, name }) => {
+    
     const stars = [];
     for (let i = 0; i < 5; i++) {
       if (i < rating) {
