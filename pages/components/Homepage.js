@@ -45,14 +45,14 @@ const Homepage = () => {
           backgroundImage: `url(https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "105vh",
+          height: "100vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
         <Grid>
-          <Stack margin="0 auto" justifyContent={"center"}>
+          <Stack>
             <span className="text-7xl text-center mb-10 text-blue-300">
               UW Rez
             </span>
@@ -176,16 +176,17 @@ const Homepage = () => {
               </Stack>
             </Stack>
           </motion.div>
-
-          <Button
-            variant="contained"
+          <Stack
+            paddingTop="2rem"
             display="flex"
+            justifyContent={"center"}
+            width={"20%"}
             margin="0 auto"
-            justifyContent="center"
-            color="success"
           >
-            Get Started
-          </Button>
+            <Button variant="contained" fontSize="2rem">
+              Get Started
+            </Button>
+          </Stack>
         </Grid>
       </div>
     </>
