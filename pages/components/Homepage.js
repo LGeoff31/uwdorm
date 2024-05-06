@@ -61,7 +61,7 @@ const Homepage = () => {
           <Stack>
             <Typography
               fontSize="3rem"
-              color="#93c5FD"
+              color="#93C5FD"
               margin="0 auto"
               marginBottom="1rem"
             >

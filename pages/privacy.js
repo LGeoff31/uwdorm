@@ -29,22 +29,17 @@ export default function Privacy() {
         style={{
           background: `url('https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png') no-repeat center center fixed`,
           backgroundSize: "cover",
-          height: "25vh",
+          height: "30vh",
           display: "flex",
         }}
       >
         <Stack margin="">
-          <span className="text-4xl p-20 ml-20 text-blue-300 ">
+          <span className="text-4xl p-20 text-blue-300 ">
             UW Rez Privacy
           </span>
         </Stack>
       </div>
-      <Grid
-        sx={{ background: "rgb(225 246 255)" }}
-        paddingLeft="10rem"
-        paddingTop="5rem"
-        height="65vh"
-      >
+      <div className="bg-[rgba(225,246,255,1)] p-20 ">
         <h1 className="text-3xl font-bold mb-8">
           Privacy Policy:
         </h1>
@@ -103,7 +98,7 @@ export default function Privacy() {
           </Stack>
         </Grid>
         
-      </Grid>
+      </div>
       <Stack paddingTop="7rem" sx={{ background: "rgb(225 246 255)" }} />
       <FooterOther />
     </>
