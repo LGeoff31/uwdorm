@@ -6,6 +6,7 @@ import {
   TextField,
   Typography,
   Autocomplete,
+  Button,
 } from "@mui/material";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdPriceCheck } from "react-icons/md";
@@ -78,137 +79,113 @@ const Homepage = () => {
               </select>
             </label>
           </Stack>
-          <Grid>
-            <motion.div
-              initial={{ x: -200, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.5 }}
-              className=" object-cover md:rounded-lg  overflow-hidden"
+          <motion.div
+            initial={{ x: -200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.5 }}
+            className=" object-cover md:rounded-lg  overflow-hidden"
+          >
+            <Stack
+              direction="row"
+              gap="1rem"
+              marginTop="4rem"
+              justifyContent={"center"}
             >
-              <Stack
-                direction="row"
-                gap="1rem"
-                marginTop="4rem"
-                justifyContent={"center"}
-              >
-                <IoHomeOutline style={{ fontSize: "3rem", color: "#d4d4d8" }} />
-                <Stack>
-                  <Typography
-                    fontWeight="bold"
-                    color="#93c5fd"
-                    fontSize="1.5rem"
-                  >
-                    {"Housing"}
-                  </Typography>
-                  <Typography
-                    fontWeight="300"
-                    color="#d4d4d8"
-                    fontSize="1.2rem"
-                  >
-                    Learn about the available accommodations!
-                  </Typography>
-                </Stack>
+              <IoHomeOutline style={{ fontSize: "3rem", color: "#d4d4d8" }} />
+              <Stack>
+                <Typography fontWeight="bold" color="#93c5fd" fontSize="1.5rem">
+                  {"Housing"}
+                </Typography>
+                <Typography fontWeight="300" color="#d4d4d8" fontSize="1.2rem">
+                  Learn about the available accommodations!
+                </Typography>
               </Stack>
-            </motion.div>
+            </Stack>
+          </motion.div>
 
-            <motion.div
-              initial={{ x: 200, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.5, delay: 1 }}
-              className=" object-cover md:rounded-lg  overflow-hidden"
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
+            className=" object-cover md:rounded-lg  overflow-hidden"
+          >
+            <Stack
+              direction="row"
+              gap="1rem"
+              marginTop="2rem"
+              justifyContent={"center"}
             >
-              <Stack
-                direction="row"
-                gap="1rem"
-                marginTop="2rem"
-                justifyContent={"center"}
-              >
-                <MdPriceCheck style={{ fontSize: "3rem", color: "#d4d4d8" }} />
-                <Stack>
-                  <Typography
-                    fontWeight="bold"
-                    color="#93c5fd"
-                    fontSize="1.5rem"
-                  >
-                    {"Price"}
-                  </Typography>
-                  <Typography
-                    fontWeight="300"
-                    color="#d4d4d8"
-                    fontSize="1.2rem"
-                  >
-                    Compare prices between different residences!
-                  </Typography>
-                </Stack>
+              <MdPriceCheck style={{ fontSize: "3rem", color: "#d4d4d8" }} />
+              <Stack>
+                <Typography fontWeight="bold" color="#93c5fd" fontSize="1.5rem">
+                  {"Price"}
+                </Typography>
+                <Typography fontWeight="300" color="#d4d4d8" fontSize="1.2rem">
+                  Compare prices between different residences!
+                </Typography>
               </Stack>
-            </motion.div>
+            </Stack>
+          </motion.div>
 
-            <motion.div
-              initial={{ x: -200, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.5, delay: 2 }}
-              className=" object-cover md:rounded-lg  overflow-hidden"
+          <motion.div
+            initial={{ x: -200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.5, delay: 1 }}
+            className=" object-cover md:rounded-lg  overflow-hidden"
+          >
+            <Stack
+              direction="row"
+              gap="1rem"
+              marginTop="2rem"
+              justifyContent={"center"}
             >
-              <Stack
-                direction="row"
-                gap="1rem"
-                marginTop="2rem"
-                justifyContent={"center"}
-              >
-                <TransferWithinAStationIcon
-                  style={{ fontSize: "3rem", color: "#d4d4d8" }}
-                />
-                <Stack>
-                  <Typography
-                    fontWeight="bold"
-                    color="#93c5fd"
-                    fontSize="1.5rem"
-                  >
-                    {"Experience"}
-                  </Typography>
-                  <Typography
-                    fontWeight="300"
-                    color="#d4d4d8"
-                    fontSize="1.2rem"
-                  >
-                    Learn from the experiences of other students!
-                  </Typography>
-                </Stack>
+              <TransferWithinAStationIcon
+                style={{ fontSize: "3rem", color: "#d4d4d8" }}
+              />
+              <Stack>
+                <Typography fontWeight="bold" color="#93c5fd" fontSize="1.5rem">
+                  {"Experience"}
+                </Typography>
+                <Typography fontWeight="300" color="#d4d4d8" fontSize="1.2rem">
+                  Learn from the experiences of other students!
+                </Typography>
               </Stack>
-            </motion.div>
+            </Stack>
+          </motion.div>
 
-            <motion.div
-              initial={{ x: 200, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.5, delay: 3 }}
-              className=" object-cover md:rounded-lg  overflow-hidden"
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.5, delay: 1.5 }}
+            className=" object-cover md:rounded-lg  overflow-hidden"
+          >
+            <Stack
+              direction="row"
+              gap="1rem"
+              marginTop="2rem"
+              justifyContent={"center"}
             >
-              <Stack
-                direction="row"
-                gap="1rem"
-                marginTop="2rem"
-                justifyContent={"center"}
-              >
-                <SiSlideshare style={{ fontSize: "3rem", color: "#d4d4d8" }} />
-                <Stack>
-                  <Typography
-                    fontWeight="bold"
-                    color="#93c5fd"
-                    fontSize="1.5rem"
-                  >
-                    {"Share"}
-                  </Typography>
-                  <Typography
-                    fontWeight="300"
-                    color="#d4d4d8"
-                    fontSize="1.2rem"
-                  >
-                    Add your view on residences for others to see!
-                  </Typography>
-                </Stack>
+              <SiSlideshare style={{ fontSize: "3rem", color: "#d4d4d8" }} />
+              <Stack>
+                <Typography fontWeight="bold" color="#93c5fd" fontSize="1.5rem">
+                  {"Share"}
+                </Typography>
+                <Typography fontWeight="300" color="#d4d4d8" fontSize="1.2rem">
+                  Add your view on residences for others to see!
+                </Typography>
               </Stack>
-            </motion.div>
-          </Grid>
+            </Stack>
+          </motion.div>
+
+          <Button
+            variant="contained"
+            display="flex"
+            margin="0 auto"
+            justifyContent="center"
+            color="success"
+          >
+            Get Started
+          </Button>
         </Grid>
       </div>
     </>

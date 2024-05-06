@@ -9,6 +9,7 @@ import {
   Grid,
   Box,
   Typography,
+  Button,
 } from "@mui/material";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarIcon from "@mui/icons-material/Star";
@@ -243,18 +244,18 @@ export default function Residence() {
         />
         <Stack
           direction="row"
-          spacing={1.5}
           alignItems="center"
           paddingLeft={{ md: "10rem", xs: "3rem" }}
           paddingTop="2rem"
         >
           <Link href="/">
-            <ArrowBackIcon
-              sx={{ fontSize: "2rem" }}
-              className="hover:scale-125 ease-in-out duration-900"
-            />
+            <Button variant="contained">
+              <ArrowBackIcon
+                sx={{ fontSize: "2rem" }}
+                className="transition duration-300 ease-in-out transform hover:scale-100 "
+              />
+            </Button>
           </Link>
-          <h1 className="text-xl"> Back to Residences</h1>
         </Stack>
         <Grid justifyContent={"space-between"}>
           <Stack
