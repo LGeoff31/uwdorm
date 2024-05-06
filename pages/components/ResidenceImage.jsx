@@ -45,24 +45,34 @@ const ResidenceImage = ({
         style={{
           background: `url('https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png') no-repeat center center fixed`,
           backgroundSize: "cover",
-          height: "25vh",
+          height: "30vh",
           display: "flex",
         }}
       ></div>
-      {/* <img
-        src={residence[0].images}
-        alt="image"
-        style={{ width: "100%", height: "500px" }}
-      /> */}
+
       <Grid
-        sx={{ position: "absolute", bottom: 20, left: 150, zIndex: 1 }}
+        sx={{ position: "absolute", bottom: 20, zIndex: 1 }}
+        // bottom={{ md: 20, sm: 80 }}
+        left={{ md: 150, xs: 30 }}
         className="text-blue-300"
       >
-        <Stack direction="row" alignItems={"center"} spacing={10}>
+        <Stack
+          direction={{ md: "row", xs: "column" }}
+          alignItems={{ md: "center", xs: "none" }}
+          spacing={{ md: 10, xs: 0 }}
+        >
           <Stack direction="column">
-            <h1 className="text-5xl">{residence[0].name}</h1>
+            <Typography fontSize={{ md: "3rem", xs: "1.5rem" }}>
+              {residence[0].name}
+            </Typography>
+            {/* <h1 className="text-5xl">{residence[0].name}</h1> */}
             <Stack direction="row" alignItems={"center"}>
-              <StarIcon style={{ fontSize: "3rem", color: "#FFD700" }} />
+              <StarIcon
+                style={{
+                  fontSize: { sm: "1rem", md: "3rem" },
+                  color: "#FFD700",
+                }}
+              />
               <Typography fontSize="2.7rem" color="yellow">
                 {" "}
                 {overallRating}{" "}

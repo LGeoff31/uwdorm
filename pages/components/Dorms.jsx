@@ -105,10 +105,10 @@ const Dorms = () => {
         {residences.map((residence) => (
           <motion.div
             key={residence.id}
-            initial={{ x: -200, opacity: 0 }}
+            initial={{ x: 0, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className=" object-cover md:rounded-lg  overflow-hidden"
+            className=" object-cover md:rounded-lg"
           >
             <DormInfo
               key={residence.id}
