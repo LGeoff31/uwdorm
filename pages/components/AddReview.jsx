@@ -60,6 +60,18 @@ const AddReview = ({
     }, 4000);
   };
   const handleSubmit = async () => {
+    if (
+      !name ||
+      !faculty ||
+      !comment ||
+      !roomRating ||
+      !buildingRating ||
+      !locationRating ||
+      !bathroomRating
+    ) {
+      // Show an alert or handle validation as per your requirement
+      return;
+    }
     const data = {
       residence_id: id,
       users_id: 1,

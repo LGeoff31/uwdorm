@@ -17,7 +17,6 @@ import { useRouter } from "next/router";
 import { FcGoogle } from "react-icons/fc";
 import { GiNightSleep } from "react-icons/gi";
 
-
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -54,8 +53,8 @@ const Navbar = ({ setUser }: { setUser: any }) => {
   console.log(user);
   setUser(user);
   return (
-    <nav className="bg-white">
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-1">
+    <nav className="bg-[rgba(225, 246, 255,1)]">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-1 ">
         <div className="flex items-center space-x-3">
           <Link href="/" className="flex items-center">
             <img
@@ -127,9 +126,7 @@ const Navbar = ({ setUser }: { setUser: any }) => {
           </>
         )}
       </div>
-      
     </nav>
-    
   );
 };
 
