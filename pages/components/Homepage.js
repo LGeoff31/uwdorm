@@ -56,7 +56,7 @@ const Homepage = () => {
             <span className="text-7xl text-center mb-10 text-blue-300">
               UW Rez
             </span>
-            <span className="text-4xl mb-10 text-gray-300 ">
+            <span className="text-2xl mb-10 text-gray-300 ">
               Explore reviews of Waterloo&apos;s residences or add your own!
             </span>
             <label className="flex text-med justify-center h-[3rem]">

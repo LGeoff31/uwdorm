@@ -96,7 +96,7 @@ const Dorms = () => {
   return (
     <>
       <h1
-        className="text-center p-4 text-5xl mt-20 text-blue-500"
+        className="text-center p-4 text-4xl mt-20 text-blue-500"
         style={{ fontWeight: "bold" }}
       >
         Residences
