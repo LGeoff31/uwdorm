@@ -38,11 +38,13 @@ export default function About() {
 
         <div className="px-20 ml-20 font-bold text-3xl">Our Team:</div>
         <div>
-          <div className="flex flex-row mt-2">
+          <div className="flex flex-row mt-2 "> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
             <img
               alt="James Yu Image"
-              className=" px-20 py-5 ml-20 w-[20rem] h-[11rem] rounded-full"
-              src="james.png"
+              className="mt-5 ml-20 mr-5 w-[10rem] mb-5 h-[10rem] rounded-full border-2 border-blue-500"
+              src="james.jpg"
             ></img>
             <div className="flex flex-col mt-4 mr-40">
               <h1 className="font-bold text-lg">James Yu</h1>
@@ -51,17 +53,17 @@ export default function About() {
               </h1>
               <h1 className="mt-3">
                 James can often be found playing table tennis and hitting the
-                gym with friends. He worked as a full stack developer with
-                Geoffrey to create UW Rez.
+                gym with friends.
               </h1>
             </div>
           </div>
         </div>
         <div>
-          <div className="flex flex-row">
+          <div className="flex flex-row ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <img
               alt="James Yu Image"
-              className=" px-20 py-5 ml-20 w-[20rem] h-[11rem] rounded-full"
+              className=" ml-20 w-[10rem] mr-5 h-[10rem] rounded-full border-2 border-blue-500"
               src="geoff.png"
             ></img>
             <div className="flex flex-col mt-4 mr-40">
@@ -71,8 +73,7 @@ export default function About() {
               </h1>
               <h1 className="mt-3">
                 Geoffrey can often be found running marathons and doing coding
-                pro jects. He worked as a full stack developer with James to
-                create UW Rez.
+                pro jects. 
               </h1>
             </div>
           </div>
