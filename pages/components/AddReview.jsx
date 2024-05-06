@@ -36,13 +36,13 @@ const AddReview = ({
   setComment,
   userPhoto,
 }) => {
-  const [name, setName] = useState("");
-  const [faculty, setFaculty] = useState("");
   if (!id) {
     return <div>Loading</div>;
   }
 
   const handleSubmit = async () => {
+    const [name, setName] = useState("");
+    const [faculty, setFaculty] = useState("");
     const data = {
       residence_id: id,
       users_id: 1,
