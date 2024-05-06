@@ -84,87 +84,77 @@ export default function Contact() {
         style={{
           background: `url('https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png') no-repeat center center fixed`,
           backgroundSize: "cover",
-          height: "25vh",
+          height: "30vh",
           display: "flex",
         }}
       >
         <Stack margin="">
-          <span className="text-4xl p-20 ml-20 text-blue-300">
+          <span className="text-4xl p-20 text-blue-300">
             UW Rez Contact
           </span>
         </Stack>
       </div>
-      <div className="bg-[rgba(225,246,255,1)] h-[75vh] ">
-        <div className="p-20 mr-40 ml-20">
+      <div className="bg-[rgba(225,246,255,1)]">
+        <div className="p-20">
           <div className="text-3xl font-bold">Contact:</div>
-          <br></br>
-
-          <form
-            // ref={form}
-            onSubmit={handleSubmit}
-            // style={{ justifyContent: "center", paddingTop: "2rem" }}
-          >
-            <div className="flex flex-row mb-5 ">
-              <label for="firstname" className="flex flex-col text-lg">
+          <form onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
+              <label htmlFor="firstname" className="flex flex-col text-lg">
                 First Name:
                 <input
                   required
                   value={firstName}
-                  className="w-[15rem] border-2 border-zinc-300 rounded-lg p-2"
+                  className="border-2 border-zinc-300 rounded-lg p-2"
                   id="firstname"
                   placeholder="Enter First Name"
                   onChange={handleFirstNameChange}
-                ></input>
+                />
               </label>
-              <label for="lastname" className="flex flex-col text-lg ml-5">
+              <label htmlFor="lastname" className="flex flex-col text-lg">
                 Last Name:
                 <input
                   required
                   value={lastName}
                   id="lastname"
-                  className="w-[15rem] border-2 border-zinc-300 rounded-lg p-2"
+                  className="border-2 border-zinc-300 rounded-lg p-2"
                   placeholder="Enter Last Name"
                   onChange={handleLastNameChange}
-                ></input>
+                />
               </label>
-              <label for="email" className="flex flex-col text-lg ml-5">
+              <label htmlFor="email" className="flex flex-col text-lg">
                 Email:
                 <input
                   required
                   value={email}
-                  className="w-[28rem] border-2 border-zinc-300 rounded-lg p-2"
+                  className="border-2 border-zinc-300 rounded-lg p-2"
                   id="email"
                   placeholder="Enter Email"
                   onChange={handleEmailChange}
-                ></input>
+                />
               </label>
             </div>
-            <div className="text-lg">
-              Message:
-              <label for="message" className="flex flex-col">
+            <div className="mt-5">
+              <label htmlFor="message" className="text-lg">
+                Message:
                 <textarea
                   required
                   value={message}
                   id="message"
-                  className="w-[60.5rem] h-[9rem] border-2 border-zinc-300 rounded-lg p-2"
+                  className="border-2 border-zinc-300 rounded-lg p-2 w-full"
                   placeholder="Enter Message"
                   onChange={handleMessageChange}
-                ></textarea>
+                />
               </label>
             </div>
-
             <button
               type="submit"
-              //   onClick={handleSubmit}
-              className="flex flex-row mt-5 text-lg bg-blue-300 rounded-lg w-[8rem]
-                             h-[2.3rem] justify-center items-center focus:ring-4 shadow-lg transform active:scale-75 transition-transform"
+              className="mt-5 text-lg bg-blue-300 rounded-lg px-4 py-2 inline-flex items-center"
             >
               Submit <LuSendHorizonal size={16} className="ml-2" />
             </button>
           </form>
         </div>
       </div>
-
       <FooterOther />
     </>
   );

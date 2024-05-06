@@ -59,7 +59,7 @@ const Homepage = () => {
       >
         <Grid>
           <Stack>
-            <span className="text-7xl text-center mb-10 text-blue-300">
+            <span className="lg:text-7xl sm:text-3xl lg:mt-0 sm:mt-10 text-center mb-10 text-blue-300">
               UW Rez
             </span>
             <span className="text-2xl mb-10 text-gray-300 ">
