@@ -11,6 +11,7 @@ import {
   DialogTitle,
   IconButton,
   Rating,
+  MenuItem,
   Alert,
 } from "@mui/material";
 import { MdOutlineRateReview } from "react-icons/md";
@@ -73,6 +74,8 @@ const AddReview = ({
     setOpen(false);
   };
 
+  const [name, setName] = useState("");
+  const [facultyProgram, setFacultyProgram] = useState("");
   return (
     <Stack>
       <Button variant="contained" onClick={handleOpen} size="large">
@@ -85,8 +88,29 @@ const AddReview = ({
             <CloseIcon color="primary" />
           </IconButton>
         </DialogTitle>
+
         <DialogContent>
           <Stack spacing={2} margin={2}>
+            <TextField
+              variant="outlined"
+              label="Display Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <TextField
+              select
+              variant="outlined"
+              label="Faculty Program"
+              value={facultyProgram}
+              onChange={(e) => setFacultyProgram(e.target.value)}
+            >
+              <MenuItem value="Arts">Arts</MenuItem>
+              <MenuItem value="Engineering">Engineering</MenuItem>
+              <MenuItem value="Environment">Environment</MenuItem>
+              <MenuItem value="Health">Health</MenuItem>
+              <MenuItem value="Mathematics">Mathematics</MenuItem>
+              <MenuItem value="Science">Science</MenuItem>
+            </TextField>
             <Stack direction="row" justifyContent={"space-between"}>
               <Typography>Room</Typography>
               <Rating
