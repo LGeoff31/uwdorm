@@ -43,75 +43,66 @@ export default function Privacy() {
         sx={{ background: "rgb(225 246 255)" }}
         paddingLeft="10rem"
         paddingTop="5rem"
+        height="65vh"
       >
-        <Typography variant="h3" fontWeight="bold" fontSize="2.5rem">
+        <h1 className="text-3xl font-bold">
           Privacy Policy:
-        </Typography>
-        <Typography variant="body1" marginTop="2rem">
-          Thank you for using uwrez.com. This Privacy Policy explains how we
-          collect, use, and disclose your information when you use our website.
-        </Typography>
+        </h1>
+        <h1 className="mt-2">
+          Thank you for using UW Rez! This Privacy Policy explains how we
+          collect, use, and disclose your information while you are on our site.
+        </h1>
 
         <Grid>
           <Stack direction="row" gap="1rem" marginTop="2rem">
             <IoIosInformationCircleOutline style={{ fontSize: "3rem" }} />
             <Stack>
-              <Typography fontWeight="bold">
+              <h1 className="font-medium">
                 {"Information We Collect"}
-              </Typography>
-              <Typography fontWeight="300">
+              </h1>
+              <h1>
                 When you voluntarily login with us, we collect your email
                 address. However, this is not required to access the site.
-              </Typography>
+              </h1>
             </Stack>
           </Stack>
           <Stack direction="row" gap="1rem" marginTop="2rem">
             <MdOutlineRateReview style={{ fontSize: "3rem" }} />
             <Stack>
-              <Typography fontWeight="bold">{"User-Generated"}</Typography>
-              <Typography fontWeight="300">
+              <h1 className="font-medium">{"User-Generated"}</h1>
+              <h1 fontWeight="300">
                 When you add a review, we will list your name (optional),
                 message, and reviews.
-              </Typography>
+              </h1>
             </Stack>
           </Stack>
           <Stack direction="row" gap="1rem" marginTop="2rem">
             <CiDatabase style={{ fontSize: "3rem" }} />
             <Stack>
-              <Typography fontWeight="bold">
+              <h1 className="font-medium">
                 {"Automatically Collected Data"}
-              </Typography>
-              <Typography fontWeight="300">
+              </h1>
+              <h1 fontWeight="300">
                 We may automatically collect certain information when you visit
                 our website, including your browser type, operating system, and
                 browsing behavior.
-              </Typography>
+              </h1>
             </Stack>
           </Stack>
           <Stack direction="row" gap="1rem" marginTop="2rem">
             <FaExchangeAlt style={{ fontSize: "3rem" }} />
             <Stack>
-              <Typography fontWeight="bold">
+              <h1 className="font-medium">
                 {"Changes to this Privacy Policy"}
-              </Typography>
-              <Typography fontWeight="300">
+              </h1>
+              <h1 fontWeight="300">
                 We may update this Privacy Policy from time to time to reflect
                 changes in our practices or legal requirements.
-              </Typography>
+              </h1>
             </Stack>
           </Stack>
         </Grid>
-        <Typography
-          variant="body1"
-          marginTop="2rem"
-          marginBottom="1rem"
-          fontSize="1.5rem"
-        >
-          Have any other questions?
-        </Typography>
-        <Link href="/contact">
-          <Button variant="contained">Contact Us</Button>
-        </Link>
+        
       </Grid>
       <Stack paddingTop="7rem" sx={{ background: "rgb(225 246 255)" }} />
       <FooterOther />

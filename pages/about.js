@@ -8,7 +8,7 @@ export default function About() {
   return (
     <>
       <Navbar setUser={setUser} />
-      <div
+      <div 
         style={{
           background: `url('https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png') no-repeat center center fixed`,
           backgroundSize: "cover",
@@ -22,7 +22,7 @@ export default function About() {
           </span>
         </Stack>
       </div>
-      <div className="bg-[rgba(225,246,255,1)]">
+      <div className="bg-[rgba(225,246,255,1)] h-[100vh]">
         <div className="p-20 mr-40 ml-20">
           <div className="text-3xl font-bold">Welcome to UW Rez!</div>
 

@@ -313,44 +313,49 @@ export default function Residence() {
                     key={idx}
                     className="p-3 border-2 border-slate-300 rounded-3xl bg-gray-100"
                   >
-                    <div className="flex flex-row justify-between">
-                      <img
-                        src={c.photourl}
-                        alt="user photo"
-                        style={{ borderRadius: "70%", height: "8rem" }}
-                      />
-                      <Typography>{c.name}</Typography>
-                      <Typography>{c.faculty}</Typography>
-                      <Stack direction={"column"}>
-                        <Typography color="grey">
+                    <div className="flex flex-col justify-between">
+                      <div className="flex flex-row">
+                        <img
+                          className="p-3"
+                          src={c.photourl}
+                          alt="user photo"
+                          style={{ borderRadius: "70%", height: "5rem" , width: "5rem"}}
+                        />
+                        <div className="">
+                          <h1 className="ml-4">{c.name}</h1>
+                          <h1 className="ml-4 font-light italic">{c.faculty}</h1>
+                        </div>
+                      </div>
+                      <div className="flex flex-col">
+                        <h1 className="text-gray-600">
                           {formatDate(c.created_at)}
-                        </Typography>
-                        <h1 className="text-left text-lg text-zinc-500 mr-12 ml-1">
+                        </h1>
+                        <h1 className="text-lg text-zinc-500">
                           {c.review}{" "}
                         </h1>
-                      </Stack>
-
-                      <div className="flex flex-col">
-                        <div className="flex flex-row justify-between">
-                          <h1 className="text-left text-lg">Room</h1>
-                          <StarRating rating={c.room} name={""} />{" "}
+                        <div className="flex flex-col">
+                        <div className="flex flex-row ">
+                          <h1 className="text-left text-sm">Room</h1>
+                          <StarRating className=""rating={c.room} name={""} />{" "}
                         </div>
 
-                        <div className="flex flex-row justify-between">
-                          <h1 className="text-left text-lg">Pricing</h1>
+                        <div className="flex flex-row ">
+                          <h1 className="text-left text-sm">Pricing</h1>
                           <StarRating rating={c.building} name={""} />{" "}
                         </div>
 
-                        <div className="flex flex-row justify-between">
-                          <h1 className="text-left text-lg">Location</h1>
-                          <StarRating rating={c.location} name={""} />{" "}
+                        <div className="flex flex-row">
+                          <h1 className="text-left text-sm">Location</h1>
+                          <StarRating className=""rating={c.location} name={""} />{" "}
                         </div>
-                        <div className="flex flex-row justify-between">
-                          <h1 className="text-left text-lg">Bathroom</h1>
+                        <div className="flex flex-row ">
+                          <h1 className="text-left text-sm">Bathroom</h1>
                           <StarRating rating={c.bathroom} name={""} />{" "}
                         </div>
                       </div>
-                    </div>
+                      </div>
+                      
+                  </div>
                     {/* <StarRating rating={c.room} name={"Room"} /> */}
                     {/* <StarRating rating={c.building} name={"Building"} />
                 <StarRating rating={c.location} name={"Location"} />
