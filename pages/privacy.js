@@ -34,7 +34,7 @@ export default function Privacy() {
         }}
       >
         <Stack margin="">
-          <span className="text-4xl p-20 ml-20 text-blue-300">
+          <span className="text-4xl p-20 ml-20 text-blue-300 mb-6">
             UW Rez Privacy
           </span>
         </Stack>
