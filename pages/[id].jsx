@@ -332,7 +332,7 @@ export default function Residence() {
                             {c.faculty}
                           </h1>
                         </div>
-                        <h1 className="text-med text-left font-light ml-7">{c.review} </h1>
+                        <h1 className="text-med text-left font-light ml-10">{c.review} </h1>
                       </div>
                       <div className="flex flex-col">
                         <h1 className="text-blue-400 ml-1 text-sm">
