@@ -11,7 +11,9 @@ export default function Home() {
     <Stack sx={{ background: "rgb(225 246 255)" }}>
       <Navbar setUser={setUser} />
       <Homepage />
-      <Dorms />
+      <section id="dorms">
+        <Dorms />
+      </section>
     </Stack>
   );
 }

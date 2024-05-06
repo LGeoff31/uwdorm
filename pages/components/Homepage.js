@@ -7,12 +7,14 @@ import {
   Typography,
   Autocomplete,
   Button,
+  Box,
 } from "@mui/material";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdPriceCheck } from "react-icons/md";
 import TransferWithinAStationIcon from "@mui/icons-material/TransferWithinAStation";
 import { SiSlideshare } from "react-icons/si";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
 const Homepage = () => {
   const residences = [
@@ -30,6 +32,10 @@ const Homepage = () => {
     // Add more residences as needed
   ];
 
+  const ScrollLink = dynamic(
+    () => import("react-scroll").then((module) => module.Link),
+    { ssr: false }
+  );
   function handleResidenceChange(e) {
     const selectedResValue = e.target.value;
     if (selectedResValue) {
@@ -180,12 +186,35 @@ const Homepage = () => {
             paddingTop="2rem"
             display="flex"
             justifyContent={"center"}
-            width={"20%"}
+            width={"30%"}
             margin="0 auto"
           >
-            <Button variant="contained" fontSize="2rem">
-              Get Started
-            </Button>
+            <ScrollLink
+              to="dorms"
+              spy={true}
+              smooth={true}
+              duration={1500}
+              style={{
+                padding: "0.5rem 0rem",
+                border: "2px solid transparent",
+                textDecoration: "none",
+                color: "grey",
+                borderRadius: "10rem",
+              }}
+            >
+              <Box
+                sx={{
+                  transition: "transform 0.3s ease-in-out", // Animation transition
+                  ":hover": {
+                    transform: "scale(1.1)", // Scale to 1.2 times on hover
+                  },
+                }}
+              >
+                <Button variant="contained">
+                  <Typography>Get Started</Typography>
+                </Button>
+              </Box>
+            </ScrollLink>
           </Stack>
         </Grid>
       </div>
