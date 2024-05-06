@@ -15,7 +15,7 @@ export default async function handler(
     console.log("REACHING INSERT COMMENT");
     console.log("data", data);
     const { rows } =
-      await sql`INSERT INTO comment (residence_id, users_id, review, room, building, bathroom, location, photourl) VALUES (${data.residence_id}, ${data.users_id}, ${data.review}, ${room}, ${building}, ${bathroom}, ${location}, ${data.userPhoto})`;
+      await sql`INSERT INTO comment (residence_id, users_id, review, room, building, bathroom, location, photourl, name, faculty) VALUES (${data.residence_id}, ${data.users_id}, ${data.review}, ${room}, ${building}, ${bathroom}, ${location}, ${data.userPhoto}, ${data.name}, ${data.faculty})`;
     return rows;
   };
 

@@ -50,6 +50,8 @@ const AddReview = ({
       location: locationRating,
       bathroom: bathroomRating,
       userPhoto: userPhoto,
+      name: name,
+      faculty: faculty,
     };
 
     const response = await fetch("/api/insert-comment", {
@@ -75,7 +77,7 @@ const AddReview = ({
   };
 
   const [name, setName] = useState("");
-  const [facultyProgram, setFacultyProgram] = useState("");
+  const [faculty, setFaculty] = useState("");
   return (
     <Stack>
       <Button variant="contained" onClick={handleOpen} size="large">
@@ -101,8 +103,8 @@ const AddReview = ({
               select
               variant="outlined"
               label="Faculty Program"
-              value={facultyProgram}
-              onChange={(e) => setFacultyProgram(e.target.value)}
+              value={faculty}
+              onChange={(e) => setFaculty(e.target.value)}
             >
               <MenuItem value="Arts">Arts</MenuItem>
               <MenuItem value="Engineering">Engineering</MenuItem>
