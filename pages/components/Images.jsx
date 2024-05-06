@@ -527,6 +527,7 @@ const Images = ({ id }) => {
                 sx={{
                   height: "400px",
                   width: "800px",
+                  // width: { md: "800px", xs: "400px" },
                 }}
                 className="rounded-t-2xl"
                 src={step.imgPath}

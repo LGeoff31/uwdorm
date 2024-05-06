@@ -18,11 +18,13 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 import { MdOutlineRateReview } from "react-icons/md";
 import { CiDatabase } from "react-icons/ci";
 import { FaExchangeAlt } from "react-icons/fa";
+import React, { useState } from "react";
 
 export default function Privacy() {
+  const [user, setUser] = useState(null);
   return (
     <>
-      <Navbar />
+      <Navbar setUser={setUser} />
       <div
         style={{
           background: `url('https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png') no-repeat center center fixed`,

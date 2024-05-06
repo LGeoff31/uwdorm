@@ -241,7 +241,7 @@ export default function Residence() {
           direction="row"
           spacing={1.5}
           alignItems="center"
-          paddingLeft="10rem"
+          paddingLeft={{ md: "10rem", xs: "3rem" }}
           paddingTop="2rem"
         >
           <Link href="/">
@@ -255,9 +255,9 @@ export default function Residence() {
         <Grid justifyContent={"space-between"}>
           <Stack
             padding="2rem"
-            paddingLeft="10rem"
-            paddingRight="10rem"
-            direction="row"
+            paddingLeft={{ md: "10rem", xs: "3rem" }}
+            paddingRight={{ md: "10rem", xs: "3rem" }}
+            direction={{ md: "row", xs: "column" }}
           >
             <Description
               residence={residence}
@@ -266,7 +266,11 @@ export default function Residence() {
             <Images id={id} />
           </Stack>
 
-          <Stack padding="2rem" paddingLeft="10rem" paddingRight="10rem">
+          <Stack
+            padding="2rem"
+            paddingLeft={{ md: "10rem", xs: "3rem" }}
+            paddingRight={{ md: "10rem", xs: "3rem" }}
+          >
             <Stack
               direction="row"
               alignItems={"center"}
@@ -274,7 +278,10 @@ export default function Residence() {
               justifyContent={"space-between"}
               gap="2rem"
             >
-              <h1 className="text-3xl font-bold">Comments</h1>
+              <h1 className="text-3xl font-bold">
+                Read {comments.length} Reviews ⭐
+              </h1>
+
               <AddReview
                 residencesMap={residencesMap}
                 fetchComments={fetchComments}
