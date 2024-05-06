@@ -9,6 +9,7 @@ export default function Contact() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [user, setUser] = useState(null);
 
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
@@ -22,6 +23,26 @@ export default function Contact() {
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
+
+  const showToast = (message) => {
+    const toast = document.createElement('div');
+    toast.innerHTML = `
+      <div id="toast-success" class="fixed top-4 right-4 z-50 flex items-center w-max p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
+        <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+          </svg>
+          <span class="sr-only">Check icon</span>
+        </div>
+        <div class="ml-3 text-sm font-normal">${message}</div>
+      </div>
+    `;
+    document.body.appendChild(toast);
+    setTimeout(() => {
+      toast.remove();
+    }, 4000);
+  };
+
   const handleSubmit = async () => {
     if (!firstName || !lastName || !email || !message) {
       alert("Please fill in all input fields!");
@@ -44,12 +65,14 @@ export default function Contact() {
       },
       body: JSON.stringify(data),
     });
-    const p = await response.json();
-    alert(
-      "Thank you for submitting your message! We will contact you back shortly!"
-    );
+    const jsonResponse = await response.json();
+    setLastName("");
+    setFirstName("");
+    setEmail("");
+    setMessage("");
+    showToast("Thank you for submitting your message! We will contact you back shortly!");
   };
-  const [user, setUser] = useState(null);
+
   return (
     <>
       <Navbar setUser={setUser} />
@@ -76,6 +99,7 @@ export default function Contact() {
               First Name:
               <input
                 required
+                value={firstName}
                 className="w-[15rem] border-2 border-zinc-300 rounded-lg p-2"
                 id="firstname"
                 placeholder="Enter First Name"
@@ -86,6 +110,7 @@ export default function Contact() {
               Last Name:
               <input
                 required
+                value={lastName}
                 id="lastname"
                 className="w-[15rem] border-2 border-zinc-300 rounded-lg p-2"
                 placeholder="Enter Last Name"
@@ -93,10 +118,10 @@ export default function Contact() {
               ></input>
             </label>
             <label for="email" className="flex flex-col text-lg ml-5">
-              {" "}
               Email:
               <input
                 required
+                value={email}
                 className="w-[28rem] border-2 border-zinc-300 rounded-lg p-2"
                 id="email"
                 placeholder="Enter Email"
@@ -109,6 +134,7 @@ export default function Contact() {
             <label for="message" className="flex flex-col">
               <textarea
                 required
+                value={message}
                 id="message"
                 className="w-[60.5rem] h-[9rem] border-2 border-zinc-300 rounded-lg p-2"
                 placeholder="Enter Message"
@@ -127,6 +153,7 @@ export default function Contact() {
           </button>
         </div>
       </div>
+      
       <FooterOther />
     </>
   );

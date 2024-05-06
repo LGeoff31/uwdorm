@@ -16,6 +16,8 @@ import { auth } from "../../utils/firebase";
 import { useRouter } from "next/router";
 import { FcGoogle } from "react-icons/fc";
 import { GiNightSleep } from "react-icons/gi";
+
+
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -125,7 +127,9 @@ const Navbar = ({ setUser }: { setUser: any }) => {
           </>
         )}
       </div>
+      
     </nav>
+    
   );
 };
 
