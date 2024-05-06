@@ -36,6 +36,8 @@ const AddReview = ({
   setComment,
   userPhoto,
 }) => {
+  const [name, setName] = useState("");
+  const [faculty, setFaculty] = useState("");
   if (!id) {
     return <div>Loading</div>;
   }
@@ -76,8 +78,6 @@ const AddReview = ({
     setOpen(false);
   };
 
-  const [name, setName] = useState("");
-  const [faculty, setFaculty] = useState("");
   return (
     <Stack>
       <Button variant="contained" onClick={handleOpen} size="large">
