@@ -320,21 +320,40 @@ export default function Residence() {
                           className="p-3"
                           src={c.photourl}
                           alt="user photo"
-                          style={{ borderRadius: "70%", height: "5rem" , width: "5rem"}}
+                          style={{
+                            borderRadius: "70%",
+                            height: "5rem",
+                            width: "5rem",
+                          }}
                         />
                         <div className="">
                           <h1 className="ml-4">{c.name}</h1>
-                          <h1 className="ml-4 font-light italic">{c.faculty}</h1>
+                          <h1 className="ml-4 font-light italic">
+                            {c.faculty}
+                          </h1>
                         </div>
                       </div>
                       <div className="flex flex-col">
                         <h1 className="text-gray-600">
                           {formatDate(c.created_at)}
                         </h1>
-                        <h1 className="text-lg text-zinc-500">
-                          {c.review}{" "}
-                        </h1>
-                        <div className="flex flex-col">
+                        <h1 className="text-lg text-zinc-500">{c.review} </h1>
+                        <Stack
+                          direction="row"
+                          spacing={2}
+                          alignItems={"center"}
+                        >
+                          <StarIcon
+                            style={{ fontSize: "5rem", color: "#FFD700" }}
+                          />
+                          <Typography fontWeight="bold" fontSize="2.5rem">
+                            {(
+                              (c.building + c.room + c.location + c.bathroom) /
+                              4
+                            ).toFixed(1)}
+                          </Typography>
+                        </Stack>
+                        {/* <div className="flex flex-col">
                         <div className="flex flex-row ">
                           <h1 className="text-left text-sm">Room</h1>
                           <StarRating className=""rating={c.room} name={""} />{" "}
@@ -353,10 +372,9 @@ export default function Residence() {
                           <h1 className="text-left text-sm">Bathroom</h1>
                           <StarRating rating={c.bathroom} name={""} />{" "}
                         </div>
+                      </div> */}
                       </div>
-                      </div>
-                      
-                  </div>
+                    </div>
                     {/* <StarRating rating={c.room} name={"Room"} /> */}
                     {/* <StarRating rating={c.building} name={"Building"} />
                 <StarRating rating={c.location} name={"Location"} />
