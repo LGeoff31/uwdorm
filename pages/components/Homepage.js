@@ -228,7 +228,7 @@ const Homepage = () => {
                 }}
               >
                 <Button variant="contained">
-                  <Typography>Get Started</Typography>
+                  <h1>Get Started</h1>
                 </Button>
               </Box>
             </ScrollLink>

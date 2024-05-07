@@ -92,7 +92,7 @@ export default function Contact() {
           <span className="text-4xl p-20 text-blue-300">UW Rez Contact</span>
         </Stack>
       </div>
-      <div className="bg-[rgba(225,246,255,1)] h-[70vh]">
+      <div className="bg-[rgba(225,246,255,1)]">
         <div className="p-20">
           <div className="text-3xl font-bold">Contact:</div>
           <form onSubmit={handleSubmit}>
@@ -153,6 +153,7 @@ export default function Contact() {
           </form>
         </div>
       </div>
+
       <FooterOther />
     </>
   );
