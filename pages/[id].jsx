@@ -361,7 +361,7 @@ export default function Residence() {
                         </div>
                       </div>
 
-                      <h1 className="text-med text-left font-light ml-4 mt-3 max-w-[1000px]">
+                      <h1 className="text-med text-left font-light ml-4 mt-3 max-w-[1100px]">
                         {c.review}{" "}
                       </h1>
                     </div>
