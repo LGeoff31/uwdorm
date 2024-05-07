@@ -287,7 +287,7 @@ export default function Residence() {
               gap="2rem"
             >
               <h1 className="text-3xl font-bold">
-                Read {comments.length} Reviews ⭐
+                Read {comments.length} Reviews
               </h1>
 
               <AddReview
@@ -346,9 +346,9 @@ export default function Residence() {
                             <h1 className="text-sm"></h1>
                             <StarIcon
                               className=""
-                              style={{ fontSize: "1.35rem", color: "#FFD700" }}
+                              style={{ fontSize: "1.5rem", color: "#FFD700" }}
                             />
-                            <h1 className="text-sm ml-1">
+                            <h1 className="text-md ml-1">
                               {(
                                 (c.building +
                                   c.room +

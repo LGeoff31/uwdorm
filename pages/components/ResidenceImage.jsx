@@ -78,7 +78,7 @@ const ResidenceImage = ({
                   color: "#FFD700",
                 }}
               />
-              <Typography fontSize="2.7rem" color="yellow">
+              <Typography fontSize="2.7rem" color="rgb(255, 215, 0)">
                 {" "}
                 {overallRating}{" "}
               </Typography>

@@ -83,8 +83,8 @@ const Homepage = () => {
                 className=" font-medium rounded-lg bg-gray-300"
                 onChange={handleResidenceChange}
               >
-                <option className="" disabled selected hidden>
-                  &nbsp;Select a Residence
+                <option className="pr-2" disabled selected hidden>
+                  &nbsp;&nbsp;Select a Residence
                 </option>
                 {residences.map((residence, index) => (
                   <option
@@ -120,7 +120,7 @@ const Homepage = () => {
                   {"Housing"}
                 </Typography>
                 <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
-                  Learn about the available accommodations!
+                  Learn about all the available accommodations!
                 </Typography>
               </Stack>
             </Stack>
