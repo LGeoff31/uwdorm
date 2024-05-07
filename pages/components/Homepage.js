@@ -45,6 +45,18 @@ const Homepage = () => {
     }
   }
 
+  function isMobile() {
+    const regex =
+      /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    return regex.test(navigator.userAgent);
+  }
+  let mobile = false;
+  if (isMobile()) {
+    mobile = true;
+  }
+
+  console.log("MOBILE", mobile);
+
   return (
     <>
       <div
@@ -100,7 +112,7 @@ const Homepage = () => {
           </Stack>
 
           <motion.div
-            initial={{ x: -200, opacity: 0 }}
+            initial={{ x: 0, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5 }}
             className=" object-cover md:rounded-lg  overflow-hidden"
@@ -119,7 +131,7 @@ const Homepage = () => {
                 <Typography fontWeight="bold" color="#93c5fd">
                   {"Housing"}
                 </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="0.5rem">
+                <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
                   Learn about the available accommodations!
                 </Typography>
               </Stack>
@@ -127,7 +139,7 @@ const Homepage = () => {
           </motion.div>
 
           <motion.div
-            initial={{ x: 200, opacity: 0 }}
+            initial={{ x: 0, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.5 }}
             className=" object-cover md:rounded-lg  overflow-hidden"
@@ -143,7 +155,7 @@ const Homepage = () => {
                 <Typography fontWeight="bold" color="#93c5fd">
                   {"Price"}
                 </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="0.5rem">
+                <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
                   Compare prices between different residences!
                 </Typography>
               </Stack>
@@ -151,7 +163,7 @@ const Homepage = () => {
           </motion.div>
 
           <motion.div
-            initial={{ x: -200, opacity: 0 }}
+            initial={{ x: 0, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5, delay: 1 }}
             className=" object-cover md:rounded-lg  overflow-hidden"
@@ -169,7 +181,7 @@ const Homepage = () => {
                 <Typography fontWeight="bold" color="#93c5fd">
                   {"Experience"}
                 </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="0.5rem">
+                <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
                   Learn from the experiences of other students!
                 </Typography>
               </Stack>
@@ -177,7 +189,7 @@ const Homepage = () => {
           </motion.div>
 
           <motion.div
-            initial={{ x: 200, opacity: 0 }}
+            initial={{ x: 0, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5, delay: 1.5 }}
             className=" object-cover md:rounded-lg  overflow-hidden"
@@ -193,7 +205,7 @@ const Homepage = () => {
                 <Typography fontWeight="bold" color="#93c5fd">
                   {"Share"}
                 </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="0.5rem">
+                <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
                   Add your view on residences for others to see!
                 </Typography>
               </Stack>
