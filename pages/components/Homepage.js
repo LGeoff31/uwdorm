@@ -16,17 +16,6 @@ import { SiSlideshare } from "react-icons/si";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
-let isMobile = false;
-
-if (
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  )
-) {
-  // true for mobile device
-  isMobile = true;
-}
-
 const Homepage = () => {
   const residences = [
     "Village1 (V1)",
