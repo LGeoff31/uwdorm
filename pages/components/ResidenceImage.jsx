@@ -45,7 +45,7 @@ const ResidenceImage = ({
         style={{
           background: `url('https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png') no-repeat center center fixed`,
           backgroundSize: "cover",
-          height: "30vh",
+          height: "35vh",
           display: "flex",
         }}
       ></div>
@@ -66,10 +66,15 @@ const ResidenceImage = ({
               {residence[0].name}
             </Typography>
             {/* <h1 className="text-5xl">{residence[0].name}</h1> */}
-            <Stack direction="row" alignItems={"center"}>
+            <Stack
+              direction="row"
+              alignItems={"center"}
+              gap="1rem"
+              fontSize={{ md: "3rem", xs: "2rem" }}
+            >
               <StarIcon
+                fontSize="3rem"
                 style={{
-                  fontSize: { sm: "1rem", md: "3rem" },
                   color: "#FFD700",
                 }}
               />
