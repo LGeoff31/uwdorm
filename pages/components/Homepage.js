@@ -221,6 +221,9 @@ const Homepage = () => {
             >
               <Box
                 sx={{
+                  display: "flex",
+                  margin: "0 auto",
+                  justifyContent: "center",
                   transition: "transform 0.3s ease-in-out", // Animation transition
                   ":hover": {
                     transform: "scale(1.1)", // Scale to 1.2 times on hover
