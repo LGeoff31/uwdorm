@@ -13,17 +13,6 @@ import FooterOther from "./footerOther";
 import { motion } from "framer-motion";
 // import { useMediaQuery } from "react-responsive";
 
-let isMobile = false;
-
-if (
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  )
-) {
-  // true for mobile device
-  isMobile = true;
-}
-
 function DormInfo(props) {
   return (
     <Stack elevation={3} padding="2.5rem">
