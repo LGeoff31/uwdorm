@@ -203,7 +203,7 @@ const Homepage = () => {
             paddingTop="2rem"
             display="flex"
             justifyContent={"center"}
-            width={"20%"}
+            width={"30%"}
             margin="0 auto"
           >
             <ScrollLink

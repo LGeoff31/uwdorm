@@ -93,12 +93,16 @@ const AddReview = ({
       !buildingRating ||
       !locationRating ||
       !bathroomRating
-      
     ) {
       // Show an alert or handle validation as per your requirement
-      alert("Pleass fill in all fields and ratings!")
+      alert("Pleass fill in all fields and ratings!");
       return;
     }
+    if (comment.length > 300) {
+      alert("Sorry, the comment must be shorter than 300 characters");
+      return;
+    }
+
     const data = {
       residence_id: id,
       users_id: 1,
@@ -123,10 +127,9 @@ const AddReview = ({
       console.log("error on inserting comment", response.statusText);
     }
     const p = await response.json();
-    showToast("Thanks so much for leaving a comment!")
+    showToast("Thanks so much for leaving a comment!");
     handleClose();
     fetchComments();
-
   };
   const handleOpen = () => {
     setOpen(true);
