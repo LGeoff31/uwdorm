@@ -13,6 +13,17 @@ import FooterOther from "./footerOther";
 import { motion } from "framer-motion";
 // import { useMediaQuery } from "react-responsive";
 
+let isMobile = false;
+
+if (
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+) {
+  // true for mobile device
+  isMobile = true;
+}
+
 function DormInfo(props) {
   return (
     <Stack elevation={3} padding="2.5rem">
@@ -104,24 +115,53 @@ const Dorms = () => {
       </h1>
       <Grid container justifyContent={"center"} marginBottom="10rem">
         {residences.map((residence) => (
-          <motion.div
-            key={residence.id}
-            initial={{ x: 0, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.5 }}
-            className=" object-cover md:rounded-lg"
-          >
-            <DormInfo
-              key={residence.id}
-              id={residence.id}
-              name={residence.name}
-              images={residence.images}
-              description={residence.description}
-              address={residence.address}
-              link={residence.id}
-              residenceCounts={findCount({ id: residence.id })}
-            />
-          </motion.div>
+          <div key={residence.id}>
+            {isMobile ? (
+              <DormInfo
+                id={residence.id}
+                name={residence.name}
+                images={residence.images}
+                description={residence.description}
+                address={residence.address}
+                link={residence.id}
+                residenceCounts={findCount({ id: residence.id })}
+              />
+            ) : (
+              <motion.div
+                initial={{ x: 0, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1.5 }}
+              >
+                <DormInfo
+                  id={residence.id}
+                  name={residence.name}
+                  images={residence.images}
+                  description={residence.description}
+                  address={residence.address}
+                  link={residence.id}
+                  residenceCounts={findCount({ id: residence.id })}
+                />
+              </motion.div>
+            )}
+          </div>
+          // <motion.div
+          //   key={residence.id}
+          //   initial={{ x: 0, opacity: 0 }}
+          //   whileInView={{ x: 0, opacity: 1 }}
+          //   transition={{ duration: 1.5 }}
+          //   className=" object-cover md:rounded-lg"
+          // >
+          //   <DormInfo
+          //     key={residence.id}
+          //     id={residence.id}
+          //     name={residence.name}
+          //     images={residence.images}
+          //     description={residence.description}
+          //     address={residence.address}
+          //     link={residence.id}
+          //     residenceCounts={findCount({ id: residence.id })}
+          //   />
+          // </motion.div>
         ))}
       </Grid>
       <FooterOther />

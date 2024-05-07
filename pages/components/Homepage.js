@@ -16,6 +16,17 @@ import { SiSlideshare } from "react-icons/si";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
+let isMobile = false;
+
+if (
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+) {
+  // true for mobile device
+  isMobile = true;
+}
+
 const Homepage = () => {
   const residences = [
     "Village1 (V1)",
@@ -44,6 +55,7 @@ const Homepage = () => {
       <h1>Nothing here</h1>;
     }
   }
+
   return (
     <>
       <div
@@ -97,6 +109,7 @@ const Homepage = () => {
               </select>
             </label>
           </Stack>
+
           <motion.div
             initial={{ x: -200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
