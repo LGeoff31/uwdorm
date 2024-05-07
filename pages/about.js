@@ -71,7 +71,7 @@ export default function About() {
               <h1 className="italic font-light">
                 Founder - Software Engineering 2028
               </h1>
-              <h1 className="mt-3">
+              <h1 className="mt-3 mb-20">
                 Geoffrey can often be found running marathons and doing coding
                 projects.
               </h1>

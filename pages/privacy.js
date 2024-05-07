@@ -39,7 +39,7 @@ export default function Privacy() {
           </span>
         </Stack>
       </div>
-      <div className="bg-[rgba(225,246,255,1)] p-20 ">
+      <div className="bg-[rgba(225,246,255,1)] p-20">
         <h1 className="text-3xl font-bold mb-8">
           Privacy Policy:
         </h1>
@@ -97,9 +97,9 @@ export default function Privacy() {
             </Stack>
           </Stack>
         </Grid>
-        
-      </div>
-      <Stack paddingTop="7rem" sx={{ background: "rgb(225 246 255)" }} />
+        </div>
+    
+      
       <FooterOther />
     </>
   );

@@ -9,7 +9,7 @@ function footerOther(){
     return(
         <>
  
-            <div className="flex flex-row justify-center text-xl p-2.5 bg-[rgba(225,246,255,1)]">
+            <div className="flex flex-row justify-center text-xl p-3 bg-[rgba(225,246,255,1)]">
                
                 <Link href="/">
                     <Image src={Logo} alt="UW Rez Logo" width={30} height={30} className="duration-300 ease-in-out hover:scale-125"/>
@@ -29,7 +29,7 @@ function footerOther(){
                 
                 
             </div>
-            <div className=" flex flex-row justify-center text-med bg-[rgba(225,246,255,1)] p-2">
+            <div className=" flex flex-row justify-center text-med bg-[rgba(225,246,255,1)] p-1">
                 <Link href="/" className="hover:text-blue-400"> Home</Link>
                 <Link href="/privacy" className="hover:text-blue-400" >&nbsp;&nbsp;Privacy</Link>
                 <Link href="/about" className="hover:text-blue-400">&nbsp;&nbsp;About</Link>
