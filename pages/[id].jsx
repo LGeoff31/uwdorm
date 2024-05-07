@@ -214,6 +214,11 @@ export default function Residence() {
   overallBuildingRating /= comments.length;
 
   overallRating = overallRating.toFixed(1);
+  // console.log("OVERAL RATING", isNaN(overallRating));
+  if (isNaN(overallRating)) {
+    overallRating = 0;
+  }
+  // overallRating = 0;
   console.log("Please user", user);
   let userPhoto =
     "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/little-cute-kitten-serhii-kucher.jpg";
