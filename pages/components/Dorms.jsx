@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import FooterOther from "./footerOther";
 import { motion } from "framer-motion";
+// import { useMediaQuery } from "react-responsive";
 
 function DormInfo(props) {
   return (

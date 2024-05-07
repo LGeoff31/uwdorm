@@ -538,7 +538,7 @@ const Images = ({ id }) => {
         ))}
       </AutoPlaySwipeableViews>
       <MobileStepper
-        className="rounded-b-2xl w-[40rem] sm:w-[20rem]"
+        className="rounded-b-2xl w-[40rem] "
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
