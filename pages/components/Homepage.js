@@ -45,18 +45,6 @@ const Homepage = () => {
     }
   }
 
-  function isMobile() {
-    const regex =
-      /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-    return regex.test(navigator.userAgent);
-  }
-  let mobile = false;
-  if (isMobile()) {
-    mobile = true;
-  }
-
-  console.log("MOBILE", mobile);
-
   return (
     <>
       <div
