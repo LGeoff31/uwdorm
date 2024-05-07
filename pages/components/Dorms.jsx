@@ -104,24 +104,24 @@ const Dorms = () => {
       </h1>
       <Grid container justifyContent={"center"} marginBottom="10rem">
         {residences.map((residence) => (
-          // <motion.div
-          //   key={residence.id}
-          //   initial={{ x: 0, opacity: 0 }}
-          //   whileInView={{ x: 0, opacity: 1 }}
-          //   transition={{ duration: 1.5 }}
-          //   className=" object-cover md:rounded-lg"
-          // >
-          <DormInfo
+          <motion.div
             key={residence.id}
-            id={residence.id}
-            name={residence.name}
-            images={residence.images}
-            description={residence.description}
-            address={residence.address}
-            link={residence.id}
-            residenceCounts={findCount({ id: residence.id })}
-          />
-          // </motion.div>
+            initial={{ x: 0, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.5 }}
+            className=" object-cover md:rounded-lg"
+          >
+            <DormInfo
+              key={residence.id}
+              id={residence.id}
+              name={residence.name}
+              images={residence.images}
+              description={residence.description}
+              address={residence.address}
+              link={residence.id}
+              residenceCounts={findCount({ id: residence.id })}
+            />
+          </motion.div>
         ))}
       </Grid>
       <FooterOther />
