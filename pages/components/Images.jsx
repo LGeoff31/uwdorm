@@ -512,7 +512,7 @@ const Images = ({ id }) => {
   };
 
   return (
-    <div className="w-[40rem] rounded-sm">
+    <div className="w-[38rem] rounded-sm">
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -538,7 +538,7 @@ const Images = ({ id }) => {
         ))}
       </AutoPlaySwipeableViews>
       <MobileStepper
-        className="rounded-b-2xl w-[40rem] sm:w-[20rem]"
+        className="rounded-b-2xl w-[38rem]"
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
