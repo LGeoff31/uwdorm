@@ -101,7 +101,7 @@ const Homepage = () => {
 
           <motion.div
             initial={{ x: 0, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5 }}
             className=" object-cover md:rounded-lg  overflow-hidden"
           >
@@ -128,7 +128,7 @@ const Homepage = () => {
 
           <motion.div
             initial={{ x: 0, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.5 }}
             className=" object-cover md:rounded-lg  overflow-hidden"
           >
@@ -152,7 +152,7 @@ const Homepage = () => {
 
           <motion.div
             initial={{ x: 0, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5, delay: 1 }}
             className=" object-cover md:rounded-lg  overflow-hidden"
           >
@@ -178,7 +178,7 @@ const Homepage = () => {
 
           <motion.div
             initial={{ x: 0, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5, delay: 1.5 }}
             className=" object-cover md:rounded-lg  overflow-hidden"
           >

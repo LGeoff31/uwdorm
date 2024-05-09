@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import { Stack } from "@mui/material";
 import Homepage from "./components/Homepage.js";
 import Dorms from "./components/Dorms";
+import Maps from "./components/Maps";
 import React, { useState } from "react";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <section id="dorms">
         <Dorms />
       </section>
+      <Maps />
     </Stack>
   );
 }
