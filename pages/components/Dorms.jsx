@@ -17,7 +17,7 @@ function DormInfo(props) {
   return (
     <Stack elevation={3} padding="2.5rem">
       <Link href={props.link} height={350}>
-        <div class="rounded-t-3xl relative overflow-hidden bg-cover bg-no-repeat">
+        <div className="rounded-t-3xl relative overflow-hidden bg-cover bg-no-repeat">
           <img
             src={props.images}
             alt={props.name}
@@ -102,7 +102,7 @@ const Dorms = () => {
       >
         Residences
       </h1>
-      <Grid container justifyContent={"center"} marginBottom="10rem">
+      <Grid container justifyContent={"center"} marginBottom="3rem">
         {residences.map((residence) => (
           <motion.div
             key={residence.id}
@@ -124,7 +124,6 @@ const Dorms = () => {
           </motion.div>
         ))}
       </Grid>
-      <FooterOther />
     </>
   );
 };
