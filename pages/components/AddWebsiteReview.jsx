@@ -101,7 +101,7 @@ const WebsiteReview = () => {
         marginTop="1rem"
         fontSize="1.3rem"
       >
-        Enjoy the site? Missing you residence? We'd love to hear more!{" "}
+        Enjoy the site? Missing you residence? We would love to hear more!{" "}
       </Typography>
       <ThemeProvider theme={darkTheme}>
         <Stack>
