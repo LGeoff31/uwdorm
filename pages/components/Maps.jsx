@@ -1,3 +1,11 @@
+import React from "react";
+
+const Maps = () => {
+  return <div>This is maps</div>;
+};
+
+export default Maps;
+
 // import React, { useState, useEffect } from "react";
 // import {
 //   TextField,

@@ -22,3 +22,10 @@
 //     cursor: "pointer",
 //   },
 // }));
+import React from "react";
+
+const styles = () => {
+  return <div>This is styles</div>;
+};
+
+export default styles;
