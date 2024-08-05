@@ -2,7 +2,6 @@ import Navbar from "./components/Navbar";
 import { Stack } from "@mui/material";
 import Homepage from "./components/Homepage.js";
 import Dorms from "./components/Dorms";
-import Maps from "./components/Maps";
 import FooterOther from "./components/footerOther";
 import AddWebsiteReview from "./components/AddWebsiteReview";
 import React, { useState } from "react";
