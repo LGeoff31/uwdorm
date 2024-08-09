@@ -102,7 +102,7 @@ const Dorms = () => {
       >
         Residences
       </h1>
-      <Grid container justifyContent={"center"} marginBottom="10rem">
+      <Grid container justifyContent={"center"} marginBottom="3rem">
         {residences.map((residence) => (
           <motion.div
             key={residence.id}
@@ -124,7 +124,6 @@ const Dorms = () => {
           </motion.div>
         ))}
       </Grid>
-      <FooterOther />
     </>
   );
 };
