@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Footer from "./footer";
 import {
   Grid,
   Stack,
@@ -15,6 +14,10 @@ import TransferWithinAStationIcon from "@mui/icons-material/TransferWithinAStati
 import { SiSlideshare } from "react-icons/si";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+
+const FindResidence = dynamic(() => import('../components/FindResidence'), {
+  ssr: false,
+});
 
 const Homepage = () => {
   const residences = [
@@ -77,7 +80,6 @@ const Homepage = () => {
             >
               Explore reviews of Waterloo&apos;s residences or add your own!
             </Typography>
-
             <label className="flex text-med justify-center h-[3rem]">
               <select
                 className=" font-medium rounded-lg bg-gray-300"
@@ -97,6 +99,19 @@ const Homepage = () => {
                 ))}
               </select>
             </label>
+            <Typography
+              fontSize={{ md: "1.7rem", xs: "1rem" }}
+              marginTop="1rem"
+              color="#93C5FD"
+              marginLeft="2rem"
+              marginRight="2rem"
+              className="text-center"
+            >
+              OR
+            </Typography>
+            
+            <FindResidence/>
+            
           </Stack>
 
           <motion.div
@@ -108,7 +123,7 @@ const Homepage = () => {
             <Stack
               direction="row"
               gap="1rem"
-              marginTop="4rem"
+              marginTop="2rem"
               justifyContent={"center"}
             >
               <IoHomeOutline
@@ -230,9 +245,11 @@ const Homepage = () => {
                   },
                 }}
               >
-                <Button variant="contained">
-                  <h1>Get Started</h1>
-                </Button>
+                <div className="flex flex-row">
+                  <Button variant="contained">
+                    <h1>Get Started</h1>
+                  </Button>
+                </div>
               </Box>
             </ScrollLink>
           </Stack>
