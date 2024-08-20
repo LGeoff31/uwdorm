@@ -131,7 +131,10 @@ const FindResidence = ()  => {
 
   const handleFindResidences = async (event: React.FormEvent) => {
     event.preventDefault();
-  
+    if (amenities.length < 100 || details.length < 100) {
+      window.alert('Please make sure amenities and details have at least 100 characteres')
+      return;
+    }
     if (room && mealplan && amenities && details) {
       setIsLoading(true)
       const inputText = await createInputText(room, mealplan, amenities, details);
@@ -235,14 +238,14 @@ const FindResidence = ()  => {
                     ))}
                   </select>
                 </label>
-              <h1 className='mt-2 mb-1 text-white'>What are some other amenities you wish to have? (Ex. gym, gaming room, great hall, pool table, ping pong table, etc...)</h1>
+              <h1 className='mt-2 mb-1 text-white'>What are some other amenities you wish to have? (Ex. gym, gaming room, great hall, pool table, ping pong table, etc...) - min 100 char</h1>
               <textarea 
                 value={amenities}
                 onChange={handleAmenitiesChange}
                 className="w-full p-2 mt-2 border text-black border-gray-300 rounded-md bg-gray-300 focus:outline-none"
                 placeholder="Describe your ideal residence...">
               </textarea>
-              <h1 className='mt-2 mb-1 text-white'>Other details (Ex. living learning community, close to UW plaza, etc...)</h1>
+              <h1 className='mt-2 mb-1 text-white'>Other details (Ex. living learning community, close to UW plaza, etc...) - min 100 char</h1>
               <textarea
                 value={details}
                 onChange={handleDetailsChange}
