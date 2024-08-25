@@ -4,6 +4,7 @@ import Homepage from "./components/Homepage.js";
 import Dorms from "./components/Dorms";
 import FooterOther from "./components/footerOther";
 import AddWebsiteReview from "./components/AddWebsiteReview";
+// import Maps from "./components/Maps";
 import React, { useState } from "react";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <section id="dorms">
         <Dorms />
       </section>
+      {/* <Maps /> */}
       <AddWebsiteReview />
       <FooterOther />
     </Stack>

@@ -1,94 +1,56 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import mapboxgl from "mapbox-gl";
+
+// Add your Mapbox access token
+mapboxgl.accessToken =
+  "pk.eyJ1IjoiZWxlY3RyaWNvY2h5IiwiYSI6ImNseG8xdzg5bDBhZW0yanB4Y2RlNnA1MmkifQ.el_Y0mXT3qJvURGNdy9e0g";
 
 const Maps = () => {
-  return <div>This is maps</div>;
+  const mapContainerRef = useRef(null);
+
+  // Coordinates for the first-year residences
+  const residences = [
+    { name: "Village 1 (V1)", coords: [43.4723, -80.5464] },
+    { name: "Ron Eydt Village (REV)", coords: [43.4745, -80.546] },
+    { name: "Claudette Millar Hall (CMH)", coords: [43.4742, -80.5452] },
+    { name: "University of Waterloo Place (UWP)", coords: [43.4734, -80.5409] },
+    { name: "Mackenzie King Village (MKV)", coords: [43.4717, -80.5465] },
+    { name: "United College", coords: [43.4728, -80.543] },
+  ];
+
+  useEffect(() => {
+    // Initialize the map
+    const map = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      style: "mapbox://styles/electricochy/clxo2yhca02rl01qk664fb82k", // style URL
+      center: [-87.661557, 41.893748], // center around the residences
+      zoom: 10.7, // zoom to show all residences clearly
+    });
+    map.on("click", (event) => {
+      // If the user clicked on one of your markers, get its information.
+      const features = map.queryRenderedFeatures(event.point, {
+        layers: ["chicago-parks"], // replace with your layer name
+      });
+      if (!features.length) {
+        return;
+      }
+      const feature = features[0];
+
+      const popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(
+          `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+        )
+        .addTo(map);
+    });
+  }, []);
+
+  return (
+    <div
+      ref={mapContainerRef}
+      style={{ width: "50%", height: "400px", margin: "0 auto" }}
+    />
+  );
 };
 
 export default Maps;
-
-// import React, { useState, useEffect } from "react";
-// import {
-//   TextField,
-//   Stack,
-//   Typography,
-//   Button,
-//   Dialog,
-//   DialogActions,
-//   DialogContent,
-//   DialogTitle,
-//   IconButton,
-//   Rating,
-//   MenuItem,
-//   Alert,
-//   Grid,
-//   Paper,
-// } from "@mui/material";
-// import GoogleMapReact from "google-map-react";
-// // import LocationOnOutlinedIcon from "@mui/material/icons/LocationOnOutlined";
-// import useStyles from "./styles";
-// import geoffrey from "../../public/geoff.png";
-// const Marker = ({ text }) => (
-//   <div
-//     style={{
-//       color: "white",
-//       background: "red",
-//       padding: "5px 10px",
-//       display: "inline-flex",
-//       textAlign: "center",
-//       alignItems: "center",
-//       justifyContent: "center",
-//       borderRadius: "50%",
-//       transform: "translate(-50%, -50%)",
-//     }}
-//   >
-//     <Typography variant="body2">{text}</Typography>
-//   </div>
-// );
-
-// const Maps = () => {
-//   // const [coordinates, setCoordinates] = useState({});
-//   // useEffect(() => {
-//   //   navigator.geolocation.getCurrentPosition(
-//   //     ({ coords: { latitude, longitude } }) => {
-//   //       setCoordinates({ lat: latitude, lng: longitude });
-//   //     }
-//   //   );
-//   // }, []);
-//   const classes = useStyles();
-
-//   const coordinates = { lat: 43.47871, lng: -80.562103 };
-
-//   return (
-//     <div className={classes.mapContainer}>
-//       <GoogleMapReact
-//         bootstrapURLKeys={{ key: "AIzaSyACTuBQL3SNY1bKRuaAfchknur7EVGEjtg" }}
-//         defaultCenter={coordinates}
-//         center={coordinates}
-//         defaultZoom={16}
-//         margin={[50, 50, 50, 50]}
-//         options={""}
-//         onChange={""}
-//         onChildClick={""}
-//       >
-//         {/* <div lat={43.47063} lng={-80.54138}>
-//           <Paper elevation={3}>
-//             <Typography
-//               // className={classes.Typography}
-//               variant="subtitle2"
-//               gutterBottom
-//             >
-//               Geof
-//             </Typography>
-//             <img
-//               // className={classes.pointer}
-//               src={geoffrey}
-//             />
-//           </Paper>
-//         </div> */}
-//         <Marker lat={43.47063} lng={-80.54138} text="Your Location" />
-//       </GoogleMapReact>
-//     </div>
-//   );
-// };
-
-// export default Maps;
