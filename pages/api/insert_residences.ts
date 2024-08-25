@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { DataAPIClient, VectorDoc, UUID } from '@datastax/astra-db-ts';
 import { pipeline } from '@xenova/transformers';
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
 
 interface Idea extends VectorDoc {
   idea: string;
