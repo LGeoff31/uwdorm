@@ -1,20 +1,14 @@
 import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
-import { useState } from 'react';
 
 interface ResultDialogProps {
     isOpen: boolean;
-    close: (value: boolean) => void;
+    closeFunction: () => void;
     ideal_residence: string;
     match: number;
 }
 
 
-const ResultDialog = ({ isOpen, close, ideal_residence, match}: ResultDialogProps) => {
-
-  const closeResult = () => {
-    close(false);
-  }
-
+const ResultDialog = ({ isOpen, closeFunction, ideal_residence, match}: ResultDialogProps) => {
   const redirect_to_res = () => {
     switch (ideal_residence) {
       case "Village 1":
@@ -36,12 +30,12 @@ const ResultDialog = ({ isOpen, close, ideal_residence, match}: ResultDialogProp
         window.location.href = `/9`;
         break;
       default:
-        closeResult()
+        closeFunction()
         break;
     }
   }
   return(
-      <Dialog open={isOpen} as="div" className="relative z-10 focus:outline-none" onClose={closeResult}>
+      <Dialog open={isOpen} as="div" className="relative z-10 focus:outline-none" onClose={closeFunction}>
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
         <div className="flex min-h-full items-center justify-center p-4">
           <DialogPanel

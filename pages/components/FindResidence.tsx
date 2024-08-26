@@ -68,9 +68,9 @@ const FindResidence = ()  => {
     setIsResultOpen(true)
   }
 
-  // function closeResult(isResultOpen: boolean) {
-  //   setIsResultOpen(false)
-  // }
+  function closeResult() {
+    setIsResultOpen(false)
+  }
 
   const showToast = (message: string) => {
     const toast = document.createElement("div");
@@ -273,7 +273,7 @@ const FindResidence = ()  => {
     </label>
     <ResultDialog
       ideal_residence={idealRes}
-      close={setIsResultOpen}
+      closeFunction={closeResult}
       match={similarity}
       isOpen={isResultOpen}
     />
