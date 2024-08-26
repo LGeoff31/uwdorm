@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { DataAPIClient, VectorDoc, UUID } from '@datastax/astra-db-ts';
 import { pipeline } from '@xenova/transformers';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
 interface Idea extends VectorDoc {
   idea: string;
@@ -68,10 +68,10 @@ export default async function find_residence(req: NextApiRequest, res: NextApiRe
 
         const embedding: number[] = Array.from(output.data);
         console.log(`Embedding generated for index ${index}`);
-        const uuid = uuidv4();
+        // const uuid = uuidv4();
         const document = [
           {
-            _id: new UUID(uuid),
+            // _id: new UUID(uuid),
             idea: text,
             $vector: embedding,
           }
