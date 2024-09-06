@@ -10,6 +10,8 @@ import {
 } from "@mui/material";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdPriceCheck } from "react-icons/md";
+import { GiMaterialsScience } from "react-icons/gi";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import TransferWithinAStationIcon from "@mui/icons-material/TransferWithinAStation";
 import { SiSlideshare } from "react-icons/si";
 import { motion } from "framer-motion";
@@ -77,40 +79,33 @@ const Homepage = () => {
             >
               Explore reviews of Waterloo&apos;s residences or add your own!
             </Typography>
-            <label className="flex text-med justify-center h-[3rem]">
-              <select
-                className=" font-medium rounded-lg bg-gray-300"
-                onChange={handleResidenceChange}
-              >
-                <option className="pr-2" disabled selected hidden>
-                  &nbsp;&nbsp;Select a Residence
-                </option>
-                {residences.map((residence, index) => (
-                  <option
-                    key={residence}
-                    value={index + 1}
-                    className="font-medium text-black"
-                  >
-                    &nbsp;{residence}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <Typography
-              fontSize={{ md: "1.7rem", xs: "1rem" }}
-              marginTop="1rem"
-              color="#93C5FD"
-              marginLeft="2rem"
-              marginRight="2rem"
-              className="text-center"
-            >
-              OR
-            </Typography>
-            
-            <FindResidence/>
-            
           </Stack>
 
+          <motion.div
+            initial={{ x: 0, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.5, delay: 1.5 }}
+            className=" object-cover md:rounded-lg  overflow-hidden"
+          >
+            <Stack
+              direction="row"
+              gap="1rem"
+              marginTop="2rem"
+              justifyContent={"center"}
+            >
+              <GiMaterialsScience
+                style={{ fontSize: "3rem", color: "#d4d4d8" }}
+              />
+              <Stack>
+                <Typography fontWeight="bold" color="#93c5fd">
+                  AI Algorithm
+                </Typography>
+                <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
+                  Find your ideal location using our AI algorithm.
+                </Typography>
+              </Stack>
+            </Stack>
+          </motion.div>
           <motion.div
             initial={{ x: 0, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -129,10 +124,10 @@ const Homepage = () => {
               />
               <Stack>
                 <Typography fontWeight="bold" color="#93c5fd">
-                  {"Housing"}
+                  Housing
                 </Typography>
                 <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
-                  Learn about all the available accommodations!
+                  Learn about all the available accommodations.
                 </Typography>
               </Stack>
             </Stack>
@@ -153,10 +148,10 @@ const Homepage = () => {
               <MdPriceCheck style={{ fontSize: "3rem", color: "#d4d4d8" }} />
               <Stack>
                 <Typography fontWeight="bold" color="#93c5fd">
-                  {"Price"}
+                  Price
                 </Typography>
                 <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
-                  Compare prices between different residences!
+                  Compare prices between different residences.
                 </Typography>
               </Stack>
             </Stack>
@@ -166,7 +161,7 @@ const Homepage = () => {
             initial={{ x: 0, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5, delay: 1 }}
-            className=" object-cover md:rounded-lg  overflow-hidden"
+            className=" object-cover md:rounded-lg  overflow-hidden pb-7"
           >
             <Stack
               direction="row"
@@ -179,79 +174,62 @@ const Homepage = () => {
               />
               <Stack>
                 <Typography fontWeight="bold" color="#93c5fd">
-                  {"Experience"}
+                  Experience
                 </Typography>
                 <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
-                  Learn from the experiences of other students!
+                  Learn from the experiences of other students.
                 </Typography>
               </Stack>
             </Stack>
           </motion.div>
 
-          <motion.div
-            initial={{ x: 0, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 1.5 }}
-            className=" object-cover md:rounded-lg  overflow-hidden"
+          <FindResidence />
+          <ScrollLink
+            to="dorms"
+            spy={true}
+            smooth={true}
+            duration={1500}
+            className="mt-8 cursor-pointer"
           >
-            <Stack
-              direction="row"
-              gap="1rem"
-              marginTop="2rem"
-              justifyContent={"center"}
-            >
-              <SiSlideshare style={{ fontSize: "3rem", color: "#d4d4d8" }} />
-              <Stack>
-                <Typography fontWeight="bold" color="#93c5fd">
-                  {"Share"}
-                </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
-                  Add your view on residences for others to see!
-                </Typography>
-              </Stack>
-            </Stack>
-          </motion.div>
-          <Stack
-            paddingTop="2rem"
-            display="flex"
-            justifyContent={"center"}
-            width={"30%"}
-            margin="0 auto"
-          >
-            <ScrollLink
-              to="dorms"
-              spy={true}
-              smooth={true}
-              duration={1500}
-              style={{
-                padding: "0.5rem 0rem",
-                border: "2px solid transparent",
-                textDecoration: "none",
-                color: "grey",
-                borderRadius: "10rem",
-              }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  margin: "0 auto",
-                  justifyContent: "center",
-                  transition: "transform 0.3s ease-in-out", // Animation transition
-                  ":hover": {
-                    transform: "scale(1.1)", // Scale to 1.2 times on hover
-                  },
-                }}
-              >
-                <div className="flex flex-row">
-                  <Button variant="contained">
-                    <h1>Get Started</h1>
-                  </Button>
-                </div>
-              </Box>
-            </ScrollLink>
-          </Stack>
+            <Box className="flex justify-center mt-12">
+              <div className="scroll-arrow flex flex-col items-center">
+                <span />
+                <span />
+                <span />
+              </div>
+            </Box>
+          </ScrollLink>
         </Grid>
       </div>
+      <style jsx>{`
+        .scroll-arrow {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .scroll-arrow span {
+          width: 30px;
+          height: 30px;
+          border-bottom: 4px solid #93c5fd;
+          border-right: 4px solid #93c5fd;
+          transform: rotate(45deg);
+          margin: -10px;
+          animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+          0% {
+            transform: translateY(0) rotate(45deg);
+          }
+          50% {
+            transform: translateY(10px) rotate(45deg);
+          }
+          100% {
+            transform: translateY(0) rotate(45deg);
+          }
+        }
+      `}</style>
     </>
   );
 };
