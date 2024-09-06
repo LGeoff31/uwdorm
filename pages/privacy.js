@@ -96,6 +96,12 @@ export default function Privacy() {
               </h1>
             </Stack>
           </Stack>
+          <h1 className="text-3xl font-bold mb-8 mt-8">
+            Photo Creds:
+          </h1>
+          <h1 className="mt-2">
+            https://coolbackgrounds.io/images/backgrounds
+          </h1>
         </Grid>
         </div>
     
