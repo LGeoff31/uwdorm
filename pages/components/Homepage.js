@@ -14,10 +14,7 @@ import TransferWithinAStationIcon from "@mui/icons-material/TransferWithinAStati
 import { SiSlideshare } from "react-icons/si";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-
-const FindResidence = dynamic(() => import('../components/FindResidence'), {
-  ssr: false,
-});
+import FindResidence from "../components/FindResidence";
 
 const Homepage = () => {
   const residences = [
