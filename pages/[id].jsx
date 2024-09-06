@@ -332,23 +332,22 @@ export default function Residence() {
                           />
                         </div>
                         <div className="flex flex-col">
-                          <h1 className="ml-4 mt-1">{c.name}</h1>
+                          <h1 className="ml-4 mt-1 text-lg">{c.name}</h1>
                           <h1 className="ml-4 font-light italic">
                             {c.faculty}
                           </h1>
                         </div>
                         <div className="flex flex-col ml-4 items-center">
-                          <h1 className="text-blue-400 ml-1 text-sm">
+                          <h1 className="text-blue-400 ml-1 text-lg">
                             {formatDate(c.created_at)}
                           </h1>
 
-                          <div className="flex flex-row">
-                            <h1 className="text-sm"></h1>
+                          <div className="flex flex-row items-center">
                             <StarIcon
                               className=""
                               style={{ fontSize: "1.5rem", color: "#FFD700" }}
                             />
-                            <h1 className="text-md ml-1">
+                            <h1 className="text-lg ml-1">
                               {(
                                 (c.building +
                                   c.room +
@@ -361,7 +360,7 @@ export default function Residence() {
                         </div>
                       </div>
 
-                      <h1 className="text-med text-left font-light ml-4 mt-3 max-w-[1100px]">
+                      <h1 className="text-xl text-left font-light ml-4 md:ml-20 max-w-[1100px]">
                         {c.review}{" "}
                       </h1>
                     </div>
