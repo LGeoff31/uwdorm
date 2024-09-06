@@ -84,7 +84,7 @@ const Homepage = () => {
           <motion.div
             initial={{ x: 0, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 1.5 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
             className=" object-cover md:rounded-lg  overflow-hidden"
           >
             <Stack
@@ -109,7 +109,7 @@ const Homepage = () => {
           <motion.div
             initial={{ x: 0, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1, delay: 1 }}
             className=" object-cover md:rounded-lg  overflow-hidden"
           >
             <Stack
@@ -136,7 +136,7 @@ const Homepage = () => {
           <motion.div
             initial={{ x: 0, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.5 }}
+            transition={{ duration: 1.5, delay: 1.5 }}
             className=" object-cover md:rounded-lg  overflow-hidden"
           >
             <Stack
@@ -160,7 +160,7 @@ const Homepage = () => {
           <motion.div
             initial={{ x: 0, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 1 }}
+            transition={{ duration: 1.5, delay: 2 }}
             className=" object-cover md:rounded-lg  overflow-hidden pb-7"
           >
             <Stack
