@@ -90,7 +90,7 @@ const WebsiteReview = () => {
         className="text-center  text-4xl text-blue-500"
         style={{ fontWeight: "bold" }}
       >
-        Residences
+        Reviews
       </h1>
       <Typography
         color="white"

@@ -35,8 +35,11 @@ function DormInfo(props) {
             {props.residenceCounts} Reviews ⭐
           </h1>
         </div>
+        <div className="flex justify-between">
+          <h1 className="text-med text-zinc-500">{props.price}</h1>
 
-        <h1 className="text-right text-lg text-blue-400 ">{props.address}</h1>
+          <h1 className="text-right text-lg text-blue-400 ">{props.address}</h1>
+        </div>
       </div>
     </Stack>
   );
@@ -120,6 +123,7 @@ const Dorms = () => {
               address={residence.address}
               link={residence.id}
               residenceCounts={findCount({ id: residence.id })}
+              price={residence.price}
             />
           </motion.div>
         ))}

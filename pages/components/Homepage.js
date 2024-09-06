@@ -54,7 +54,7 @@ const Homepage = () => {
           backgroundImage: `url(https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "105vh",
+          height: "95vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
