@@ -62,17 +62,11 @@ const Homepage = () => {
       >
         <Grid>
           <Stack>
-            <Typography
-              fontSize="3rem"
-              color="#93C5FD"
-              margin="0 auto"
-              marginBottom="1rem"
-            >
+            <Typography fontSize="3rem" color="#93C5FD" margin="0 auto">
               UW Rez
             </Typography>
             <Typography
-              fontSize={{ md: "1.7rem", xs: "1rem" }}
-              marginBottom="1rem"
+              fontSize={{ md: "1.5rem", xs: "1rem" }}
               color="#D4D4D8"
               marginLeft="2rem"
               marginRight="2rem"
@@ -191,7 +185,7 @@ const Homepage = () => {
             duration={1500}
             className="mt-8 cursor-pointer"
           >
-            <Box className="flex justify-center mt-12">
+            <Box className="flex justify-center mt-8">
               <div className="scroll-arrow flex flex-col items-center">
                 <span />
                 <span />

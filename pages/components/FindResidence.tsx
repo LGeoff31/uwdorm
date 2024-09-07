@@ -165,7 +165,7 @@ const FindResidence = () => {
     <>
       <label className="flex text-med justify-center h-[3rem] mt-1">
         <button
-          className="text-blue-400 bg-black rounded-full font-bold px-6 py-3 mx-auto text-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-blue-600"
+          className="text-blue-400 bg-black rounded-full font-bold px-6 py-3 mx-auto text-lg transition-transform duration-300 ease-in-out hover:scale-105"
           onClick={open}
         >
           Algorithm
