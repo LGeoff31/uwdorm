@@ -165,7 +165,7 @@ const FindResidence = () => {
     <>
       <label className="flex text-med justify-center h-[3rem] mt-1">
         <button
-          className="text-blue-400 bg-black rounded-full font-bold px-6 py-3 mx-auto text-lg transition-transform duration-300 ease-in-out hover:scale-105"
+          className="hidden md:block text-blue-400 bg-black rounded-full font-bold px-6 py-3 mx-auto text-lg transition-transform duration-300 ease-in-out hover:scale-105 "
           onClick={open}
         >
           Algorithm
@@ -203,7 +203,7 @@ const FindResidence = () => {
                   </select>
                 </label>
                 <h1 className="text-white mt-2 mb-1">
-                  Are you getting a mealplan:
+                  Are you getting a mealplan?
                 </h1>
                 <label className="flex text-med justify-start h-[2rem]">
                   <select
@@ -223,9 +223,8 @@ const FindResidence = () => {
                   </select>
                 </label>
                 <h1 className="mt-2 mb-1 text-white">
-                  What are some other amenities you wish to have? (Ex. gym,
-                  gaming room, great hall, pool table, ping pong table, etc...)
-                  - min 100 char
+                  What amenities do you wish to have? (Ex. gym, great hall, pool
+                  table, ping pong (min 100 char)
                 </h1>
                 <textarea
                   value={amenities}
@@ -257,7 +256,7 @@ const FindResidence = () => {
                     className="inline-flex w-full mt-4 p-3 justify-center rounded-md bg-blue-500 text-white hover:bg-blue-600"
                     onClick={handleFindResidences}
                   >
-                    Find your ideal residence!
+                    Find your place
                   </button>
                 )}
               </DialogPanel>
