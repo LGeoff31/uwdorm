@@ -168,7 +168,7 @@ const FindResidence = () => {
           className="hidden md:block text-blue-400 bg-black rounded-full font-bold px-6 py-3 mx-auto text-lg transition-transform duration-300 ease-in-out hover:scale-105 "
           onClick={open}
         >
-          Algorithm
+          Find my match
         </button>
         <Dialog
           open={isOpen}
@@ -223,7 +223,7 @@ const FindResidence = () => {
                   </select>
                 </label>
                 <h1 className="mt-2 mb-1 text-white">
-                  What amenities do you wish to have? (Ex. gym, great hall, pool
+                  What amenities do you wish to have? Ex. gym, great hall, pool
                   table, ping pong (min 100 char)
                 </h1>
                 <textarea
@@ -233,8 +233,8 @@ const FindResidence = () => {
                   placeholder="Describe your ideal residence..."
                 ></textarea>
                 <h1 className="mt-2 mb-1 text-white">
-                  Other details (Ex. living learning community, close to UW
-                  plaza, etc...) - min 100 char
+                  Other details Ex. living learning community, close to UW
+                  plaza, roomates (min 100 char)
                 </h1>
                 <textarea
                   value={details}
