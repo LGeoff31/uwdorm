@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.maprouter {
+  position: relative;
+  height: 50vh;
+  width: 70vw;
+  margin: 0 auto;
+  margin-top: 40px;
+}
