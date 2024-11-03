@@ -95,32 +95,7 @@ const FindResidence = () => {
           setSimilarity(similarity);
         }
 
-        // const context_inputText = `${inputText}. Tell me why the University of Waterloo residence, ${idealRes}, the best for the user?`
-        // const data2 = await fetch('https://api-inference.huggingface.co/models/microsoft/Phi-3-mini-4k-instruct/v1/chat/completions', {
-        //   method: 'POST',
-        //   headers: {
-        //     Authorization: `Bearer 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`,
-        //     'Content-Type': 'application/json',
-        //   },
-        //   body: JSON.stringify({ messages: [{"role": "user", "content": context_inputText }]}), 
-        // });
-        // const context = await data2.json()
-        // const retrieved_context = context.choices[0].message.content
-        
-        // const context_inputText = `${inputText}. Tell me why the University of Waterloo residence, ${idealRes}, the best for the user?`
-        // const data2 = await fetch('https://api-inference.huggingface.co/models/openai-community/gpt2', {
-        //   method: 'POST',
-        //   headers: {
-        //     Authorization: `Bearer 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`,
-        //     'Content-Type': 'application/json',
-        //   },
-        //   body: JSON.stringify({ inputs: context_inputText}), 
-        // });
-        // const context = await data2.json()
-        // const retrieved_context = context[0]['generated_text']
-        
-
-        // setResidenceContext(retrieved_context)
+     
         setIsLoading(false);
         setIsOpen(false);
         setAmenities("");
