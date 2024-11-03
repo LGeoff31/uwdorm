@@ -107,6 +107,7 @@ const WebsiteReviews = () => {
                     color: "grey.300",
                     fontStyle: "italic",
                     fontSize: "1.05rem",
+                    display: { md: "block", xs: "none" },
                   }}
                 >
                   {format(new Date(review.created_at), "PPP")}

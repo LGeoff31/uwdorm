@@ -35,81 +35,75 @@ export default function Residence() {
 
   const residencesMap = {
     1: {
-      size: "1,381 residents",
-      style: "Traditional",
-      rooms: ["Single", "Double", "Interconnecting"],
-      mealPlan: "Required",
-      community: "First-year students",
-      mascot: "V1 Groundhog",
+      size: "👥 1,381 residents",
+      style: "🌟 Traditional",
+      rooms: ["🚪 Single", "Double", "Interconnecting"],
+      mealPlan: "🍔 Required",
+      community: "🌐 First-year students",
+      mascot: "🦦 V1 Groundhog",
     },
     2: {
-      size: "539 residents",
-      style: "Traditional",
-      rooms: ["Single", "Semi-Private"],
-      mealPlan: "Required",
-      community: "First-year and upper-year students",
-      mascot: "UWP Unicorn",
+      size: "👥 539 residents",
+      style: "🌟 Traditional",
+      rooms: ["🚪 Single", "Semi-Private"],
+      mealPlan: "🍔 Required",
+      community: "🌐 First-year and upper-year students",
+      mascot: "🦄 UWP Unicorn",
     },
     3: {
-      size: "1,650 residents",
-      style: "Suite",
-      rooms: ["2", "3", "4-bedroom suite"],
-      mealPlan: "Optional",
-      community: "First-year and upper-year students",
-      mascot: "UWP Unicorn",
+      size: "👥 1,650 residents",
+      style: "🌟 Suite",
+      rooms: ["🚪 2", "3", "4-bedroom suite"],
+      mealPlan: "🍔 Optional",
+      community: "🌐 First-year and upper-year students",
+      mascot: "🦄 UWP Unicorn",
     },
     4: {
-      size: "960 residents",
-      style: "Traditional",
-      rooms: ["Double"],
-      mealPlan: "Required",
-      community: "First-year students",
-      mascot: "REV Moustache",
+      size: "👥 960 residents",
+      style: "🌟 Traditional",
+      rooms: ["🚪 Double"],
+      mealPlan: "🍔 Required",
+      community: "🌐 First-year students",
+      mascot: "🥸 REV Moustache",
     },
     5: {
-      size: "320 residents",
-      style: "Suite",
-      rooms: ["4-bedroom suite"],
-      mealPlan: "Optional",
-      community: "First-year students",
-      mascot: "MKV Crown",
+      size: "👥 320 residents",
+      style: "🌟 Suite",
+      rooms: ["🚪 4-bedroom suite"],
+      mealPlan: "🍔 Optional",
+      community: "🌐 First-year students",
+      mascot: "👑 MKV Crown",
     },
     6: {
-      size: "400 residents",
-      style: "Suite",
-      rooms: ["4-bedroom townhouse"],
-      mealPlan: "Optional",
-      community: "First-year, upper-year, graduate and exchange students",
-      mascot: "CLV Lake Monster",
+      size: "👥 400 residents",
+      style: "🌟 Suite",
+      rooms: ["🚪 4-bedroom townhouse"],
+      mealPlan: "🍔 Optional",
+      community: "🌐 First-year, upper-year, graduate and exchange students",
+      mascot: "🐉 CLV Lake Monster",
     },
     7: {
-      size: "70 residents",
-      style: "Hybrid (shared kitchen per floor and optional meal plans)",
-      rooms: ["Single"],
-      mealPlan: "Optional",
-      community: "Upper-year students",
-      mascot: "MH Owl",
-    },
-    8: {
-      size: "1019 residents",
-      style: "Traditional",
-      founded: "1865",
-      mascot: "Jerome Lion",
+      size: "👥 70 residents",
+      style: "🌟 Hybrid (shared kitchen per floor and optional meal plans)",
+      rooms: ["🚪 Single"],
+      mealPlan: "🍔 Optional",
+      community: "🌐 Upper-year students",
+      mascot: "🦉 MH Owl",
     },
     9: {
-      size: "330 residents",
-      style: "Traditional",
-      rooms: ["Single", "Semi-Private"],
-      mealPlan: "Required",
-      community: "First-year and upper-year students",
-      mascot: "UWP Unicorn",
+      size: "👥 330 residents",
+      style: "🌟 Traditional",
+      rooms: ["🚪 Single", "Semi-Private"],
+      mealPlan: "🍔 Required",
+      community: "🌐 First-year and upper-year students",
+      mascot: "🦄 UWP Unicorn",
     },
     10: {
-      size: "539 residents",
-      style: "Traditional",
-      rooms: ["Single", "Double Room"],
+      size: "👥 539 residents",
+      style: "🌟 Traditional",
+      rooms: ["🚪 Single", "Double Room"],
       founded: "1962",
-      community: "First-year and upper-year students",
+      community: "🌐 First-year and upper-year students",
     },
   };
 
@@ -331,23 +325,22 @@ export default function Residence() {
                           />
                         </div>
                         <div className="flex flex-col">
-                          <h1 className="ml-4 mt-1">{c.name}</h1>
+                          <h1 className="ml-4 mt-1 text-lg">{c.name}</h1>
                           <h1 className="ml-4 font-light italic">
                             {c.faculty}
                           </h1>
                         </div>
                         <div className="flex flex-col ml-4 items-center">
-                          <h1 className="text-blue-400 ml-1 text-sm">
+                          <h1 className="text-blue-400 ml-1 text-lg">
                             {formatDate(c.created_at)}
                           </h1>
 
-                          <div className="flex flex-row">
-                            <h1 className="text-sm"></h1>
+                          <div className="flex flex-row items-center">
                             <StarIcon
                               className=""
                               style={{ fontSize: "1.5rem", color: "#FFD700" }}
                             />
-                            <h1 className="text-md ml-1">
+                            <h1 className="text-lg ml-1">
                               {(
                                 (c.building +
                                   c.room +
@@ -360,7 +353,7 @@ export default function Residence() {
                         </div>
                       </div>
 
-                      <h1 className="text-med text-left font-light ml-4 mt-3 max-w-[1100px]">
+                      <h1 className="text-xl text-left font-light ml-4 md:ml-20 max-w-[1100px]">
                         {c.review}{" "}
                       </h1>
                     </div>
