@@ -90,7 +90,6 @@ const Dorms = () => {
     return 0;
   };
 
-  console.log("THIS IS COUNT", residenceCounts);
   if (!residenceCounts) {
     return <h1>Loading...</h1>;
   }

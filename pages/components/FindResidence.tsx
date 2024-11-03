@@ -23,6 +23,7 @@ const FindResidence = () => {
   const [idealRes, setIdealRes] = useState<string>("");
   const [similarity, setSimilarity] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [residenceContext, setResidenceContext] = useState<string>("");
 
   const handleRoomChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setRoom(event.target.value);
@@ -70,7 +71,7 @@ const FindResidence = () => {
           },
           body: JSON.stringify({ inputText }),
         });
-
+        
         const data = await res.json();
 
         if (data) {
@@ -81,9 +82,48 @@ const FindResidence = () => {
           setSimilarity(similarity);
         }
 
+        // const context_inputText = `${inputText}. Tell me why the University of Waterloo residence, ${idealRes}, the best for the user?`
+        // const data2 = await fetch('https://api-inference.huggingface.co/models/microsoft/Phi-3-mini-4k-instruct/v1/chat/completions', {
+        //   method: 'POST',
+        //   headers: {
+        //     Authorization: `Bearer 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`,
+        //     'Content-Type': 'application/json',
+        //   },
+        //   body: JSON.stringify({ messages: [{"role": "user", "content": context_inputText }]}), 
+        // });
+        // const context = await data2.json()
+        // const retrieved_context = context.choices[0].message.content
+        
+        // const context_inputText = `${inputText}. Tell me why the University of Waterloo residence, ${idealRes}, the best for the user?`
+        // const data2 = await fetch('https://api-inference.huggingface.co/models/openai-community/gpt2', {
+        //   method: 'POST',
+        //   headers: {
+        //     Authorization: `Bearer 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`,
+        //     'Content-Type': 'application/json',
+        //   },
+        //   body: JSON.stringify({ inputs: context_inputText}), 
+        // });
+        // const context = await data2.json()
+        // const retrieved_context = context[0]['generated_text']
+        
+
+        // setResidenceContext(retrieved_context)
         setIsLoading(false);
         setIsOpen(false);
+        setAmenities("");
+        setDetails("");
+        // Reset select elements to placeholder
+        const select1 = document.getElementById('select1') as HTMLSelectElement;
+        if (select1) {
+          select1.selectedIndex = 0; // Reset to placeholder
+        }
+
+        const select2 = document.getElementById('select2') as HTMLSelectElement;
+        if (select2) {
+          select2.selectedIndex = 0; // Reset to placeholder
+        }
         openResult();
+        
       } catch (error) {
         console.log(error);
       }
@@ -166,7 +206,7 @@ const FindResidence = () => {
                   <select
                     className="font-medium rounded-lg bg-gray-300 text-gray-500"
                     onChange={handleRoomChange}
-                    id="select_room"
+                    id="select1"
                     value={room}
                   >
                     <option value="" disabled hidden>&nbsp;Room type</option>
@@ -182,7 +222,7 @@ const FindResidence = () => {
                   <select
                     className="font-medium rounded-lg bg-gray-300 text-gray-500"
                     onChange={handleMealplanChange}
-                    id="select_mealplan"
+                    id="select2"
                     value={mealplan}
                   >
                     <option value="" disabled hidden>&nbsp;Mealplan option</option>
@@ -242,6 +282,7 @@ const FindResidence = () => {
                     The residence that best matches your criteria is:
                   </p>
                   <h3 className="text-3xl font-semibold">{idealRes}</h3>
+                  <p>{residenceContext}</p>
                   <p>Matching score: {similarity}%</p>
                   <button
                     type="button"

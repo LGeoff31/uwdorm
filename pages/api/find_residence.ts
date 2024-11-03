@@ -6,12 +6,12 @@ interface Idea extends VectorDoc {
   idea: string;
 }
 
-export default async function find_residence(req: NextApiRequest, res: NextApiResponse) {
+export default async function find_residence(req: any, res: any) {
   if (req.method === 'POST') {
     const { inputText } = req.body;
 
     if (!inputText) {
-      return res.status(400).json({ error: 'No input text provided' });
+      return res.status(400).json({ error: 'No hello' });
     }
 
     try {
