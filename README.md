@@ -1,18 +1,49 @@
-# UW Rez
+# 🏠 UW Rez: Find Your Perfect Dorm at Waterloo
 
-## Introduction
+**UW Rez** is the University of Waterloo’s first AI-powered residence recommendation and review platform, designed to help freshmen pick the right place to live — with confidence.
 
-* UW Rez is Waterloo's first residence rating system.
-* Features an AI algorithm to pair freshman students with a residence based on their preferences.
+---
 
-## Contribute
+## 🚀 Why UW Rez?
 
-* After your stay at one of these residences, we would highly appreciate your contribution on the list to help the future experience of Waterloo students.
-* We rank based on room, location, price, and bathrooms
+- ✅ **Hundreds of students** have already used UW Rez to explore and compare dorms at Waterloo  
+- 🧠 **AI-driven** recommendation engine built using transformer-based embeddings + cosine similarity  
+- 🗺️ Interactive **map view** of all first-year residences with markers and ratings  
+- 🛏️ We rank dorms based on **room quality, location, price, and bathrooms**
 
-## Algorithms
+---
 
-* In progress...
+## 🤝 Contribute
 
-Love to hear feedback to make this the friendliest platform for picking the right residence for you! 
-Consider giving this project a ⭐ to let me know you enjoyed it!
+Lived in a residence at UW?  
+Help future students by sharing your experience!  
+You can rate and review your dorm — every voice matters.
+
+---
+
+## 🧠 How It Works
+
+We use a custom-built AI algorithm to pair students with their ideal residence based on preferences they provide. The model leverages:
+
+- Transformer-based **text embeddings**
+- **Cosine similarity** to match preferences to scraped university housing data
+
+_(Stay tuned – we’ll be open-sourcing the algorithm soon!)_
+
+---
+
+## 📍 Features
+
+- ✅ Residence **review system**
+- 🤖 Smart **AI recommendations**
+- 🗺️ Map of Waterloo residences
+- 🏅 Rankings by room, location, price, and bathrooms
+
+---
+
+## ⭐ Support
+
+Love the project? Consider giving it a ⭐ to let us know!  
+We’re always open to feedback — feel free to open an issue or pull request.
+
+---
