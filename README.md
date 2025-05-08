@@ -28,8 +28,6 @@ We use a custom-built AI algorithm to pair students with their ideal residence b
 - Transformer-based **text embeddings**
 - **Cosine similarity** to match preferences to scraped university housing data
 
-_(Stay tuned – we’ll be open-sourcing the algorithm soon!)_
-
 ---
 
 ## 📍 Features
