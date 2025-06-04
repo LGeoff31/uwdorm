@@ -67,7 +67,7 @@ const Homepage = () => {
             </Typography>
             <Typography
               fontSize={{ md: "1.5rem", xs: "1rem" }}
-              color="#D4D4D8"
+              color="black"
               marginLeft="2rem"
               marginRight="2rem"
             >
@@ -94,7 +94,7 @@ const Homepage = () => {
                 <Typography fontWeight="bold" color="#93c5fd">
                   AI Algorithm
                 </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
+                <Typography fontWeight="400" color="grey" fontSize="1rem">
                   Find your ideal location using our AI algorithm.
                 </Typography>
               </Stack>
@@ -120,7 +120,7 @@ const Homepage = () => {
                 <Typography fontWeight="bold" color="#93c5fd">
                   Housing
                 </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
+                <Typography fontWeight="400" color="grey" fontSize="1rem">
                   Learn about all the available accommodations.
                 </Typography>
               </Stack>
@@ -144,7 +144,7 @@ const Homepage = () => {
                 <Typography fontWeight="bold" color="#93c5fd">
                   Price
                 </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
+                <Typography fontWeight="400" color="grey" fontSize="1rem">
                   Compare prices between different residences.
                 </Typography>
               </Stack>
@@ -170,7 +170,7 @@ const Homepage = () => {
                 <Typography fontWeight="bold" color="#93c5fd">
                   Experience
                 </Typography>
-                <Typography fontWeight="300" color="#d4d4d8" fontSize="1rem">
+                <Typography fontWeight="400" color="grey" fontSize="1rem">
                   Learn from the experiences of other students.
                 </Typography>
               </Stack>
