@@ -27,6 +27,7 @@ import { MdPriceCheck } from "react-icons/md";
 
 const FindResidence = () => {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const rooms = [
     {
@@ -347,6 +348,7 @@ const FindResidence = () => {
               </Select>
             </FormControl>
 
+            {/* Amenities Input */}
             <TextField
               fullWidth
               multiline
@@ -378,6 +380,7 @@ const FindResidence = () => {
               }}
             />
 
+            {/* Additional Details Input */}
             <TextField
               fullWidth
               multiline
@@ -408,6 +411,7 @@ const FindResidence = () => {
               }}
             />
 
+            {/* Character Count Indicators */}
             <Box sx={{ display: "flex", gap: 2, mb: 3 }}>
               <Chip
                 label={`Amenities: ${getCharacterCount(amenities)}/100`}
@@ -476,6 +480,7 @@ const FindResidence = () => {
         </DialogActions>
       </Dialog>
 
+      {/* Results Dialog */}
       <Dialog
         open={isResultOpen}
         onClose={closeResult}

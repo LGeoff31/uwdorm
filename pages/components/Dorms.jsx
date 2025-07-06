@@ -266,7 +266,6 @@ const Dorms = () => {
       </Box>
     );
   }
-
   return (
     <>
       <Box
