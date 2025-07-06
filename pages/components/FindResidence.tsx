@@ -282,7 +282,7 @@ const FindResidence = () => {
               color="text.secondary"
               sx={{ mb: 3, mt: 2 }}
             >
-              Tell us about your preferences and we'll use AI to find your ideal
+              Tell us about your preferences and well use AI to find your ideal
               residence match!
             </Typography>
 
