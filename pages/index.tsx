@@ -1,6 +1,8 @@
+/// <reference types="@types/react" />
+// @ts-ignore: No types for 'react-scroll'
 import Navbar from "./components/Navbar";
 import { Stack } from "@mui/material";
-import Homepage from "./components/Homepage.js";
+import Homepage from "./components/Homepage";
 import Dorms from "./components/Dorms";
 import FooterOther from "./components/footerOther";
 import AddWebsiteReview from "./components/AddWebsiteReview";
@@ -17,15 +19,7 @@ export default function Home() {
       <section id="dorms">
         <Dorms />
       </section>
-      {/* <Maps />
-       */}
-      <div className="maprouter">
-        <iframe
-          width="100%"
-          height="100%"
-          src="https://maps.google.com/maps?q=43.473395,-80.537320&t=&z=17&ie=UTF8&iwloc=&output=embed"
-        ></iframe>
-      </div>
+      <Maps />
       <AddWebsiteReview />
       <FooterOther />
     </Stack>

@@ -122,7 +122,6 @@ export default function Residence() {
   };
 
   useEffect(() => {
-    console.log("id", router.query.id);
     if (router.query.id) {
       fetchResidence();
       fetchComments();

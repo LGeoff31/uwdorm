@@ -1,0 +1,14 @@
+name: Scheduled API Call
+
+on:
+  schedule:
+    - cron: '0 0 * * *' 
+
+jobs:
+  call_api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call API
+        run: |
+          curl -X POST 'https://uwrez.com/api/find_residence' \
+          -d '{"inputText": "hi"}'
