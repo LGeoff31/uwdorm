@@ -159,6 +159,8 @@ function DormInfo(props) {
             />
 
             <Button
+              component={Link}
+              href={`/${props.link}`}
               variant="outlined"
               size="small"
               sx={{
