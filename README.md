@@ -14,6 +14,10 @@ Now powered by a **custom fine-tuned LLaMA 3 model**, UW Rez offers rich, human-
 - 🗺️ Interactive **map view** of all first-year residences with markers and ratings  
 - 🛏️ We rank dorms based on **room quality, location, price, and bathrooms**
 
+## 💻 Architecture
+<img width="1098" height="632" alt="image" src="https://github.com/user-attachments/assets/d19e8862-86b1-4158-93b0-9e3497a6d9c4" />
+
+
 ---
 
 ## 🤝 Contribute
