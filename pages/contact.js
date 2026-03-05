@@ -1,5 +1,4 @@
 import Navbar from "./components/Navbar";
-import { Stack } from "@mui/material";
 import FooterOther from "./components/footerOther";
 import React, { useState, useRef } from "react";
 import { LuSendHorizontal } from "react-icons/lu";
@@ -80,77 +79,135 @@ export default function Contact() {
   return (
     <>
       <Navbar setUser={setUser} />
+      {/* Hero */}
       <div
         style={{
-          background: `url('https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png') no-repeat center center fixed`,
-          backgroundSize: "cover",
-          height: "30vh",
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          minHeight: "28vh",
           display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <Stack margin="">
-          <span className="text-4xl p-20 text-blue-300">UW Rez Contact</span>
-        </Stack>
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              'url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')',
+          }}
+        />
+        <h1
+          className="text-4xl md:text-5xl font-extrabold text-white text-center"
+          style={{ textShadow: "0 2px 20px rgba(0,0,0,0.15)", position: "relative", zIndex: 1 }}
+        >
+          Get in Touch
+        </h1>
       </div>
-      <div className="bg-[rgba(225,246,255,1)]">
-        <div className="p-20">
-          <div className="text-3xl font-bold">Contact:</div>
-          <form onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
-              <label htmlFor="firstname" className="flex flex-col text-lg">
-                First Name:
-                <input
-                  required
-                  value={firstName}
-                  className="border-2 border-zinc-300 rounded-lg p-2"
-                  id="firstname"
-                  placeholder="Enter First Name"
-                  onChange={handleFirstNameChange}
-                />
-              </label>
-              <label htmlFor="lastname" className="flex flex-col text-lg">
-                Last Name:
-                <input
-                  required
-                  value={lastName}
-                  id="lastname"
-                  className="border-2 border-zinc-300 rounded-lg p-2"
-                  placeholder="Enter Last Name"
-                  onChange={handleLastNameChange}
-                />
-              </label>
-              <label htmlFor="email" className="flex flex-col text-lg">
-                Email:
+
+      {/* Body */}
+      <div style={{ background: "linear-gradient(180deg, #f8faff 0%, #eef2ff 100%)", minHeight: "60vh" }}>
+        <div className="max-w-2xl mx-auto px-6 py-16">
+          <div
+            className="rounded-2xl p-8"
+            style={{
+              background: "rgba(255,255,255,0.97)",
+              border: "1px solid rgba(102,126,234,0.08)",
+              boxShadow: "0 4px 24px rgba(102,126,234,0.06)",
+            }}
+          >
+            <h2 className="text-2xl font-bold mb-6" style={{ color: "#4f46e5" }}>
+              Contact Us
+            </h2>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label htmlFor="firstname" className="flex flex-col text-sm font-medium text-gray-600">
+                  First Name
+                  <input
+                    required
+                    value={firstName}
+                    className="mt-1 rounded-xl px-4 py-3 text-base transition-all duration-200 outline-none"
+                    style={{
+                      border: "1.5px solid rgba(102,126,234,0.15)",
+                      background: "#fafbff",
+                    }}
+                    id="firstname"
+                    placeholder="Jane"
+                    onChange={handleFirstNameChange}
+                    onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(102,126,234,0.15)")}
+                  />
+                </label>
+                <label htmlFor="lastname" className="flex flex-col text-sm font-medium text-gray-600">
+                  Last Name
+                  <input
+                    required
+                    value={lastName}
+                    id="lastname"
+                    className="mt-1 rounded-xl px-4 py-3 text-base transition-all duration-200 outline-none"
+                    style={{
+                      border: "1.5px solid rgba(102,126,234,0.15)",
+                      background: "#fafbff",
+                    }}
+                    placeholder="Doe"
+                    onChange={handleLastNameChange}
+                    onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                    onBlur={(e) => (e.target.style.borderColor = "rgba(102,126,234,0.15)")}
+                  />
+                </label>
+              </div>
+              <label htmlFor="email" className="flex flex-col text-sm font-medium text-gray-600">
+                Email
                 <input
                   required
                   value={email}
-                  className="border-2 border-zinc-300 rounded-lg p-2"
+                  className="mt-1 rounded-xl px-4 py-3 text-base transition-all duration-200 outline-none"
+                  style={{
+                    border: "1.5px solid rgba(102,126,234,0.15)",
+                    background: "#fafbff",
+                  }}
                   id="email"
-                  placeholder="Enter Email"
+                  placeholder="you@uwaterloo.ca"
                   onChange={handleEmailChange}
+                  onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                  onBlur={(e) => (e.target.style.borderColor = "rgba(102,126,234,0.15)")}
                 />
               </label>
-            </div>
-            <div className="mt-5">
-              <label htmlFor="message" className="text-lg">
-                Message:
+              <label htmlFor="message" className="flex flex-col text-sm font-medium text-gray-600">
+                Message
                 <textarea
                   required
                   value={message}
                   id="message"
-                  className="border-2 border-zinc-300 rounded-lg p-2 w-full"
-                  placeholder="Enter Message"
+                  rows={5}
+                  className="mt-1 rounded-xl px-4 py-3 text-base transition-all duration-200 outline-none resize-y"
+                  style={{
+                    border: "1.5px solid rgba(102,126,234,0.15)",
+                    background: "#fafbff",
+                  }}
+                  placeholder="How can we help?"
                   onChange={handleMessageChange}
+                  onFocus={(e) => (e.target.style.borderColor = "#667eea")}
+                  onBlur={(e) => (e.target.style.borderColor = "rgba(102,126,234,0.15)")}
                 />
               </label>
-            </div>
-            <button
-              type="submit"
-              className="mt-5 text-lg bg-blue-300 rounded-lg px-4 py-2 inline-flex items-center"
-            >
-              Submit <LuSendHorizontal size={16} className="ml-2" />
-            </button>
-          </form>
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center gap-2 text-white font-semibold rounded-xl px-6 py-3 transition-all duration-300"
+                style={{
+                  background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                  boxShadow: "0 4px 15px rgba(102,126,234,0.3)",
+                  alignSelf: "flex-start",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 6px 20px rgba(102,126,234,0.45)")}
+                onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 4px 15px rgba(102,126,234,0.3)")}
+              >
+                Send Message <LuSendHorizontal size={16} />
+              </button>
+            </form>
+          </div>
         </div>
       </div>
 

@@ -271,14 +271,15 @@ export default function Residence() {
   const QuickStats = ({ icon, label, value, color = "#667eea" }) => (
     <Card
       sx={{
-        background: "rgba(255, 255, 255, 0.9)",
-        backdropFilter: "blur(10px)",
-        border: "1px solid rgba(255, 255, 255, 0.2)",
-        borderRadius: 3,
-        transition: "all 0.3s ease",
+        background: "rgba(255, 255, 255, 0.97)",
+        backdropFilter: "blur(12px)",
+        border: "1px solid rgba(102,126,234,0.08)",
+        borderRadius: 4,
+        transition: "all 0.35s cubic-bezier(.4,0,.2,1)",
         "&:hover": {
           transform: "translateY(-4px)",
-          boxShadow: "0 12px 24px rgba(0,0,0,0.1)",
+          boxShadow: "0 12px 32px rgba(102,126,234,0.10)",
+          borderColor: "rgba(102,126,234,0.15)",
         },
       }}
     >
@@ -298,7 +299,7 @@ export default function Residence() {
     <Box
       sx={{
         minHeight: "100vh",
-        background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+        background: "linear-gradient(180deg, #f8faff 0%, #eef2ff 50%, #e8ecf8 100%)",
       }}
     >
       <Navbar setUser={setUser} />
@@ -415,9 +416,9 @@ export default function Residence() {
             >
               <Card
                 sx={{
-                  background: "rgba(255, 255, 255, 0.95)",
-                  backdropFilter: "blur(10px)",
-                  border: "1px solid rgba(255, 255, 255, 0.2)",
+                  background: "rgba(255, 255, 255, 0.97)",
+                  backdropFilter: "blur(12px)",
+                  border: "1px solid rgba(102,126,234,0.08)",
                   borderRadius: 4,
                   overflow: "hidden",
                   mb: 4,
@@ -441,9 +442,9 @@ export default function Residence() {
             >
               <Card
                 sx={{
-                  background: "rgba(255, 255, 255, 0.95)",
-                  backdropFilter: "blur(10px)",
-                  border: "1px solid rgba(255, 255, 255, 0.2)",
+                  background: "rgba(255, 255, 255, 0.97)",
+                  backdropFilter: "blur(12px)",
+                  border: "1px solid rgba(102,126,234,0.08)",
                   borderRadius: 4,
                   overflow: "hidden",
                 }}
@@ -472,9 +473,9 @@ export default function Residence() {
         >
           <Card
             sx={{
-              background: "rgba(255, 255, 255, 0.95)",
-              backdropFilter: "blur(10px)",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
+              background: "rgba(255, 255, 255, 0.97)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid rgba(102,126,234,0.08)",
               borderRadius: 4,
               overflow: "hidden",
               mt: 4,
@@ -555,13 +556,14 @@ export default function Residence() {
                       >
                         <Card
                           sx={{
-                            background: "rgba(248, 250, 252, 0.8)",
-                            border: "1px solid rgba(102, 126, 234, 0.1)",
-                            borderRadius: 3,
-                            transition: "all 0.3s ease",
+                            background: "rgba(248, 250, 252, 0.9)",
+                            border: "1px solid rgba(102, 126, 234, 0.06)",
+                            borderRadius: 4,
+                            transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
                             "&:hover": {
-                              boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
+                              boxShadow: "0 8px 28px rgba(102,126,234,0.08)",
                               transform: "translateY(-2px)",
+                              borderColor: "rgba(102, 126, 234, 0.12)",
                             },
                           }}
                         >

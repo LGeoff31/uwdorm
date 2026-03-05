@@ -1,111 +1,119 @@
 import Navbar from "./components/Navbar";
 import FooterOther from "./components/footerOther";
-import {
-  Paper,
-  Link,
-  TextField,
-  Stack,
-  Grid,
-  Box,
-  Button,
-  Typography,
-} from "@mui/material";
-import { IoHomeOutline } from "react-icons/io5";
-import { MdPriceCheck } from "react-icons/md";
-import TransferWithinAStationIcon from "@mui/icons-material/TransferWithinAStation";
-import { SiSlideshare } from "react-icons/si";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { MdOutlineRateReview } from "react-icons/md";
 import { CiDatabase } from "react-icons/ci";
 import { FaExchangeAlt } from "react-icons/fa";
 import React, { useState } from "react";
 
+const sections = [
+  {
+    icon: IoIosInformationCircleOutline,
+    title: "Information We Collect",
+    body: "When you voluntarily login with us, we collect your email address. However, this is not required to access the site.",
+  },
+  {
+    icon: MdOutlineRateReview,
+    title: "User-Generated Content",
+    body: "When you add a review, we will list your name (optional), message, and reviews.",
+  },
+  {
+    icon: CiDatabase,
+    title: "Automatically Collected Data",
+    body: "We may automatically collect certain information when you visit our website, including your browser type, operating system, and browsing behavior.",
+  },
+  {
+    icon: FaExchangeAlt,
+    title: "Changes to this Policy",
+    body: "We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements.",
+  },
+];
+
 export default function Privacy() {
   const [user, setUser] = useState(null);
   return (
     <>
       <Navbar setUser={setUser} />
+      {/* Hero */}
       <div
         style={{
-          background: `url('https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png') no-repeat center center fixed`,
-          backgroundSize: "cover",
-          height: "30vh",
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          minHeight: "28vh",
           display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <Stack margin="">
-          <span className="text-4xl p-20 text-blue-300 ">
-            UW Rez Privacy
-          </span>
-        </Stack>
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              'url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')',
+          }}
+        />
+        <h1
+          className="text-4xl md:text-5xl font-extrabold text-white text-center"
+          style={{ textShadow: "0 2px 20px rgba(0,0,0,0.15)", position: "relative", zIndex: 1 }}
+        >
+          Privacy Policy
+        </h1>
       </div>
-      <div className="bg-[rgba(225,246,255,1)] p-20">
-        <h1 className="text-3xl font-bold mb-8">
-          Privacy Policy:
-        </h1>
-        <h1 className="mt-2">
-          Thank you for using UW Rez! This Privacy Policy explains how we
-          collect, use, and disclose your information while you are on our site.
-        </h1>
 
-        <Grid>
-          <Stack direction="row" gap="1rem" marginTop="2rem">
-            <IoIosInformationCircleOutline style={{ fontSize: "3rem" }} />
-            <Stack>
-              <h1 className="font-medium">
-                {"Information We Collect"}
-              </h1>
-              <h1>
-                When you voluntarily login with us, we collect your email
-                address. However, this is not required to access the site.
-              </h1>
-            </Stack>
-          </Stack>
-          <Stack direction="row" gap="1rem" marginTop="2rem">
-            <MdOutlineRateReview style={{ fontSize: "3rem" }} />
-            <Stack>
-              <h1 className="font-medium">{"User-Generated"}</h1>
-              <h1 fontWeight="300">
-                When you add a review, we will list your name (optional),
-                message, and reviews.
-              </h1>
-            </Stack>
-          </Stack>
-          <Stack direction="row" gap="1rem" marginTop="2rem">
-            <CiDatabase style={{ fontSize: "3rem" }} />
-            <Stack>
-              <h1 className="font-medium">
-                {"Automatically Collected Data"}
-              </h1>
-              <h1 fontWeight="300">
-                We may automatically collect certain information when you visit
-                our website, including your browser type, operating system, and
-                browsing behavior.
-              </h1>
-            </Stack>
-          </Stack>
-          <Stack direction="row" gap="1rem" marginTop="2rem">
-            <FaExchangeAlt style={{ fontSize: "3rem" }} />
-            <Stack>
-              <h1 className="font-medium">
-                {"Changes to this Privacy Policy"}
-              </h1>
-              <h1 fontWeight="300">
-                We may update this Privacy Policy from time to time to reflect
-                changes in our practices or legal requirements.
-              </h1>
-            </Stack>
-          </Stack>
-          <h1 className="text-3xl font-bold mb-8 mt-8">
-            Photo Creds:
-          </h1>
-          <h1 className="mt-2">
-            https://coolbackgrounds.io/images/backgrounds
-          </h1>
-        </Grid>
+      {/* Body */}
+      <div style={{ background: "linear-gradient(180deg, #f8faff 0%, #eef2ff 100%)", minHeight: "60vh" }}>
+        <div className="max-w-3xl mx-auto px-6 py-16">
+          <p className="text-gray-600 text-lg leading-relaxed mb-10">
+            Thank you for using UW Rez! This Privacy Policy explains how we
+            collect, use, and disclose your information while you are on our site.
+          </p>
+
+          <div className="flex flex-col gap-5">
+            {sections.map((s) => {
+              const Icon = s.icon;
+              return (
+                <div
+                  key={s.title}
+                  className="rounded-2xl p-6 flex items-start gap-5 transition-all duration-300"
+                  style={{
+                    background: "rgba(255,255,255,0.97)",
+                    border: "1px solid rgba(102,126,234,0.08)",
+                    boxShadow: "0 4px 24px rgba(102,126,234,0.06)",
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.boxShadow =
+                      "0 8px 32px rgba(102,126,234,0.12)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.boxShadow =
+                      "0 4px 24px rgba(102,126,234,0.06)")
+                  }
+                >
+                  <div
+                    className="flex-shrink-0 rounded-xl flex items-center justify-center"
+                    style={{
+                      width: 48,
+                      height: 48,
+                      background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                    }}
+                  >
+                    <Icon style={{ fontSize: "1.4rem", color: "#fff" }} />
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-semibold mb-1" style={{ color: "#1e293b" }}>
+                      {s.title}
+                    </h2>
+                    <p className="text-gray-600 leading-relaxed">{s.body}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-    
-      
+      </div>
+
       <FooterOther />
     </>
   );

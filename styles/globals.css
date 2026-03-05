@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---- Smooth defaults ---- */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(102, 126, 234, 0.25);
+  color: inherit;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Subtle page-transition fade (works with Next.js SPA navigations) */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#__next > * {
+  animation: fadeIn 0.35s ease-out;
+}
+
+/* ---- Map ---- */
 .maprouter {
   position: relative;
   height: 50vh;

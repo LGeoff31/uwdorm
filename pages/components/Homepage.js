@@ -63,7 +63,7 @@ const Homepage = () => {
     <>
       <Box
         sx={{
-          minHeight: "90vh",
+          minHeight: "92vh",
           background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
           position: "relative",
           overflow: "hidden",
@@ -131,15 +131,17 @@ const Homepage = () => {
                 <Typography
                   variant="h1"
                   sx={{
-                    fontSize: { xs: "3rem", md: "4.5rem" },
+                    fontSize: { xs: "3rem", md: "4.8rem" },
                     fontWeight: 800,
                     color: "white",
                     mb: 2,
-                    textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
-                    background: "linear-gradient(45deg, #ffffff, #e0e7ff)",
+                    textShadow: "0 2px 20px rgba(0,0,0,0.15)",
+                    background: "linear-gradient(160deg, #ffffff 30%, #c7d2fe 100%)",
                     backgroundClip: "text",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
+                    letterSpacing: '-0.02em',
+                    lineHeight: 1.1,
                   }}
                 >
                   UW Rez
@@ -147,11 +149,13 @@ const Homepage = () => {
                 <Typography
                   variant="h4"
                   sx={{
-                    fontSize: { xs: "1.2rem", md: "1.5rem" },
-                    color: "rgba(255,255,255,0.9)",
+                    fontSize: { xs: "1.1rem", md: "1.35rem" },
+                    color: "rgba(255,255,255,0.85)",
                     mb: 4,
-                    fontWeight: 300,
-                    lineHeight: 1.6,
+                    fontWeight: 400,
+                    lineHeight: 1.7,
+                    maxWidth: '540px',
+                    mx: 'auto',
                   }}
                 >
                   Discover your perfect home at Waterloo with AI-powered
@@ -232,8 +236,8 @@ const Homepage = () => {
       <Box
         id="features"
         sx={{
-          py: 8,
-          background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+          py: { xs: 8, md: 10 },
+          background: "linear-gradient(180deg, #f8faff 0%, #eef2ff 50%, #e8ecf8 100%)",
           minHeight: "100vh",
           display: "flex",
           alignItems: "center",
@@ -288,15 +292,26 @@ const Homepage = () => {
                   <Card
                     sx={{
                       height: "100%",
-                      background: "rgba(255, 255, 255, 0.9)",
+                      background: "rgba(255, 255, 255, 0.97)",
                       backdropFilter: "blur(10px)",
-                      border: "1px solid rgba(255, 255, 255, 0.2)",
-                      borderRadius: 3,
-                      transition: "all 0.3s ease",
+                      border: "1px solid rgba(102,126,234,0.08)",
+                      borderRadius: 4,
+                      transition: "all 0.35s cubic-bezier(.4,0,.2,1)",
+                      position: 'relative',
+                      overflow: 'hidden',
+                      '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0, left: 0, right: 0,
+                        height: '3px',
+                        background: feature.color,
+                        opacity: 0,
+                        transition: 'opacity 0.35s ease',
+                      },
                       "&:hover": {
-                        transform: "translateY(-8px)",
-                        boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-                        background: "rgba(255, 255, 255, 0.95)",
+                        transform: "translateY(-6px)",
+                        boxShadow: "0 16px 48px rgba(102,126,234,0.12)",
+                        '&::before': { opacity: 1 },
                       },
                     }}
                   >

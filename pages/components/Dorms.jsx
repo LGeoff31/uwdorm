@@ -21,22 +21,22 @@ import { MdStar } from "react-icons/md";
 
 function DormInfo(props) {
   return (
-    <motion.div whileHover={{ y: -8 }} transition={{ duration: 0.3 }}>
+    <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}>
       <Card
         sx={{
           height: "100%",
           minHeight: "500px",
           display: "flex",
           flexDirection: "column",
-          background: "rgba(255, 255, 255, 0.95)",
-          backdropFilter: "blur(10px)",
-          border: "1px solid rgba(255, 255, 255, 0.2)",
+          background: "rgba(255, 255, 255, 0.97)",
+          backdropFilter: "blur(12px)",
+          border: "1px solid rgba(102, 126, 234, 0.08)",
           borderRadius: 4,
           overflow: "hidden",
-          transition: "all 0.3s ease",
+          transition: "all 0.35s cubic-bezier(.4,0,.2,1)",
           "&:hover": {
-            boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-            transform: "translateY(-8px)",
+            boxShadow: "0 20px 50px rgba(102,126,234,0.14)",
+            borderColor: "rgba(102, 126, 234, 0.18)",
           },
         }}
       >
@@ -51,9 +51,9 @@ function DormInfo(props) {
               width: "100%",
               objectFit: "cover",
               objectPosition: "center",
-              transition: "transform 0.3s ease",
+              transition: "transform 0.5s cubic-bezier(.4,0,.2,1)",
               "&:hover": {
-                transform: "scale(1.05)",
+                transform: "scale(1.04)",
               },
             }}
           />
@@ -157,11 +157,16 @@ function DormInfo(props) {
               variant="outlined"
               size="small"
               sx={{
-                borderColor: "rgba(102, 126, 234, 0.3)",
+                borderColor: "rgba(102, 126, 234, 0.25)",
                 color: "#667eea",
+                borderRadius: '999px',
+                textTransform: 'none',
+                fontWeight: 600,
+                px: 2,
+                transition: 'all 0.25s ease',
                 "&:hover": {
                   borderColor: "#667eea",
-                  background: "rgba(102, 126, 234, 0.04)",
+                  background: "rgba(102, 126, 234, 0.06)",
                 },
               }}
               startIcon={<IoHomeOutline />}
@@ -255,7 +260,7 @@ const Dorms = () => {
       <Box
         sx={{
           background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-          py: 8,
+          py: { xs: 6, md: 8 },
           position: "relative",
           overflow: "hidden",
         }}
@@ -339,8 +344,8 @@ const Dorms = () => {
 
       <Box
         sx={{
-          py: 8,
-          background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+          py: { xs: 6, md: 8 },
+          background: "linear-gradient(180deg, #f8faff 0%, #eef2ff 50%, #e8ecf8 100%)",
           minHeight: "100vh",
         }}
       >
