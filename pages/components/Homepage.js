@@ -84,6 +84,37 @@ const Homepage = () => {
             animation: "float 20s ease-in-out infinite",
           }}
         />
+        {/* Floating ambient orbs */}
+        <motion.div
+          animate={{ x: [0, 40, 0], y: [0, -30, 0] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+          style={{
+            position: "absolute", top: "8%", left: "4%",
+            width: 320, height: 320, borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(255,255,255,0.14) 0%, transparent 70%)",
+            filter: "blur(24px)", pointerEvents: "none",
+          }}
+        />
+        <motion.div
+          animate={{ x: [0, -30, 0], y: [0, 35, 0] }}
+          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          style={{
+            position: "absolute", bottom: "12%", right: "6%",
+            width: 280, height: 280, borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 70%)",
+            filter: "blur(20px)", pointerEvents: "none",
+          }}
+        />
+        <motion.div
+          animate={{ x: [0, 20, 0], y: [0, 25, 0] }}
+          transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+          style={{
+            position: "absolute", top: "40%", right: "20%",
+            width: 180, height: 180, borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)",
+            filter: "blur(16px)", pointerEvents: "none",
+          }}
+        />
         <Container maxWidth="lg">
           <Grid
             container

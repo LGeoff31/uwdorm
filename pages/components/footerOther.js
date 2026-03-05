@@ -1,65 +1,64 @@
 import Link from "next/link";
 import Logo from "../../public/logo.png";
 import Image from "next/image";
-import { CiMail } from "react-icons/ci";
-import { CiLinkedin } from "react-icons/ci";
-import { IoLogoInstagram } from "react-icons/io";
+import { motion } from "framer-motion";
 
 function footerOther() {
   return (
-    <>
-      <div className="flex flex-row justify-center text-xl p-3 bg-[rgba(225,246,255,1)]">
-        <Link href="/">
+    <footer
+      style={{
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        padding: "2rem 1rem 1.5rem",
+        marginTop: "2rem",
+      }}
+    >
+      <motion.div
+        className="flex flex-col items-center gap-3"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <Link href="/" className="flex items-center gap-2">
           <Image
             src={Logo}
             alt="UW Rez Logo"
-            width={30}
-            height={30}
-            className="duration-300 ease-in-out hover:scale-125"
+            width={32}
+            height={32}
+            className="duration-300 ease-in-out hover:scale-110"
           />
+          <span
+            style={{
+              color: "white",
+              fontWeight: 700,
+              fontSize: "1.2rem",
+              letterSpacing: "0.02em",
+            }}
+          >
+            UW Rez
+          </span>
         </Link>
-        <Link href="/">
-          <h1 className="mr-2 ml-1 hover:text-blue-300">UW Rez</h1>
-        </Link>
-        <Link
-          href="https://www.instagram.com/uw.rez/"
-          target="_blank"
-          className="mr-1 duration-300 ease-in-out hover:scale-125"
+
+        <div
+          className="flex flex-row gap-5"
+          style={{ fontSize: "0.95rem" }}
         >
-          <IoLogoInstagram size={28} color="tomato" />
-        </Link>
-        <Link
-          href="mailto:james.yuu@hotmail.com"
-          target="_blank"
-          className="mr-1 duration-300 ease-in-out hover:scale-125"
-        >
-          <CiMail size={28} color="MediumSeaGreen" />
-        </Link>
-        <Link
-          href="https://www.linkedin.com/company/uw-rez/"
-          target="_blank"
-          className="duration-300 ease-in-out hover:scale-125"
-        >
-          <CiLinkedin size={28} color="darkblue" />
-        </Link>
-      </div>
-      <div className=" flex flex-row justify-center text-med bg-[rgba(225,246,255,1)] p-1">
-        <Link href="/" className="hover:text-blue-400">
-          {" "}
-          Home
-        </Link>
-        <Link href="/privacy" className="hover:text-blue-400">
-          &nbsp;&nbsp;Privacy
-        </Link>
-        <Link href="/about" className="hover:text-blue-400">
-          &nbsp;&nbsp;About
-        </Link>
-        <Link href="/contact" className="hover:text-blue-400">
-          &nbsp;&nbsp;Contact
-        </Link>
-        <br></br>
-      </div>
-    </>
+          <Link href="/" style={{ color: "rgba(255,255,255,0.85)" }} className="hover:text-white transition-colors">
+            Home
+          </Link>
+          <Link href="/privacy" style={{ color: "rgba(255,255,255,0.85)" }} className="hover:text-white transition-colors">
+            Privacy
+          </Link>
+          <Link href="/about" style={{ color: "rgba(255,255,255,0.85)" }} className="hover:text-white transition-colors">
+            About
+          </Link>
+        </div>
+
+        <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem", marginTop: "0.5rem" }}>
+          &copy; {new Date().getFullYear()} UW Rez. All rights reserved.
+        </p>
+      </motion.div>
+    </footer>
   );
 }
 

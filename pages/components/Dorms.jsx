@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   Link,
-  Stack,
-  Paper,
-  TextField,
   Grid,
   Button,
   Typography,
@@ -15,7 +12,6 @@ import {
   Chip,
   Rating,
   useTheme,
-  useMediaQuery,
 } from "@mui/material";
 import FooterOther from "./footerOther";
 import { motion } from "framer-motion";
@@ -24,9 +20,6 @@ import { MdLocationOn } from "react-icons/md";
 import { MdStar } from "react-icons/md";
 
 function DormInfo(props) {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
   return (
     <motion.div whileHover={{ y: -8 }} transition={{ duration: 0.3 }}>
       <Card
@@ -183,8 +176,6 @@ function DormInfo(props) {
 }
 
 const Dorms = () => {
-  const theme = useTheme();
-
   const [residences, setResidences] = useState([]);
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -194,9 +185,8 @@ const Dorms = () => {
       const response = await fetch("/api/residences");
       const data = await response.json();
       setResidences(data);
-      console.log(data);
     } catch (error) {
-      console.error("Error fetching residences:", error);
+      // failed to load residences
     }
   };
 
@@ -204,15 +194,12 @@ const Dorms = () => {
     try {
       const response = await fetch("/api/all_comments", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
       });
       const data = await response.json();
-      console.log("THIS IS DATA", data);
       setComments(data);
     } catch (error) {
-      console.error("Error fetching comments:", error);
+      // failed to load comments
     }
   };
 
@@ -232,12 +219,7 @@ const Dorms = () => {
   });
 
   const findCount = ({ id }) => {
-    console.log("checking ", id, residenceCounts);
-    if (id in residenceCounts) {
-      return residenceCounts[id];
-    }
-    console.log("ID", id);
-    return 0;
+    return residenceCounts[id] ?? 0;
   };
 
   if (isLoading) {

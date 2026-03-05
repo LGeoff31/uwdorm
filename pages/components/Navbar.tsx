@@ -10,13 +10,11 @@ import {
   Divider,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../utils/firebase";
 import { useRouter } from "next/router";
 import { FcGoogle } from "react-icons/fc";
-import { GiNightSleep } from "react-icons/gi";
-
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -28,18 +26,23 @@ import { MdAccountCircle } from "react-icons/md";
 const Navbar = ({ setUser }: { setUser: any }) => {
   const [user, loading] = useAuthState(auth);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const open = Boolean(anchorEl);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   const route = useRouter();
   const googleProvider = new GoogleAuthProvider();
   const GoogleLogin = async () => {
-    console.log("user1", user);
     try {
-      const result = await signInWithPopup(auth, googleProvider);
+      await signInWithPopup(auth, googleProvider);
       route.push("/");
     } catch (error) {
-      console.log("google sign in error", error);
+      // sign-in dismissed or failed silently
     }
-    console.log("user2", user);
   };
 
   const handleClick = (event: any) => {
@@ -49,11 +52,21 @@ const Navbar = ({ setUser }: { setUser: any }) => {
     setAnchorEl(null);
   };
 
-  if (loading) return <h1>Loading...</h1>;
-  console.log(user);
+  if (loading) return null;
   setUser(user);
   return (
-    <nav className="bg-[rgba(225, 246, 255,1)]">
+    <nav
+      className="bg-[rgba(225,246,255,1)]"
+      style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 1000,
+        transition: 'box-shadow 0.3s ease, backdrop-filter 0.3s ease, background 0.3s ease',
+        boxShadow: isScrolled ? '0 2px 20px rgba(102,126,234,0.18)' : 'none',
+        backdropFilter: isScrolled ? 'blur(12px)' : 'none',
+        background: isScrolled ? 'rgba(225,246,255,0.85)' : 'rgba(225,246,255,1)',
+      }}
+    >
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-1 ">
         <div className="flex items-center space-x-3">
           <Link href="/" className="flex items-center">

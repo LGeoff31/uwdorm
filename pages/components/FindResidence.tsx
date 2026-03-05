@@ -18,7 +18,9 @@ import {
   IconButton,
   useTheme,
   useMediaQuery,
+  Divider,
 } from "@mui/material";
+import { ResidenceResult, RESIDENCE_ID_TO_PATH } from "../../utils/residenceData";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoClose } from "react-icons/io5";
 import { GiMaterialsScience } from "react-icons/gi";
@@ -63,10 +65,8 @@ const FindResidence = () => {
   const [mealplan, setMealplan] = useState<string>("");
   const [amenities, setAmenities] = useState<string>("");
   const [details, setDetails] = useState<string>("");
-  const [idealRes, setIdealRes] = useState<string>("");
-  const [similarity, setSimilarity] = useState<number>(0);
+  const [allResults, setAllResults] = useState<ResidenceResult[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [residenceContext, setResidenceContext] = useState<string>("");
 
   const handleRoomChange = (event: any) => {
     setRoom(event.target.value);
@@ -100,7 +100,6 @@ const FindResidence = () => {
     }
     input_text += `Moreover, the user wants the residence to have these things available: ${amenities}. `;
     input_text += `Overall, the user is looking for this type of residence to spend their year in: ${details}`;
-    console.log("Input text is:", input_text);
     return input_text;
   };
 
@@ -121,17 +120,13 @@ const FindResidence = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ inputText }),
+          body: JSON.stringify({ inputText, room, mealplan }),
         });
 
         const data = await res.json();
 
-        if (data) {
-          const idea = data.results[0].idea;
-          const similarity = Math.round(data.results[0].similarity * 100);
-          const res_name = parseResidenceFromResults(idea);
-          setIdealRes(res_name);
-          setSimilarity(similarity);
+        if (data && data.results && data.results.length > 0) {
+          setAllResults(data.results as ResidenceResult[]);
         }
 
         setIsLoading(false);
@@ -142,26 +137,11 @@ const FindResidence = () => {
         setMealplan("");
         openResult();
       } catch (error) {
-        console.log(error);
         setIsLoading(false);
       }
     } else {
-      console.log("Unable to create inputText");
+      // required fields missing
     }
-  };
-
-  const parseResidenceFromResults = (results: string) => {
-    let i = 0;
-    let res_name = "";
-    while (results[i] !== ",") {
-      if (results[i] === "(") {
-        res_name = res_name.substring(0, res_name.length - 1);
-        break;
-      }
-      res_name += results[i];
-      i++;
-    }
-    return res_name;
   };
 
   function open() {
@@ -180,30 +160,19 @@ const FindResidence = () => {
     setIsResultOpen(false);
   }
 
-  const redirect_to_res = () => {
-    switch (idealRes) {
-      case "Village 1":
-        window.location.href = `/1`;
-        break;
-      case "Claudette Millar Hall":
-        window.location.href = `/2`;
-        break;
-      case "University of Waterloo Place":
-        window.location.href = `/3`;
-        break;
-      case "Ron Eydt Village":
-        window.location.href = `/4`;
-        break;
-      case "Mackenzie King Village":
-        window.location.href = `/5`;
-        break;
-      case "United College":
-        window.location.href = `/9`;
-        break;
-      default:
-        closeResult();
-        break;
+  const redirect_to_res = (id: string) => {
+    const path = RESIDENCE_ID_TO_PATH[id];
+    if (path) {
+      window.location.href = path;
+    } else {
+      closeResult();
     }
+  };
+
+  const rankLabel = (i: number) => {
+    if (i === 0) return { label: "Best Match", color: "#10B981" };
+    if (i === 1) return { label: "2nd Choice", color: "#667eea" };
+    return { label: "3rd Choice", color: "#764ba2" };
   };
 
   const getCharacterCount = (text: string) => {
@@ -484,7 +453,7 @@ const FindResidence = () => {
       <Dialog
         open={isResultOpen}
         onClose={closeResult}
-        maxWidth="sm"
+        maxWidth="md"
         fullWidth
         PaperProps={{
           sx: {
@@ -514,91 +483,132 @@ const FindResidence = () => {
           >
             <MdPriceCheck style={{ fontSize: "2rem" }} />
             <Typography variant="h5" fontWeight={600}>
-              Perfect Match Found!
+              Your Top Residence Matches
             </Typography>
           </Box>
         </DialogTitle>
 
-        <DialogContent sx={{ p: 4, textAlign: "center" }}>
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Paper
-              elevation={0}
-              sx={{
-                p: 3,
-                background: "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
-                borderRadius: 3,
-                border: "1px solid rgba(102, 126, 234, 0.1)",
-              }}
-            >
-              <Typography variant="h6" color="text.secondary" sx={{ mb: 2 }}>
-                Based on your preferences, we recommend:
-              </Typography>
-
-              <Typography
-                variant="h4"
-                sx={{
-                  fontWeight: 700,
-                  mb: 2,
-                  background:
-                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
+        <DialogContent sx={{ p: 3 }}>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2, mt: 1 }}>
+            Ranked by relevance with diversity — so each option is meaningfully different.
+          </Typography>
+          {allResults.map((result, i) => {
+            const { label, color } = rankLabel(i);
+            return (
+              <motion.div
+                key={result.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
               >
-                {idealRes}
-              </Typography>
+                <Paper
+                  elevation={i === 0 ? 3 : 1}
+                  sx={{
+                    p: 2.5,
+                    mb: 2,
+                    borderRadius: 3,
+                    border: i === 0 ? `2px solid ${color}` : "1px solid rgba(0,0,0,0.08)",
+                    background: i === 0
+                      ? "linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)"
+                      : "#fafafa",
+                  }}
+                >
+                  <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", mb: 1 }}>
+                    <Box>
+                      <Chip
+                        label={label}
+                        size="small"
+                        sx={{ bgcolor: color, color: "white", fontWeight: 700, mb: 0.5 }}
+                      />
+                      <Typography variant="h6" fontWeight={700} sx={{ mt: 0.5 }}>
+                        {result.name}
+                      </Typography>
+                    </Box>
+                    <Chip
+                      label={`${result.matchPercentage}% match`}
+                      size="small"
+                      variant="outlined"
+                      sx={{ borderColor: color, color, fontWeight: 600 }}
+                    />
+                  </Box>
 
-              <Chip
-                label={`${similarity}% Match Score`}
-                color="success"
-                sx={{
-                  fontSize: "1rem",
-                  py: 1,
-                  px: 2,
-                  mb: 3,
-                }}
-              />
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                    {result.shortDescription}
+                  </Typography>
 
-              <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-                {residenceContext}
-              </Typography>
-            </Paper>
-          </motion.div>
+                  {result.whyChosen && (
+                    <Box
+                      sx={{
+                        bgcolor: i === 0 ? 'rgba(16,185,129,0.08)' : 'rgba(102,126,234,0.06)',
+                        border: `1px solid ${i === 0 ? 'rgba(16,185,129,0.25)' : 'rgba(102,126,234,0.2)'}`,
+                        borderRadius: 2,
+                        px: 1.5,
+                        py: 1,
+                        mb: 1.5,
+                      }}
+                    >
+                      <Typography variant="caption" sx={{ fontWeight: 600, color: i === 0 ? '#059669' : '#667eea', display: 'block', mb: 0.3 }}>
+                        Why this matches you
+                      </Typography>
+                      <Typography variant="caption" color="text.secondary">
+                        {result.whyChosen}
+                      </Typography>
+                    </Box>
+                  )}
+
+                  <Typography variant="caption" color="text.secondary" sx={{ display: "block", mb: 1.5 }}>
+                    <strong>Best for:</strong> {result.bestFor}
+                  </Typography>
+
+                  <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 1.5 }}>
+                    <Chip label={result.style} size="small" variant="outlined" />
+                    <Chip label={result.priceRange} size="small" variant="outlined" />
+                    {result.amenities.includes("AIR CONDITIONING") && (
+                      <Chip label="AC" size="small" color="info" />
+                    )}
+                    {result.mealPlan.toLowerCase().includes("optional") ? (
+                      <Chip label="Meal plan optional" size="small" color="success" variant="outlined" />
+                    ) : (
+                      <Chip label="Meal plan included" size="small" color="warning" variant="outlined" />
+                    )}
+                  </Box>
+
+                  <Divider sx={{ my: 1 }} />
+
+                  <Button
+                    onClick={() => redirect_to_res(result.id)}
+                    variant={i === 0 ? "contained" : "outlined"}
+                    size="small"
+                    startIcon={<IoHomeOutline />}
+                    sx={{
+                      background: i === 0
+                        ? `linear-gradient(135deg, ${color} 0%, #059669 100%)`
+                        : undefined,
+                      color: i === 0 ? "white" : color,
+                      borderColor: i === 0 ? undefined : color,
+                      borderRadius: 2,
+                      textTransform: "none",
+                      "&:hover": {
+                        background: i === 0
+                          ? `linear-gradient(135deg, #059669 0%, #047857 100%)`
+                          : `rgba(0,0,0,0.04)`,
+                      },
+                    }}
+                  >
+                    View {result.name}
+                  </Button>
+                </Paper>
+              </motion.div>
+            );
+          })}
         </DialogContent>
 
-        <DialogActions sx={{ p: 3, pt: 0 }}>
+        <DialogActions sx={{ p: 2, pt: 0 }}>
           <Button
             onClick={closeResult}
-            sx={{
-              color: "text.secondary",
-              "&:hover": {
-                background: "rgba(0, 0, 0, 0.04)",
-              },
-            }}
+            sx={{ color: "text.secondary", "&:hover": { background: "rgba(0,0,0,0.04)" } }}
           >
             Close
-          </Button>
-          <Button
-            onClick={redirect_to_res}
-            variant="contained"
-            sx={{
-              background: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
-              color: "white",
-              px: 4,
-              py: 1.5,
-              borderRadius: 2,
-              "&:hover": {
-                background: "linear-gradient(135deg, #059669 0%, #047857 100%)",
-              },
-            }}
-            startIcon={<IoHomeOutline />}
-          >
-            View {idealRes}
           </Button>
         </DialogActions>
       </Dialog>

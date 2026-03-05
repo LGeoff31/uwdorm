@@ -20,7 +20,6 @@ import {
   useMediaQuery,
   IconButton,
   Rating,
-  Fade,
   Skeleton,
 } from "@mui/material";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
@@ -132,15 +131,13 @@ export default function Residence() {
     try {
       const response = await fetch("/api/comments-by-residence", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ residence_id: id }),
       });
       const data = await response.json();
       setComments(data);
     } catch (error) {
-      console.error("Error fetching comments:", error);
+      // failed silently
     }
   };
 
@@ -159,15 +156,13 @@ export default function Residence() {
     try {
       const response = await fetch("/api/residence-by-id", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ residence_id: id }),
       });
       const data = await response.json();
       setResidence(data);
     } catch (error) {
-      console.error("Error fetching residence data:", error);
+      // failed silently
     }
   };
 
