@@ -52,6 +52,9 @@ function footerOther() {
           <Link href="/about" style={{ color: "rgba(255,255,255,0.85)" }} className="hover:text-white transition-colors">
             About
           </Link>
+          <Link href="/contact" style={{ color: "rgba(255,255,255,0.85)" }} className="hover:text-white transition-colors">
+            Contact
+          </Link>
         </div>
 
         <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem", marginTop: "0.5rem" }}>

@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import { Stack } from "@mui/material";
 import FooterOther from "./components/footerOther";
 import React, { useState, useRef } from "react";
-import { LuSendHorizonal } from "react-icons/lu";
+import { LuSendHorizontal } from "react-icons/lu";
 
 export default function Contact() {
   const [firstName, setFirstName] = useState("");
@@ -148,7 +148,7 @@ export default function Contact() {
               type="submit"
               className="mt-5 text-lg bg-blue-300 rounded-lg px-4 py-2 inline-flex items-center"
             >
-              Submit <LuSendHorizonal size={16} className="ml-2" />
+              Submit <LuSendHorizontal size={16} className="ml-2" />
             </button>
           </form>
         </div>

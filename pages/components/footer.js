@@ -30,6 +30,9 @@ function footer() {
         <Link href="/About" className="hover:text-blue-400">
           &nbsp;&nbsp;About
         </Link>
+        <Link href="/contact" className="hover:text-blue-400">
+          &nbsp;&nbsp;Contact
+        </Link>
       </div>
     </>
   );
